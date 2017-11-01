@@ -16,6 +16,7 @@ namespace Main
         private static LogikController LC;
         private static PresentationController PC;
         private static DataController DC;
+        private static int t = 4;
 
         static void Main(string[] args)
         {
