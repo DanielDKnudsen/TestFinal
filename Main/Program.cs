@@ -17,6 +17,7 @@ namespace Main
         private static PresentationController PC;
         private static DataController DC;
         private static int t = 4;
+        private static int q = 10;
 
         static void Main(string[] args)
         {
