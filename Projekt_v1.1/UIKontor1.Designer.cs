@@ -28,11 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.UIKontor_StartKnap = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // UIKontor_StartKnap
+            // 
+            this.UIKontor_StartKnap.Location = new System.Drawing.Point(89, 61);
+            this.UIKontor_StartKnap.Name = "UIKontor_StartKnap";
+            this.UIKontor_StartKnap.Size = new System.Drawing.Size(75, 23);
+            this.UIKontor_StartKnap.TabIndex = 0;
+            this.UIKontor_StartKnap.Text = "Start";
+            this.UIKontor_StartKnap.UseVisualStyleBackColor = true;
+            this.UIKontor_StartKnap.Click += new System.EventHandler(this.UIKontor_StartKnap_Click);
+            // 
+            // UIKontor1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(728, 397);
+            this.Controls.Add(this.UIKontor_StartKnap);
+            this.Name = "UIKontor1";
             this.Text = "UIKontor1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button UIKontor_StartKnap;
     }
 }

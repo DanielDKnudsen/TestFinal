@@ -16,5 +16,10 @@ namespace Projekt_v1._1
         {
             InitializeComponent();
         }
+
+        private void UIKontor_StartKnap_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
