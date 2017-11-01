@@ -16,10 +16,6 @@ namespace Main
         private static LogikController LC;
         private static PresentationController PC;
         private static DataController DC;
-        private static int t = 4;
-        private static int q = 10;
-        private static int k = 100000;
-        private static int h = 90;
 
         static void Main(string[] args)
         {
