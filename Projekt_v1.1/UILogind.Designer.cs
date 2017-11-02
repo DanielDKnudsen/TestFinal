@@ -99,6 +99,7 @@
             this.UILogind_buttonLogind.TabIndex = 6;
             this.UILogind_buttonLogind.Text = "Logind";
             this.UILogind_buttonLogind.UseVisualStyleBackColor = true;
+            this.UILogind_buttonLogind.Click += new System.EventHandler(this.UILogind_buttonLogind_Click);
             // 
             // UILogind
             // 
