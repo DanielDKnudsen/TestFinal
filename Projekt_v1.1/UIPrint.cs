@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projekt_v1._1
 {
-    public partial class UILogin : Form
+    public partial class UIPrint : Form
     {
-        public UILogin()
+        public UIPrint()
         {
             InitializeComponent();
         }

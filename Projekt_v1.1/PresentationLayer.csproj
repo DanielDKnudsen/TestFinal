@@ -51,17 +51,29 @@
     <Compile Include="UIKontor1.Designer.cs">
       <DependentUpon>UIKontor1.cs</DependentUpon>
     </Compile>
-    <Compile Include="UILogin.cs">
+    <Compile Include="UILogind.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UILogin.Designer.cs">
-      <DependentUpon>UILogin.cs</DependentUpon>
+    <Compile Include="UILogind.Designer.cs">
+      <DependentUpon>UILogind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIMed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIMed.Designer.cs">
+      <DependentUpon>UIMed.cs</DependentUpon>
     </Compile>
     <Compile Include="UIPatient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UIPatient.Designer.cs">
       <DependentUpon>UIPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIPrint.Designer.cs">
+      <DependentUpon>UIPrint.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -71,8 +83,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="UILogind.resx">
+      <DependentUpon>UILogind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIMed.resx">
+      <DependentUpon>UIMed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UIPatient.resx">
       <DependentUpon>UIPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIPrint.resx">
+      <DependentUpon>UIPrint.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
