@@ -32,65 +32,85 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
-            this.UIPrint_textBoxTidspunkt = new System.Windows.Forms.TextBox();
-            this.UIPrint_buttonFiltrering = new System.Windows.Forms.Button();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.UIPrint_KnapFiltrering = new System.Windows.Forms.Button();
+            this.BlodtrykPRINTChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.UIPrint_comboBox = new System.Windows.Forms.ComboBox();
+            this.UIPatient_KnapPrint = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.BlodtrykPRINTChart)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 64);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(40, 94);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 17);
+            this.label1.Size = new System.Drawing.Size(232, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tidspunkt:";
             // 
-            // UIPrint_textBoxTidspunkt
+            // UIPrint_KnapFiltrering
             // 
-            this.UIPrint_textBoxTidspunkt.Location = new System.Drawing.Point(28, 84);
-            this.UIPrint_textBoxTidspunkt.Name = "UIPrint_textBoxTidspunkt";
-            this.UIPrint_textBoxTidspunkt.Size = new System.Drawing.Size(100, 22);
-            this.UIPrint_textBoxTidspunkt.TabIndex = 1;
+            this.UIPrint_KnapFiltrering.Location = new System.Drawing.Point(342, 116);
+            this.UIPrint_KnapFiltrering.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.UIPrint_KnapFiltrering.Name = "UIPrint_KnapFiltrering";
+            this.UIPrint_KnapFiltrering.Size = new System.Drawing.Size(226, 74);
+            this.UIPrint_KnapFiltrering.TabIndex = 2;
+            this.UIPrint_KnapFiltrering.Text = "Digital Filtrering";
+            this.UIPrint_KnapFiltrering.UseVisualStyleBackColor = true;
             // 
-            // UIPrint_buttonFiltrering
-            // 
-            this.UIPrint_buttonFiltrering.Location = new System.Drawing.Point(491, 64);
-            this.UIPrint_buttonFiltrering.Name = "UIPrint_buttonFiltrering";
-            this.UIPrint_buttonFiltrering.Size = new System.Drawing.Size(129, 41);
-            this.UIPrint_buttonFiltrering.TabIndex = 2;
-            this.UIPrint_buttonFiltrering.Text = "Digital Filtrering";
-            this.UIPrint_buttonFiltrering.UseVisualStyleBackColor = true;
-            // 
-            // chart1
+            // BlodtrykPRINTChart
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.BlodtrykPRINTChart.ChartAreas.Add(chartArea1);
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(28, 134);
-            this.chart1.Name = "chart1";
+            this.BlodtrykPRINTChart.Legends.Add(legend1);
+            this.BlodtrykPRINTChart.Location = new System.Drawing.Point(49, 215);
+            this.BlodtrykPRINTChart.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.BlodtrykPRINTChart.Name = "BlodtrykPRINTChart";
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(1112, 373);
-            this.chart1.TabIndex = 3;
-            this.chart1.Text = "UIPrint_ChartBT";
+            series1.Name = "Blodtryk";
+            this.BlodtrykPRINTChart.Series.Add(series1);
+            this.BlodtrykPRINTChart.Size = new System.Drawing.Size(1631, 676);
+            this.BlodtrykPRINTChart.TabIndex = 3;
+            this.BlodtrykPRINTChart.Text = "UIPrint_ChartBT";
+            // 
+            // UIPrint_comboBox
+            // 
+            this.UIPrint_comboBox.FormattingEnabled = true;
+            this.UIPrint_comboBox.Location = new System.Drawing.Point(49, 149);
+            this.UIPrint_comboBox.Name = "UIPrint_comboBox";
+            this.UIPrint_comboBox.Size = new System.Drawing.Size(208, 37);
+            this.UIPrint_comboBox.TabIndex = 4;
+            // 
+            // UIPatient_KnapPrint
+            // 
+            this.UIPatient_KnapPrint.Location = new System.Drawing.Point(597, 116);
+            this.UIPatient_KnapPrint.Margin = new System.Windows.Forms.Padding(5);
+            this.UIPatient_KnapPrint.Name = "UIPatient_KnapPrint";
+            this.UIPatient_KnapPrint.Size = new System.Drawing.Size(226, 74);
+            this.UIPatient_KnapPrint.TabIndex = 5;
+            this.UIPatient_KnapPrint.Text = "Print";
+            this.UIPatient_KnapPrint.UseVisualStyleBackColor = true;
             // 
             // UIPrint
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1204, 519);
-            this.Controls.Add(this.chart1);
-            this.Controls.Add(this.UIPrint_buttonFiltrering);
-            this.Controls.Add(this.UIPrint_textBoxTidspunkt);
+            this.ClientSize = new System.Drawing.Size(2107, 941);
+            this.Controls.Add(this.UIPatient_KnapPrint);
+            this.Controls.Add(this.UIPrint_comboBox);
+            this.Controls.Add(this.BlodtrykPRINTChart);
+            this.Controls.Add(this.UIPrint_KnapFiltrering);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "UIPrint";
             this.Text = "UIPrint";
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlodtrykPRINTChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,8 +119,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox UIPrint_textBoxTidspunkt;
-        private System.Windows.Forms.Button UIPrint_buttonFiltrering;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Button UIPrint_KnapFiltrering;
+        private System.Windows.Forms.DataVisualization.Charting.Chart BlodtrykPRINTChart;
+        private System.Windows.Forms.ComboBox UIPrint_comboBox;
+        private System.Windows.Forms.Button UIPatient_KnapPrint;
     }
 }
