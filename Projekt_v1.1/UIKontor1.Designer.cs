@@ -34,199 +34,342 @@
             this.UIKontor_KnapAnnuller = new System.Windows.Forms.Button();
             this.UIKontor_StueBox = new System.Windows.Forms.PictureBox();
             this.UIKontor_FarveIndikator = new System.Windows.Forms.TextBox();
-            this.UIKontor_LabelCPR = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.UIKontor_LabelCPR1 = new System.Windows.Forms.Label();
+            this.UIKontor_LabelDiaMax = new System.Windows.Forms.Label();
+            this.UIKontor_DiaMin = new System.Windows.Forms.Label();
+            this.UIKontor_LabelSysMax = new System.Windows.Forms.Label();
+            this.UIKontor_LabelSysMin = new System.Windows.Forms.Label();
+            this.UIKontor_LabelIndlæggelsesdato = new System.Windows.Forms.Label();
+            this.UIKontor_LabelEfternavn = new System.Windows.Forms.Label();
             this.UIKontor_LabelFornavn = new System.Windows.Forms.Label();
             this.UIKontor_LabelStue1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.UIKontor_LabelAlarm = new System.Windows.Forms.Label();
+            this.UIKontor_LabelStue2 = new System.Windows.Forms.Label();
+            this.UIKontor_LabelCPR2 = new System.Windows.Forms.Label();
+            this.UIKontor_Indlæggelsesdato = new System.Windows.Forms.DateTimePicker();
+            this.UIKontor_TextBoxCPR1 = new System.Windows.Forms.TextBox();
+            this.UIKontor_TextBoxStue1 = new System.Windows.Forms.TextBox();
+            this.UIKontor_TextBoxEfternavn = new System.Windows.Forms.TextBox();
+            this.UIKontor_TextBoxFornavn = new System.Windows.Forms.TextBox();
+            this.UIKontor_TextBoxSysMax = new System.Windows.Forms.TextBox();
+            this.UIKontor_TextBoxSysMin = new System.Windows.Forms.TextBox();
+            this.UIKontor_TextBoxDiaMax = new System.Windows.Forms.TextBox();
+            this.UIKontor_TextBoxDiaMin = new System.Windows.Forms.TextBox();
+            this.UIKontor_TextBoxStue2 = new System.Windows.Forms.TextBox();
+            this.UIKontor_TextBoxCPR2 = new System.Windows.Forms.TextBox();
+            this.UIKontor_KnapStart = new System.Windows.Forms.Button();
+            this.UIKontor_KnapHent = new System.Windows.Forms.Button();
+            this.UIKontor_KnapStop = new System.Windows.Forms.Button();
+            this.UIKontor_KnapLogud = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UIKontor_StueBox)).BeginInit();
             this.SuspendLayout();
             // 
             // UIKontor_KnapIndskriv
             // 
-            this.UIKontor_KnapIndskriv.Location = new System.Drawing.Point(21, 25);
+            this.UIKontor_KnapIndskriv.Location = new System.Drawing.Point(52, 25);
             this.UIKontor_KnapIndskriv.Name = "UIKontor_KnapIndskriv";
-            this.UIKontor_KnapIndskriv.Size = new System.Drawing.Size(149, 40);
+            this.UIKontor_KnapIndskriv.Size = new System.Drawing.Size(185, 40);
             this.UIKontor_KnapIndskriv.TabIndex = 0;
             this.UIKontor_KnapIndskriv.Text = "Indskriv";
             this.UIKontor_KnapIndskriv.UseVisualStyleBackColor = true;
             // 
             // UIKontor_KnapUdskriv
             // 
-            this.UIKontor_KnapUdskriv.Location = new System.Drawing.Point(188, 25);
+            this.UIKontor_KnapUdskriv.Location = new System.Drawing.Point(273, 25);
             this.UIKontor_KnapUdskriv.Name = "UIKontor_KnapUdskriv";
-            this.UIKontor_KnapUdskriv.Size = new System.Drawing.Size(149, 40);
+            this.UIKontor_KnapUdskriv.Size = new System.Drawing.Size(185, 40);
             this.UIKontor_KnapUdskriv.TabIndex = 1;
             this.UIKontor_KnapUdskriv.Text = "Udskriv";
             this.UIKontor_KnapUdskriv.UseVisualStyleBackColor = true;
             // 
             // UIKontor_KnapGem
             // 
-            this.UIKontor_KnapGem.Location = new System.Drawing.Point(21, 84);
+            this.UIKontor_KnapGem.Location = new System.Drawing.Point(52, 84);
             this.UIKontor_KnapGem.Name = "UIKontor_KnapGem";
-            this.UIKontor_KnapGem.Size = new System.Drawing.Size(149, 40);
+            this.UIKontor_KnapGem.Size = new System.Drawing.Size(185, 40);
             this.UIKontor_KnapGem.TabIndex = 2;
             this.UIKontor_KnapGem.Text = "Gem";
             this.UIKontor_KnapGem.UseVisualStyleBackColor = true;
             // 
             // UIKontor_KnapAnnuller
             // 
-            this.UIKontor_KnapAnnuller.Location = new System.Drawing.Point(188, 84);
+            this.UIKontor_KnapAnnuller.Location = new System.Drawing.Point(273, 84);
             this.UIKontor_KnapAnnuller.Name = "UIKontor_KnapAnnuller";
-            this.UIKontor_KnapAnnuller.Size = new System.Drawing.Size(149, 40);
+            this.UIKontor_KnapAnnuller.Size = new System.Drawing.Size(185, 40);
             this.UIKontor_KnapAnnuller.TabIndex = 3;
             this.UIKontor_KnapAnnuller.Text = "Annuller";
             this.UIKontor_KnapAnnuller.UseVisualStyleBackColor = true;
             // 
             // UIKontor_StueBox
             // 
-            this.UIKontor_StueBox.Location = new System.Drawing.Point(561, 0);
+            this.UIKontor_StueBox.Location = new System.Drawing.Point(517, 1);
             this.UIKontor_StueBox.Name = "UIKontor_StueBox";
-            this.UIKontor_StueBox.Size = new System.Drawing.Size(404, 532);
+            this.UIKontor_StueBox.Size = new System.Drawing.Size(328, 530);
             this.UIKontor_StueBox.TabIndex = 4;
             this.UIKontor_StueBox.TabStop = false;
             // 
             // UIKontor_FarveIndikator
             // 
             this.UIKontor_FarveIndikator.Enabled = false;
-            this.UIKontor_FarveIndikator.Location = new System.Drawing.Point(901, 12);
+            this.UIKontor_FarveIndikator.Location = new System.Drawing.Point(781, 11);
             this.UIKontor_FarveIndikator.Multiline = true;
             this.UIKontor_FarveIndikator.Name = "UIKontor_FarveIndikator";
             this.UIKontor_FarveIndikator.Size = new System.Drawing.Size(51, 34);
             this.UIKontor_FarveIndikator.TabIndex = 5;
             // 
-            // UIKontor_LabelCPR
+            // UIKontor_LabelCPR1
             // 
-            this.UIKontor_LabelCPR.AutoSize = true;
-            this.UIKontor_LabelCPR.Location = new System.Drawing.Point(21, 147);
-            this.UIKontor_LabelCPR.Name = "UIKontor_LabelCPR";
-            this.UIKontor_LabelCPR.Size = new System.Drawing.Size(68, 20);
-            this.UIKontor_LabelCPR.TabIndex = 6;
-            this.UIKontor_LabelCPR.Text = "CPR nr.:";
+            this.UIKontor_LabelCPR1.AutoSize = true;
+            this.UIKontor_LabelCPR1.Location = new System.Drawing.Point(61, 139);
+            this.UIKontor_LabelCPR1.Name = "UIKontor_LabelCPR1";
+            this.UIKontor_LabelCPR1.Size = new System.Drawing.Size(68, 20);
+            this.UIKontor_LabelCPR1.TabIndex = 6;
+            this.UIKontor_LabelCPR1.Text = "CPR nr.:";
             // 
-            // label2
+            // UIKontor_LabelDiaMax
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(457, 256);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "label2";
+            this.UIKontor_LabelDiaMax.AutoSize = true;
+            this.UIKontor_LabelDiaMax.Location = new System.Drawing.Point(282, 450);
+            this.UIKontor_LabelDiaMax.Name = "UIKontor_LabelDiaMax";
+            this.UIKontor_LabelDiaMax.Size = new System.Drawing.Size(151, 20);
+            this.UIKontor_LabelDiaMax.TabIndex = 7;
+            this.UIKontor_LabelDiaMax.Text = "Diastole maksimum:";
             // 
-            // label3
+            // UIKontor_DiaMin
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(465, 264);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 20);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "label3";
+            this.UIKontor_DiaMin.AutoSize = true;
+            this.UIKontor_DiaMin.Location = new System.Drawing.Point(61, 450);
+            this.UIKontor_DiaMin.Name = "UIKontor_DiaMin";
+            this.UIKontor_DiaMin.Size = new System.Drawing.Size(138, 20);
+            this.UIKontor_DiaMin.TabIndex = 8;
+            this.UIKontor_DiaMin.Text = "Diastole minimum:";
             // 
-            // label4
+            // UIKontor_LabelSysMax
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(473, 272);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 20);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "label4";
+            this.UIKontor_LabelSysMax.AutoSize = true;
+            this.UIKontor_LabelSysMax.Location = new System.Drawing.Point(282, 380);
+            this.UIKontor_LabelSysMax.Name = "UIKontor_LabelSysMax";
+            this.UIKontor_LabelSysMax.Size = new System.Drawing.Size(145, 20);
+            this.UIKontor_LabelSysMax.TabIndex = 9;
+            this.UIKontor_LabelSysMax.Text = "Systole maksimum:";
             // 
-            // label5
+            // UIKontor_LabelSysMin
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(481, 280);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 20);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "label5";
+            this.UIKontor_LabelSysMin.AutoSize = true;
+            this.UIKontor_LabelSysMin.Location = new System.Drawing.Point(61, 380);
+            this.UIKontor_LabelSysMin.Name = "UIKontor_LabelSysMin";
+            this.UIKontor_LabelSysMin.Size = new System.Drawing.Size(132, 20);
+            this.UIKontor_LabelSysMin.TabIndex = 10;
+            this.UIKontor_LabelSysMin.Text = "Systole minimum:";
             // 
-            // label6
+            // UIKontor_LabelIndlæggelsesdato
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(489, 288);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 20);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "label6";
+            this.UIKontor_LabelIndlæggelsesdato.AutoSize = true;
+            this.UIKontor_LabelIndlæggelsesdato.Location = new System.Drawing.Point(179, 276);
+            this.UIKontor_LabelIndlæggelsesdato.Name = "UIKontor_LabelIndlæggelsesdato";
+            this.UIKontor_LabelIndlæggelsesdato.Size = new System.Drawing.Size(141, 20);
+            this.UIKontor_LabelIndlæggelsesdato.TabIndex = 11;
+            this.UIKontor_LabelIndlæggelsesdato.Text = "Indlæggelsesdato:";
             // 
-            // label7
+            // UIKontor_LabelEfternavn
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(497, 296);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 20);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "label7";
+            this.UIKontor_LabelEfternavn.AutoSize = true;
+            this.UIKontor_LabelEfternavn.Location = new System.Drawing.Point(282, 202);
+            this.UIKontor_LabelEfternavn.Name = "UIKontor_LabelEfternavn";
+            this.UIKontor_LabelEfternavn.Size = new System.Drawing.Size(82, 20);
+            this.UIKontor_LabelEfternavn.TabIndex = 12;
+            this.UIKontor_LabelEfternavn.Text = "Efternavn:";
             // 
             // UIKontor_LabelFornavn
             // 
             this.UIKontor_LabelFornavn.AutoSize = true;
-            this.UIKontor_LabelFornavn.Location = new System.Drawing.Point(30, 202);
+            this.UIKontor_LabelFornavn.Location = new System.Drawing.Point(61, 202);
             this.UIKontor_LabelFornavn.Name = "UIKontor_LabelFornavn";
-            this.UIKontor_LabelFornavn.Size = new System.Drawing.Size(67, 20);
+            this.UIKontor_LabelFornavn.Size = new System.Drawing.Size(71, 20);
             this.UIKontor_LabelFornavn.TabIndex = 13;
-            this.UIKontor_LabelFornavn.Text = "Fornavn";
+            this.UIKontor_LabelFornavn.Text = "Fornavn:";
             // 
             // UIKontor_LabelStue1
             // 
             this.UIKontor_LabelStue1.AutoSize = true;
-            this.UIKontor_LabelStue1.Location = new System.Drawing.Point(184, 147);
+            this.UIKontor_LabelStue1.Location = new System.Drawing.Point(282, 139);
             this.UIKontor_LabelStue1.Name = "UIKontor_LabelStue1";
             this.UIKontor_LabelStue1.Size = new System.Drawing.Size(69, 20);
             this.UIKontor_LabelStue1.TabIndex = 14;
             this.UIKontor_LabelStue1.Text = "Stue nr.:";
             // 
-            // label10
+            // UIKontor_LabelAlarm
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(21, 454);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 20);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "label10";
+            this.UIKontor_LabelAlarm.AutoSize = true;
+            this.UIKontor_LabelAlarm.Location = new System.Drawing.Point(48, 350);
+            this.UIKontor_LabelAlarm.Name = "UIKontor_LabelAlarm";
+            this.UIKontor_LabelAlarm.Size = new System.Drawing.Size(166, 20);
+            this.UIKontor_LabelAlarm.TabIndex = 15;
+            this.UIKontor_LabelAlarm.Text = "Alarm grænseværdier:";
             // 
-            // label11
+            // UIKontor_LabelStue2
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(784, 218);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 20);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "label11";
+            this.UIKontor_LabelStue2.AutoSize = true;
+            this.UIKontor_LabelStue2.Location = new System.Drawing.Point(561, 94);
+            this.UIKontor_LabelStue2.Name = "UIKontor_LabelStue2";
+            this.UIKontor_LabelStue2.Size = new System.Drawing.Size(69, 20);
+            this.UIKontor_LabelStue2.TabIndex = 16;
+            this.UIKontor_LabelStue2.Text = "Stue nr.:";
             // 
-            // label12
+            // UIKontor_LabelCPR2
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(734, 168);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(60, 20);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "label12";
+            this.UIKontor_LabelCPR2.AutoSize = true;
+            this.UIKontor_LabelCPR2.Location = new System.Drawing.Point(561, 25);
+            this.UIKontor_LabelCPR2.Name = "UIKontor_LabelCPR2";
+            this.UIKontor_LabelCPR2.Size = new System.Drawing.Size(68, 20);
+            this.UIKontor_LabelCPR2.TabIndex = 17;
+            this.UIKontor_LabelCPR2.Text = "CPR nr.:";
+            // 
+            // UIKontor_Indlæggelsesdato
+            // 
+            this.UIKontor_Indlæggelsesdato.Location = new System.Drawing.Point(136, 299);
+            this.UIKontor_Indlæggelsesdato.Name = "UIKontor_Indlæggelsesdato";
+            this.UIKontor_Indlæggelsesdato.Size = new System.Drawing.Size(228, 26);
+            this.UIKontor_Indlæggelsesdato.TabIndex = 18;
+            // 
+            // UIKontor_TextBoxCPR1
+            // 
+            this.UIKontor_TextBoxCPR1.Location = new System.Drawing.Point(52, 163);
+            this.UIKontor_TextBoxCPR1.Name = "UIKontor_TextBoxCPR1";
+            this.UIKontor_TextBoxCPR1.Size = new System.Drawing.Size(185, 26);
+            this.UIKontor_TextBoxCPR1.TabIndex = 19;
+            // 
+            // UIKontor_TextBoxStue1
+            // 
+            this.UIKontor_TextBoxStue1.Location = new System.Drawing.Point(273, 163);
+            this.UIKontor_TextBoxStue1.Name = "UIKontor_TextBoxStue1";
+            this.UIKontor_TextBoxStue1.Size = new System.Drawing.Size(185, 26);
+            this.UIKontor_TextBoxStue1.TabIndex = 20;
+            // 
+            // UIKontor_TextBoxEfternavn
+            // 
+            this.UIKontor_TextBoxEfternavn.Location = new System.Drawing.Point(273, 230);
+            this.UIKontor_TextBoxEfternavn.Name = "UIKontor_TextBoxEfternavn";
+            this.UIKontor_TextBoxEfternavn.Size = new System.Drawing.Size(185, 26);
+            this.UIKontor_TextBoxEfternavn.TabIndex = 22;
+            // 
+            // UIKontor_TextBoxFornavn
+            // 
+            this.UIKontor_TextBoxFornavn.Location = new System.Drawing.Point(52, 230);
+            this.UIKontor_TextBoxFornavn.Name = "UIKontor_TextBoxFornavn";
+            this.UIKontor_TextBoxFornavn.Size = new System.Drawing.Size(185, 26);
+            this.UIKontor_TextBoxFornavn.TabIndex = 21;
+            // 
+            // UIKontor_TextBoxSysMax
+            // 
+            this.UIKontor_TextBoxSysMax.Location = new System.Drawing.Point(273, 408);
+            this.UIKontor_TextBoxSysMax.Name = "UIKontor_TextBoxSysMax";
+            this.UIKontor_TextBoxSysMax.Size = new System.Drawing.Size(185, 26);
+            this.UIKontor_TextBoxSysMax.TabIndex = 24;
+            // 
+            // UIKontor_TextBoxSysMin
+            // 
+            this.UIKontor_TextBoxSysMin.Location = new System.Drawing.Point(52, 408);
+            this.UIKontor_TextBoxSysMin.Name = "UIKontor_TextBoxSysMin";
+            this.UIKontor_TextBoxSysMin.Size = new System.Drawing.Size(185, 26);
+            this.UIKontor_TextBoxSysMin.TabIndex = 23;
+            // 
+            // UIKontor_TextBoxDiaMax
+            // 
+            this.UIKontor_TextBoxDiaMax.Location = new System.Drawing.Point(273, 476);
+            this.UIKontor_TextBoxDiaMax.Name = "UIKontor_TextBoxDiaMax";
+            this.UIKontor_TextBoxDiaMax.Size = new System.Drawing.Size(185, 26);
+            this.UIKontor_TextBoxDiaMax.TabIndex = 26;
+            // 
+            // UIKontor_TextBoxDiaMin
+            // 
+            this.UIKontor_TextBoxDiaMin.Location = new System.Drawing.Point(52, 476);
+            this.UIKontor_TextBoxDiaMin.Name = "UIKontor_TextBoxDiaMin";
+            this.UIKontor_TextBoxDiaMin.Size = new System.Drawing.Size(185, 26);
+            this.UIKontor_TextBoxDiaMin.TabIndex = 25;
+            // 
+            // UIKontor_TextBoxStue2
+            // 
+            this.UIKontor_TextBoxStue2.Location = new System.Drawing.Point(553, 117);
+            this.UIKontor_TextBoxStue2.Name = "UIKontor_TextBoxStue2";
+            this.UIKontor_TextBoxStue2.Size = new System.Drawing.Size(185, 26);
+            this.UIKontor_TextBoxStue2.TabIndex = 28;
+            // 
+            // UIKontor_TextBoxCPR2
+            // 
+            this.UIKontor_TextBoxCPR2.Location = new System.Drawing.Point(553, 48);
+            this.UIKontor_TextBoxCPR2.Name = "UIKontor_TextBoxCPR2";
+            this.UIKontor_TextBoxCPR2.Size = new System.Drawing.Size(185, 26);
+            this.UIKontor_TextBoxCPR2.TabIndex = 27;
+            // 
+            // UIKontor_KnapStart
+            // 
+            this.UIKontor_KnapStart.Location = new System.Drawing.Point(581, 223);
+            this.UIKontor_KnapStart.Name = "UIKontor_KnapStart";
+            this.UIKontor_KnapStart.Size = new System.Drawing.Size(185, 40);
+            this.UIKontor_KnapStart.TabIndex = 29;
+            this.UIKontor_KnapStart.Text = "Start monitorering";
+            this.UIKontor_KnapStart.UseVisualStyleBackColor = true;
+            // 
+            // UIKontor_KnapHent
+            // 
+            this.UIKontor_KnapHent.Location = new System.Drawing.Point(581, 350);
+            this.UIKontor_KnapHent.Name = "UIKontor_KnapHent";
+            this.UIKontor_KnapHent.Size = new System.Drawing.Size(185, 40);
+            this.UIKontor_KnapHent.TabIndex = 30;
+            this.UIKontor_KnapHent.Text = "Hent data";
+            this.UIKontor_KnapHent.UseVisualStyleBackColor = true;
+            // 
+            // UIKontor_KnapStop
+            // 
+            this.UIKontor_KnapStop.Location = new System.Drawing.Point(581, 285);
+            this.UIKontor_KnapStop.Name = "UIKontor_KnapStop";
+            this.UIKontor_KnapStop.Size = new System.Drawing.Size(185, 40);
+            this.UIKontor_KnapStop.TabIndex = 31;
+            this.UIKontor_KnapStop.Text = "Stop monitorering ";
+            this.UIKontor_KnapStop.UseVisualStyleBackColor = true;
+            // 
+            // UIKontor_KnapLogud
+            // 
+            this.UIKontor_KnapLogud.Location = new System.Drawing.Point(596, 429);
+            this.UIKontor_KnapLogud.Name = "UIKontor_KnapLogud";
+            this.UIKontor_KnapLogud.Size = new System.Drawing.Size(157, 62);
+            this.UIKontor_KnapLogud.TabIndex = 32;
+            this.UIKontor_KnapLogud.Text = "Log ud";
+            this.UIKontor_KnapLogud.UseVisualStyleBackColor = true;
             // 
             // UIKontor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 532);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.ClientSize = new System.Drawing.Size(846, 532);
+            this.Controls.Add(this.UIKontor_KnapLogud);
+            this.Controls.Add(this.UIKontor_KnapStop);
+            this.Controls.Add(this.UIKontor_KnapHent);
+            this.Controls.Add(this.UIKontor_KnapStart);
+            this.Controls.Add(this.UIKontor_TextBoxStue2);
+            this.Controls.Add(this.UIKontor_TextBoxCPR2);
+            this.Controls.Add(this.UIKontor_TextBoxDiaMax);
+            this.Controls.Add(this.UIKontor_TextBoxDiaMin);
+            this.Controls.Add(this.UIKontor_TextBoxSysMax);
+            this.Controls.Add(this.UIKontor_TextBoxSysMin);
+            this.Controls.Add(this.UIKontor_TextBoxEfternavn);
+            this.Controls.Add(this.UIKontor_TextBoxFornavn);
+            this.Controls.Add(this.UIKontor_TextBoxStue1);
+            this.Controls.Add(this.UIKontor_TextBoxCPR1);
+            this.Controls.Add(this.UIKontor_Indlæggelsesdato);
+            this.Controls.Add(this.UIKontor_LabelCPR2);
+            this.Controls.Add(this.UIKontor_LabelStue2);
+            this.Controls.Add(this.UIKontor_LabelAlarm);
             this.Controls.Add(this.UIKontor_LabelStue1);
             this.Controls.Add(this.UIKontor_LabelFornavn);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.UIKontor_LabelCPR);
+            this.Controls.Add(this.UIKontor_LabelEfternavn);
+            this.Controls.Add(this.UIKontor_LabelIndlæggelsesdato);
+            this.Controls.Add(this.UIKontor_LabelSysMin);
+            this.Controls.Add(this.UIKontor_LabelSysMax);
+            this.Controls.Add(this.UIKontor_DiaMin);
+            this.Controls.Add(this.UIKontor_LabelDiaMax);
+            this.Controls.Add(this.UIKontor_LabelCPR1);
             this.Controls.Add(this.UIKontor_FarveIndikator);
             this.Controls.Add(this.UIKontor_StueBox);
             this.Controls.Add(this.UIKontor_KnapAnnuller);
@@ -249,17 +392,32 @@
         private System.Windows.Forms.Button UIKontor_KnapAnnuller;
         private System.Windows.Forms.PictureBox UIKontor_StueBox;
         private System.Windows.Forms.TextBox UIKontor_FarveIndikator;
-        private System.Windows.Forms.Label UIKontor_LabelCPR;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label UIKontor_LabelCPR1;
+        private System.Windows.Forms.Label UIKontor_LabelDiaMax;
+        private System.Windows.Forms.Label UIKontor_DiaMin;
+        private System.Windows.Forms.Label UIKontor_LabelSysMax;
+        private System.Windows.Forms.Label UIKontor_LabelSysMin;
+        private System.Windows.Forms.Label UIKontor_LabelIndlæggelsesdato;
+        private System.Windows.Forms.Label UIKontor_LabelEfternavn;
         private System.Windows.Forms.Label UIKontor_LabelFornavn;
         private System.Windows.Forms.Label UIKontor_LabelStue1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label UIKontor_LabelAlarm;
+        private System.Windows.Forms.Label UIKontor_LabelStue2;
+        private System.Windows.Forms.Label UIKontor_LabelCPR2;
+        private System.Windows.Forms.DateTimePicker UIKontor_Indlæggelsesdato;
+        private System.Windows.Forms.TextBox UIKontor_TextBoxCPR1;
+        private System.Windows.Forms.TextBox UIKontor_TextBoxStue1;
+        private System.Windows.Forms.TextBox UIKontor_TextBoxEfternavn;
+        private System.Windows.Forms.TextBox UIKontor_TextBoxFornavn;
+        private System.Windows.Forms.TextBox UIKontor_TextBoxSysMax;
+        private System.Windows.Forms.TextBox UIKontor_TextBoxSysMin;
+        private System.Windows.Forms.TextBox UIKontor_TextBoxDiaMax;
+        private System.Windows.Forms.TextBox UIKontor_TextBoxDiaMin;
+        private System.Windows.Forms.TextBox UIKontor_TextBoxStue2;
+        private System.Windows.Forms.TextBox UIKontor_TextBoxCPR2;
+        private System.Windows.Forms.Button UIKontor_KnapStart;
+        private System.Windows.Forms.Button UIKontor_KnapHent;
+        private System.Windows.Forms.Button UIKontor_KnapStop;
+        private System.Windows.Forms.Button UIKontor_KnapLogud;
     }
 }
