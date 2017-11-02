@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace Projekt_v1._1
 {
-    public partial class UIKontor1 : Form
+    public partial class UIPatient : Form
     {
-        public UIKontor1()
+        public UIPatient()
         {
             InitializeComponent();
         }
-
     }
 }

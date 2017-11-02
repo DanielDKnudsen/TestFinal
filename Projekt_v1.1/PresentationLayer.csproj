@@ -34,6 +34,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +57,12 @@
     <Compile Include="UILogin.Designer.cs">
       <DependentUpon>UILogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIPatient.Designer.cs">
+      <DependentUpon>UIPatient.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
@@ -64,8 +71,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UIKontor1.resx">
-      <DependentUpon>UIKontor1.cs</DependentUpon>
+    <EmbeddedResource Include="UIPatient.resx">
+      <DependentUpon>UIPatient.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
