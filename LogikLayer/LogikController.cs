@@ -10,15 +10,16 @@ namespace LogikLayer
 {
     public class LogikController : ILogikLayer
     {
-        private Logind Log;
+        private IDataLayer DL;
 
-        public LogikController(Logind log)
+        public LogikController(IDataLayer dl)
         {
-            Log = log;
+            DL = dl;
         }
 
         public int RequestLogind(LogindDTO LDTO)
         {
+            Logind Log = new Logind();
             return Log.CheckValues(LDTO);
         }
        

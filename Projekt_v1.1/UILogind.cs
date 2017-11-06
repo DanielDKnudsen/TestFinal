@@ -22,10 +22,7 @@ namespace Projekt_v1._1
             LL= ll;
         }
 
-        public void RequestNewLogin()
-        {
-            
-        }
+        
 
         private void UILogind_buttonLogind_Click(object sender, EventArgs e)
         {
@@ -46,14 +43,18 @@ namespace Projekt_v1._1
             if (værdi == 1)
             {
                 UIKontor1 kontor = new UIKontor1();
-                kontor.ShowDialog();
+                this.Hide();
+                kontor.Show();
+                
             }
             if (værdi == 2)
             {
                 UIMed med = new UIMed();
-                med.ShowDialog();
+                this.Hide();
+                med.Show();
+                
             }
-            else
+            if (værdi == 0)
             {
                 MessageBox.Show("Brugernavn eller kodeord er forkert, prøv igen.");
             }

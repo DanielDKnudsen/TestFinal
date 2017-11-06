@@ -7,7 +7,7 @@
     <ProjectGuid>{DC76AF0A-D5C6-4562-B3D7-4DE682AF5977}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Projekt_v1._1</RootNamespace>
+    <RootNamespace>PresentationLayer</RootNamespace>
     <AssemblyName>Projekt_v1.1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PresentationController.cs" />
+    <Compile Include="PresentationLayerController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIKontor1.cs">
       <SubType>Form</SubType>

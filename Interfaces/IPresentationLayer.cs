@@ -8,6 +8,6 @@ namespace Interfaces
 {
     public interface IPresentationLayer
     {
-
+        void startUpGUI();
     }
 }

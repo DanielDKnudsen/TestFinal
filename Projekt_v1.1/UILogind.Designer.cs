@@ -68,10 +68,12 @@
             this.UILogind_textBoxKodeord.Name = "UILogind_textBoxKodeord";
             this.UILogind_textBoxKodeord.Size = new System.Drawing.Size(258, 22);
             this.UILogind_textBoxKodeord.TabIndex = 3;
+            this.UILogind_textBoxKodeord.UseSystemPasswordChar = true;
             // 
             // UILogind_radioButtonSunhedspersonale
             // 
             this.UILogind_radioButtonSunhedspersonale.AutoSize = true;
+            this.UILogind_radioButtonSunhedspersonale.Checked = true;
             this.UILogind_radioButtonSunhedspersonale.Location = new System.Drawing.Point(55, 191);
             this.UILogind_radioButtonSunhedspersonale.Name = "UILogind_radioButtonSunhedspersonale";
             this.UILogind_radioButtonSunhedspersonale.Size = new System.Drawing.Size(156, 21);
@@ -87,7 +89,6 @@
             this.UILogind_radioButtonMedicoTekniker.Name = "UILogind_radioButtonMedicoTekniker";
             this.UILogind_radioButtonMedicoTekniker.Size = new System.Drawing.Size(136, 21);
             this.UILogind_radioButtonMedicoTekniker.TabIndex = 5;
-            this.UILogind_radioButtonMedicoTekniker.TabStop = true;
             this.UILogind_radioButtonMedicoTekniker.Text = "Medico-teknikker";
             this.UILogind_radioButtonMedicoTekniker.UseVisualStyleBackColor = true;
             // 
