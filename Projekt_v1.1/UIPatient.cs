@@ -16,5 +16,10 @@ namespace Projekt_v1._1
         {
             InitializeComponent();
         }
+
+        private void UIPatient_KnapNul_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(MessageBox., "Der foretages nu nulpunktsjustering");
+        }
     }
 }

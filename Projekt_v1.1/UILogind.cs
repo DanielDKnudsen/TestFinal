@@ -42,14 +42,14 @@ namespace Projekt_v1._1
             
             if (værdi == 1)
             {
-                UIKontor1 kontor = new UIKontor1();
+                UIKontor1 kontor = new UIKontor1(LL);
                 this.Hide();
                 kontor.Show();
                 
             }
             if (værdi == 2)
             {
-                UIMed med = new UIMed();
+                UIMed med = new UIMed(LL);
                 this.Hide();
                 med.Show();
                 
@@ -57,6 +57,8 @@ namespace Projekt_v1._1
             if (værdi == 0)
             {
                 MessageBox.Show("Brugernavn eller kodeord er forkert, prøv igen.");
+                UILogind_textBoxBrugernavn.Clear();
+                UILogind_textBoxKodeord.Clear();
             }
         }
     }

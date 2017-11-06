@@ -8,6 +8,6 @@ namespace Interfaces
 {
     public interface IDataLayer
     {
-
+        List<double> CollectNulpunktsListe()
     }
 }

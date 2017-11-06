@@ -22,6 +22,12 @@ namespace LogikLayer
             Logind Log = new Logind();
             return Log.CheckValues(LDTO);
         }
+
+        public int StartNPJ()
+        {
+            Nulpunktsjustering NP = new Nulpunktsjustering(DL);
+            
+        }
        
     }
 }

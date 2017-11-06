@@ -9,6 +9,10 @@ namespace DataLayer
 {
     public class DataController : IDataLayer
     {
-
+        private static DAQ daq;
+        public List<double> CollectNulpunktsListe()
+        {
+            return daq.CollectNulpunktsListe();
+        }
     }
 }
