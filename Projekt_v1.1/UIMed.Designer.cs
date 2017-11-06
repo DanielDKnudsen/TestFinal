@@ -77,6 +77,7 @@
             this.UIMed_buttonLogud.TabIndex = 4;
             this.UIMed_buttonLogud.Text = "Logud";
             this.UIMed_buttonLogud.UseVisualStyleBackColor = true;
+            this.UIMed_buttonLogud.Click += new System.EventHandler(this.UIMed_buttonLogud_Click);
             // 
             // UIMed
             // 

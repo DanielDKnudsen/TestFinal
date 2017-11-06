@@ -87,6 +87,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="UIKontor1.resx">
+      <DependentUpon>UIKontor1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UILogind.resx">
       <DependentUpon>UILogind.cs</DependentUpon>
     </EmbeddedResource>
