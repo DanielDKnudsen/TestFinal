@@ -189,5 +189,17 @@ namespace Projekt_v1._1
                 UIKontor_TextBoxEfternavn.Text = UIKontor_TextBoxEfternavn.Text.Remove(UIKontor_TextBoxEfternavn.Text.Length - 1);
             }
         }
+
+        private void UIKontor_KnapStart_Click(object sender, EventArgs e)
+        {
+            UIPatient UIPatient = new UIPatient();
+            UIPatient.Show();
+        }
+
+        private void UIKontor_KnapHent_Click(object sender, EventArgs e)
+        {
+            UIPrint UIPrint = new UIPrint();
+            UIPrint.Show();
+        }
     }
 }
