@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{40A27B1F-50A5-4B61-ACC8-D497E299034B}</ProjectGuid>
+    <ProjectGuid>{C3006D25-EE99-4B36-A023-D0B90269CC1E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataLayer</RootNamespace>
-    <AssemblyName>DataLayer</AssemblyName>
+    <RootNamespace>Login.Test.Unit</RootNamespace>
+    <AssemblyName>Login.Test.Unit</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,8 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ST2Prj2LibNI-DAQ">
-      <HintPath>..\ST2PRJ2Support\ST2Prj2LibNI-DAQ.dll</HintPath>
+    <Reference Include="nunit.framework, Version=3.8.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.8.1\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,16 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAQ.cs" />
-    <Compile Include="Database\HentFraDatabase.cs" />
-    <Compile Include="DataController.cs" />
-    <Compile Include="Database\GemIDatabase.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{40a27b1f-50a5-4b61-acc8-d497e299034b}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{cf4e594c-6df2-4269-8c5f-e1d82bb4d168}</Project>
       <Name>DTO</Name>
@@ -61,6 +59,21 @@
       <Project>{8292df5d-9907-40ca-985b-78f241945284}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LogikLayer\LogikLayer.csproj">
+      <Project>{2a2f546c-a60f-41d0-bd4b-9daf05b68689}</Project>
+      <Name>LogikLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Main\Main.csproj">
+      <Project>{b9488083-43e2-428e-9399-b8584be36dee}</Project>
+      <Name>Main</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Projekt_v1.1\PresentationLayer.csproj">
+      <Project>{dc76af0a-d5c6-4562-b3d7-4de682af5977}</Project>
+      <Name>PresentationLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

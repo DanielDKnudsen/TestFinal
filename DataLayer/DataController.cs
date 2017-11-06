@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
+using DTO;
 
 namespace DataLayer
 {
     public class DataController : IDataLayer
     {
-        private static DAQ daq;
-        public List<double> CollectNulpunktsListe()
+        public void GemPatient(PatientDTO PDTO)
         {
-            return daq.CollectNulpunktsListe();
+            
         }
     }
 }

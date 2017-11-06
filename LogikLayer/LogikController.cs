@@ -29,5 +29,11 @@ namespace LogikLayer
             
         }
        
+
+        public void GemPatient(PatientDTO PDTO)
+        {
+            DL.GemPatient(PDTO);
+        }
+       
     }
 }
