@@ -22,6 +22,11 @@ namespace LogikLayer
             Logind Log = new Logind();
             return Log.CheckValues(LDTO);
         }
+
+        public void GemPatient(PatientDTO PDTO)
+        {
+            DL.GemPatient(PDTO);
+        }
        
     }
 }

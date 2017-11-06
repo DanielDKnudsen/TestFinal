@@ -10,5 +10,6 @@ namespace Interfaces
     public interface ILogikLayer
     {
         int RequestLogind(LogindDTO LDTO);
+        void GemPatient(PatientDTO PDTO);
     }
 }

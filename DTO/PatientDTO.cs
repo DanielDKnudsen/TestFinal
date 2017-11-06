@@ -11,7 +11,7 @@ namespace DTO
         public string CPR { get; set; }
         public string Fornavn { get; set; }
         public string Efternavn { get; set; }
-        public DateTime IndlæggelsesDatop { get; set; }
+        public DateTime IndlæggelsesDato { get; set; }
         public int Stue { get; set; }
         public int SysMinimum { get; set; }
         public int SysMaximum { get; set; }
