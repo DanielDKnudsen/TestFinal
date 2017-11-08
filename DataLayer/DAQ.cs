@@ -3,27 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 using ST2Prj2LibNI_DAQ;
 
 namespace DataLayer
 {
     public class DAQ
     {
-        private NI_DAQVoltage _ekgmåler;
-        private List<double> _nulpunktsjusteringer;
+        private NI_DAQVoltage _blodmåler;
         public DAQ()
         {
-            _ekgmåler = new NI_DAQVoltage();
-            _ekgmåler.rangeMaximumVolt = 3;
-            _ekgmåler.rangeMinimumVolt = -2;
-            _ekgmåler.sampleRateInHz = 500;
-            _ekgmåler.samplesPerChannel = 5000;
+            _blodmåler = new NI_DAQVoltage();
+            _blodmåler.rangeMaximumVolt = 3;
+            _blodmåler.rangeMinimumVolt = -2;
+            _blodmåler.sampleRateInHz = 1000;
+            _blodmåler.samplesPerChannel = 5000;
         }
-        public List<double> CollectNulpunktsListe()
+        public MålingDTO CollectNulpunktsListe()
         {
-            _ekgmåler.getVoltageSeqBlocking();
-            _nulpunktsjusteringer = _ekgmåler.currentVoltageSeq;
-            return _nulpunktsjusteringer;
+            _blodmåler.getVoltageSeqBlocking();
+            MålingDTO målingDto = new MålingDTO();
+            målingDto.Data = _blodmåler.currentVoltageSeq;
+            return målingDto;
         }
 
 

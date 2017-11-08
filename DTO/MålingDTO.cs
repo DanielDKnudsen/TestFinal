@@ -13,5 +13,9 @@ namespace DTO
         public int MiddelBT { get; set; }
         public int Dia { get; set; }
         public int Sys { get; set; }
+        public List<double> Data { get; set; }
+        public int Samples { get; set; }
+        public DateTime Tid { get; set; }
+
     }
 }

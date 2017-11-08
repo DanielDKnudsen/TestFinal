@@ -28,6 +28,19 @@ namespace LogikLayer
             Nulpunktsjustering NP = new Nulpunktsjustering(DL);
             
         }
+
+        public void StartMåling()
+        {
+            Systole_Diastole SD = new Systole_Diastole();
+            List<double> Systoler = new List<double>();
+            Systoler = SD.BeregnSys(DL.startMåling().Data);
+
+            Puls pKlasse = new Puls();
+            int Puls = pKlasse.PulsBeregning(Systoler);
+
+
+
+        }
        
 
         public void GemPatient(PatientDTO PDTO)

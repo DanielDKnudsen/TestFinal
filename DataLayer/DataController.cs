@@ -14,5 +14,11 @@ namespace DataLayer
         {
             
         }
+
+        public MålingDTO startMåling()
+        {
+            DAQ daq = new DAQ();
+            return daq.CollectNulpunktsListe();
+        }
     }
 }
