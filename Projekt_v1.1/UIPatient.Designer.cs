@@ -253,6 +253,7 @@
             this.UIPatient_LabelPatientNavn.Size = new System.Drawing.Size(149, 29);
             this.UIPatient_LabelPatientNavn.TabIndex = 14;
             this.UIPatient_LabelPatientNavn.Text = "XXXXXXXX";
+            this.UIPatient_LabelPatientNavn.Click += new System.EventHandler(this.UIPatient_LabelPatientNavn_Click);
             // 
             // UIPatient
             // 

@@ -12,9 +12,17 @@ namespace Projekt_v1._1
 {
     public partial class UIPatient : Form
     {
-        public UIPatient()
+        
+        public UIPatient(string navn)
         {
             InitializeComponent();
+            UIPatient_LabelPatientNavn.Text = navn;
+        }
+
+        private void UIPatient_LabelPatientNavn_Click(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }
