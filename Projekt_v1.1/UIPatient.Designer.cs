@@ -53,20 +53,23 @@
             // 
             this.UIPatient_KnapNul.BackColor = System.Drawing.Color.Black;
             this.UIPatient_KnapNul.ForeColor = System.Drawing.Color.White;
-            this.UIPatient_KnapNul.Location = new System.Drawing.Point(451, 840);
+            this.UIPatient_KnapNul.Location = new System.Drawing.Point(258, 463);
+            this.UIPatient_KnapNul.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UIPatient_KnapNul.Name = "UIPatient_KnapNul";
-            this.UIPatient_KnapNul.Size = new System.Drawing.Size(305, 142);
+            this.UIPatient_KnapNul.Size = new System.Drawing.Size(174, 78);
             this.UIPatient_KnapNul.TabIndex = 0;
             this.UIPatient_KnapNul.Text = "Start Nulpunktsjustering";
             this.UIPatient_KnapNul.UseVisualStyleBackColor = false;
+            this.UIPatient_KnapNul.Click += new System.EventHandler(this.UIPatient_KnapNul_Click);
             // 
             // UIPatient_KnapDigital
             // 
             this.UIPatient_KnapDigital.BackColor = System.Drawing.Color.Black;
             this.UIPatient_KnapDigital.ForeColor = System.Drawing.Color.White;
-            this.UIPatient_KnapDigital.Location = new System.Drawing.Point(84, 840);
+            this.UIPatient_KnapDigital.Location = new System.Drawing.Point(48, 463);
+            this.UIPatient_KnapDigital.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UIPatient_KnapDigital.Name = "UIPatient_KnapDigital";
-            this.UIPatient_KnapDigital.Size = new System.Drawing.Size(305, 142);
+            this.UIPatient_KnapDigital.Size = new System.Drawing.Size(174, 78);
             this.UIPatient_KnapDigital.TabIndex = 1;
             this.UIPatient_KnapDigital.Text = " Digital filtrering";
             this.UIPatient_KnapDigital.UseVisualStyleBackColor = false;
@@ -74,9 +77,10 @@
             // UIPatient_KnapStopAlarm
             // 
             this.UIPatient_KnapStopAlarm.BackColor = System.Drawing.Color.Red;
-            this.UIPatient_KnapStopAlarm.Location = new System.Drawing.Point(1050, 840);
+            this.UIPatient_KnapStopAlarm.Location = new System.Drawing.Point(600, 463);
+            this.UIPatient_KnapStopAlarm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UIPatient_KnapStopAlarm.Name = "UIPatient_KnapStopAlarm";
-            this.UIPatient_KnapStopAlarm.Size = new System.Drawing.Size(305, 142);
+            this.UIPatient_KnapStopAlarm.Size = new System.Drawing.Size(174, 78);
             this.UIPatient_KnapStopAlarm.TabIndex = 2;
             this.UIPatient_KnapStopAlarm.Text = "Stop Alarm";
             this.UIPatient_KnapStopAlarm.UseVisualStyleBackColor = false;
@@ -115,8 +119,7 @@
             legend1.Position.X = 3F;
             legend1.Position.Y = 88.57609F;
             this.BTChart.Legends.Add(legend1);
-            this.BTChart.Location = new System.Drawing.Point(35, 42);
-            this.BTChart.Margin = new System.Windows.Forms.Padding(5);
+            this.BTChart.Location = new System.Drawing.Point(20, 23);
             this.BTChart.Name = "BTChart";
             series1.BorderColor = System.Drawing.Color.Navy;
             series1.BorderWidth = 2;
@@ -130,7 +133,7 @@
             series1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             series1.Name = "BT";
             this.BTChart.Series.Add(series1);
-            this.BTChart.Size = new System.Drawing.Size(1127, 732);
+            this.BTChart.Size = new System.Drawing.Size(644, 404);
             this.BTChart.TabIndex = 3;
             this.BTChart.Text = "chart1";
             // 
@@ -139,9 +142,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Lime;
-            this.label1.Location = new System.Drawing.Point(1163, 78);
+            this.label1.Location = new System.Drawing.Point(665, 43);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 40);
+            this.label1.Size = new System.Drawing.Size(64, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "PULS";
             // 
@@ -149,9 +153,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Lime;
-            this.label2.Location = new System.Drawing.Point(1165, 118);
+            this.label2.Location = new System.Drawing.Point(666, 65);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 29);
+            this.label2.Size = new System.Drawing.Size(37, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "BPM";
             // 
@@ -161,9 +166,10 @@
             this.UIPatient_LabelPULS.BackColor = System.Drawing.Color.Black;
             this.UIPatient_LabelPULS.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UIPatient_LabelPULS.ForeColor = System.Drawing.Color.Lime;
-            this.UIPatient_LabelPULS.Location = new System.Drawing.Point(1332, 58);
+            this.UIPatient_LabelPULS.Location = new System.Drawing.Point(761, 32);
+            this.UIPatient_LabelPULS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UIPatient_LabelPULS.Name = "UIPatient_LabelPULS";
-            this.UIPatient_LabelPULS.Size = new System.Drawing.Size(93, 102);
+            this.UIPatient_LabelPULS.Size = new System.Drawing.Size(53, 58);
             this.UIPatient_LabelPULS.TabIndex = 6;
             this.UIPatient_LabelPULS.Text = "0";
             // 
@@ -171,18 +177,20 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(1170, 190);
+            this.label4.Location = new System.Drawing.Point(669, 105);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 29);
+            this.label4.Size = new System.Drawing.Size(0, 17);
             this.label4.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(1165, 190);
+            this.label5.Location = new System.Drawing.Point(666, 105);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 29);
+            this.label5.Size = new System.Drawing.Size(67, 17);
             this.label5.TabIndex = 8;
             this.label5.Text = "MiddelBT";
             // 
@@ -192,9 +200,10 @@
             this.UIPatient_LabelMID.BackColor = System.Drawing.Color.Black;
             this.UIPatient_LabelMID.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UIPatient_LabelMID.ForeColor = System.Drawing.Color.Red;
-            this.UIPatient_LabelMID.Location = new System.Drawing.Point(1334, 173);
+            this.UIPatient_LabelMID.Location = new System.Drawing.Point(762, 95);
+            this.UIPatient_LabelMID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UIPatient_LabelMID.Name = "UIPatient_LabelMID";
-            this.UIPatient_LabelMID.Size = new System.Drawing.Size(79, 85);
+            this.UIPatient_LabelMID.Size = new System.Drawing.Size(43, 48);
             this.UIPatient_LabelMID.TabIndex = 9;
             this.UIPatient_LabelMID.Text = "0";
             // 
@@ -203,10 +212,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(1165, 219);
-            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label7.Location = new System.Drawing.Point(666, 121);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 29);
+            this.label7.Size = new System.Drawing.Size(52, 17);
             this.label7.TabIndex = 11;
             this.label7.Text = "mmHg";
             // 
@@ -214,9 +222,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Yellow;
-            this.label8.Location = new System.Drawing.Point(1170, 299);
+            this.label8.Location = new System.Drawing.Point(669, 165);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 29);
+            this.label8.Size = new System.Drawing.Size(56, 17);
             this.label8.TabIndex = 12;
             this.label8.Text = "Sys/Dia";
             // 
@@ -226,9 +235,10 @@
             this.UIPatient_LabelSysDia.BackColor = System.Drawing.Color.Black;
             this.UIPatient_LabelSysDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UIPatient_LabelSysDia.ForeColor = System.Drawing.Color.Yellow;
-            this.UIPatient_LabelSysDia.Location = new System.Drawing.Point(1329, 280);
+            this.UIPatient_LabelSysDia.Location = new System.Drawing.Point(759, 154);
+            this.UIPatient_LabelSysDia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UIPatient_LabelSysDia.Name = "UIPatient_LabelSysDia";
-            this.UIPatient_LabelSysDia.Size = new System.Drawing.Size(96, 52);
+            this.UIPatient_LabelSysDia.Size = new System.Drawing.Size(52, 29);
             this.UIPatient_LabelSysDia.TabIndex = 12;
             this.UIPatient_LabelSysDia.Text = "--/--";
             // 
@@ -238,9 +248,10 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Blue;
-            this.label10.Location = new System.Drawing.Point(1161, 410);
+            this.label10.Location = new System.Drawing.Point(663, 226);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(177, 52);
+            this.label10.Size = new System.Drawing.Size(99, 29);
             this.label10.TabIndex = 13;
             this.label10.Text = "Patient:";
             // 
@@ -248,19 +259,20 @@
             // 
             this.UIPatient_LabelPatientNavn.AutoSize = true;
             this.UIPatient_LabelPatientNavn.ForeColor = System.Drawing.Color.Blue;
-            this.UIPatient_LabelPatientNavn.Location = new System.Drawing.Point(1170, 494);
+            this.UIPatient_LabelPatientNavn.Location = new System.Drawing.Point(669, 273);
+            this.UIPatient_LabelPatientNavn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UIPatient_LabelPatientNavn.Name = "UIPatient_LabelPatientNavn";
-            this.UIPatient_LabelPatientNavn.Size = new System.Drawing.Size(149, 29);
+            this.UIPatient_LabelPatientNavn.Size = new System.Drawing.Size(80, 17);
             this.UIPatient_LabelPatientNavn.TabIndex = 14;
             this.UIPatient_LabelPatientNavn.Text = "XXXXXXXX";
             this.UIPatient_LabelPatientNavn.Click += new System.EventHandler(this.UIPatient_LabelPatientNavn_Click);
             // 
             // UIPatient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1501, 1061);
+            this.ClientSize = new System.Drawing.Size(858, 577);
             this.Controls.Add(this.UIPatient_LabelPatientNavn);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.UIPatient_LabelSysDia);
@@ -276,6 +288,7 @@
             this.Controls.Add(this.UIPatient_KnapStopAlarm);
             this.Controls.Add(this.UIPatient_KnapDigital);
             this.Controls.Add(this.UIPatient_KnapNul);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UIPatient";
             this.Text = "UIPatient";
             ((System.ComponentModel.ISupportInitialize)(this.BTChart)).EndInit();

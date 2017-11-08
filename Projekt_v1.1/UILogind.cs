@@ -57,6 +57,8 @@ namespace Projekt_v1._1
             if (værdi == 0)
             {
                 MessageBox.Show("Brugernavn eller kodeord er forkert, prøv igen.");
+                UILogind_textBoxBrugernavn.Clear();
+                UILogind_textBoxKodeord.Clear();
             }
         }
     }
