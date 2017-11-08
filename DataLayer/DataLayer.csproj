@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ST2Prj2LibNI-DAQ">
-      <HintPath>..\ST2PRJ2Support\ST2Prj2LibNI-DAQ.dll</HintPath>
+      <HintPath>..\..\ST2Prj2LibNI-DAQ.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
