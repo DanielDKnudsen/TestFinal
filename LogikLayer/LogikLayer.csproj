@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HentData.cs" />
+    <Compile Include="ListerTilLogind.cs" />
     <Compile Include="LogikController.cs" />
     <Compile Include="Logind.cs" />
     <Compile Include="Nulpunktsjustering.cs" />

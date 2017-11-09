@@ -10,26 +10,18 @@ namespace LogikLayer
 {
     public class Logind
     {
-        private List<string> brugernavneSundhed = new List<string>();
-        private List<string> brugernavneMed = new List<string>();
-        private List<string> KodeordSundhed = new List<string>();
-        private List<string> KodeordMed = new List<string>();
-
-        private List<string> _brugerinformation = new List<string>();
-        public Logind()
-        {
-            LavLister();
-        }
-
         public int CheckValues(LogindDTO LDTO)
         {
+            ListerTilLogind LTL = new ListerTilLogind();
+            LTL.LavLister();
+
             if (LDTO.IsSundhed)
             {
-                for (int i = 0; i < brugernavneSundhed.Count; i++)
+                for (int i = 0; i < LTL.brugernavneSundhed.Count; i++)
                 {
-                    if (brugernavneSundhed[i] == LDTO.Brugernavn)
+                    if (LTL.brugernavneSundhed[i] == LDTO.Brugernavn)
                     {
-                        if (KodeordSundhed[i] == LDTO.Kodeord)
+                        if (LTL.KodeordSundhed[i] == LDTO.Kodeord)
                         {
                             return 1;
                         }
@@ -39,11 +31,11 @@ namespace LogikLayer
             }
             if (!LDTO.IsSundhed)
             {
-                for (int i = 0; i < brugernavneMed.Count; i++)
+                for (int i = 0; i < LTL.brugernavneMed.Count; i++)
                 {
-                    if (brugernavneMed[i] == LDTO.Brugernavn)
+                    if (LTL.brugernavneMed[i] == LDTO.Brugernavn)
                     {
-                        if (KodeordMed[i] == LDTO.Kodeord)
+                        if (LTL.KodeordMed[i] == LDTO.Kodeord)
                         {
                             return 2;
                         }
@@ -52,19 +44,6 @@ namespace LogikLayer
                 }
             }
             return 0;
-        }
-
-        public void RequestLogOut()
-        {
-            
-        }
-
-        private void LavLister()
-        {
-            brugernavneSundhed.Add("123");
-            brugernavneMed.Add("456");
-            KodeordSundhed.Add("123");
-            KodeordMed.Add("456");
         }
     }
 }
