@@ -11,5 +11,6 @@ namespace Interfaces
     {
         int RequestLogind(LogindDTO LDTO);
         void GemPatient(PatientDTO PDTO);
+        string StartNPJ();
     }
 }

@@ -23,10 +23,10 @@ namespace LogikLayer
             return Log.CheckValues(LDTO);
         }
 
-        public int StartNPJ()
+        public string StartNPJ()
         {
             Nulpunktsjustering NP = new Nulpunktsjustering(DL);
-            
+            return NP.Nulpunktsjuster();
         }
 
         public void StartMåling()
@@ -37,9 +37,6 @@ namespace LogikLayer
 
             Puls pKlasse = new Puls();
             int Puls = pKlasse.PulsBeregning(Systoler);
-
-
-
         }
        
 

@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Interfaces;
 
 namespace Projekt_v1._1
 {
     public partial class UIPatient : Form
     {
+
+        private ILogikLayer LL;
         
         public UIPatient(string navn)
         {
@@ -27,7 +30,8 @@ namespace Projekt_v1._1
 
         private void UIPatient_KnapNul_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(MessageBox., "Der foretages nu nulpunktsjustering");
+            MessageBox.Show("Der foretages nu nulpunktsjustering");
+            
         }
     }
 }

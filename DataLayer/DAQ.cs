@@ -26,8 +26,6 @@ namespace DataLayer
             målingDto.Data = _blodmåler.currentVoltageSeq;
             return målingDto;
         }
-
-
     }
 
 
