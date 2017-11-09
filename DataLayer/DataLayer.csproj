@@ -48,6 +48,8 @@
     <Compile Include="DataController.cs" />
     <Compile Include="Database\GemIDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XML_gem.cs" />
+    <Compile Include="XML_hent.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

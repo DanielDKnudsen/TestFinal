@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using System.Xml.Linq;
 using Interfaces;
 using DTO;
 
@@ -202,6 +203,15 @@ namespace Projekt_v1._1
         {
             UIPrint UIPrint = new UIPrint();
             UIPrint.Show();
+        }
+
+        private void UIKontor_KnapStop_Click(object sender, EventArgs e)
+        {
+            var doc = XDocument.Load("cd_catalog.xml");
+
+            var node = doc.Descendants("MÅLING").FirstOrDefault(cd => cd.Element("DATO").Value == "12/12/2012:06:44:23");
+
+
         }
     }
 }

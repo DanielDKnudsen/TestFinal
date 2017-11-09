@@ -13,7 +13,6 @@ namespace Projekt_v1._1
 {
     public partial class UIPatient : Form
     {
-
         private ILogikLayer LL;
         
         public UIPatient(string navn)
