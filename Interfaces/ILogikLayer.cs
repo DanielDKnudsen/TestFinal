@@ -11,5 +11,8 @@ namespace Interfaces
     {
         int RequestLogind(LogindDTO LDTO);
         void GemPatient(PatientDTO PDTO);
+
+        MålingDTO StartMåling();
+
     }
 }

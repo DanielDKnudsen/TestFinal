@@ -10,6 +10,7 @@ namespace Interfaces
     public interface IDataLayer
     {
         void GemPatient(PatientDTO PDTO);
-        MålingDTO startMåling();
+        MålingDTO startMålingPrøve();
+        MålingDTO Start();
     }
 }

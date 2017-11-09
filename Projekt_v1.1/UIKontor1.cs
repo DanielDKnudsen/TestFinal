@@ -16,6 +16,7 @@ namespace Projekt_v1._1
     public partial class UIKontor1 : Form
     {
         private ILogikLayer LL;
+        
         public UIKontor1(ILogikLayer ll)
         {
             InitializeComponent();
@@ -193,9 +194,12 @@ namespace Projekt_v1._1
 
         private void UIKontor_KnapStart_Click(object sender, EventArgs e)
         {
-            string navn = UIKontor_TextBoxFornavn.Text + " " + UIKontor_TextBoxEfternavn.Text;
-            UIPatient UIPatient = new UIPatient(navn);
-            UIPatient.Show();
+            MålingDTO dot = new MålingDTO();
+            dot = LL.StartMåling();
+
+            UIPatient pat = new UIPatient(UIKontor_LabelFornavn + " " + UIKontor_TextBoxEfternavn,dot);
+            pat.Show();
+            
         }
 
         private void UIKontor_KnapHent_Click(object sender, EventArgs e)

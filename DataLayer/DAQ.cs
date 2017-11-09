@@ -27,6 +27,14 @@ namespace DataLayer
             return målingDto;
         }
 
+        public MålingDTO StartMåling()
+        {
+            _blodmåler.getVoltageSeqBlocking();
+            MålingDTO test = new MålingDTO();
+            test.Data = _blodmåler.currentVoltageSeq;
+            return test;
+        }
+
 
     }
 

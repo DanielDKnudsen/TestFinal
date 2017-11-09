@@ -5,12 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
 using DTO;
+using LogikLayer.BTMåler;
+
 
 namespace LogikLayer
 {
     public class LogikController : ILogikLayer
     {
+        
         private IDataLayer DL;
+        private IPresentationLayer PL;
+        private BTMålerController BTMålercontroller;
+
+        
+     
 
         public LogikController(IDataLayer dl)
         {
@@ -23,25 +31,33 @@ namespace LogikLayer
             return Log.CheckValues(LDTO);
         }
 
-        public int StartNPJ()
-        {
-            Nulpunktsjustering NP = new Nulpunktsjustering(DL);
+        //public int StartNPJ()
+        //{
+        //    Nulpunktsjustering NP = new Nulpunktsjustering(DL);
             
-        }
+        //}
 
-        public void StartMåling()
+        public MålingDTO StartMåling()
         {
-            Systole_Diastole SD = new Systole_Diastole();
-            List<double> Systoler = new List<double>();
-            Systoler = SD.BeregnSys(DL.startMåling().Data);
+            //Systole_Diastole SD = new Systole_Diastole();
+            //List<double> Systoler = new List<double>();
+            //Systoler = SD.BeregnSys(DL.startMåling().Data);
 
-            Puls pKlasse = new Puls();
-            int Puls = pKlasse.PulsBeregning(Systoler);
+            //Puls pKlasse = new Puls();
+            //int Puls = pKlasse.PulsBeregning(Systoler);
+
+            MålingDTO dto = new MålingDTO();
+
+            dto = DL.Start();
+
+            return dto;
 
 
 
         }
-       
+
+        
+
 
         public void GemPatient(PatientDTO PDTO)
         {
