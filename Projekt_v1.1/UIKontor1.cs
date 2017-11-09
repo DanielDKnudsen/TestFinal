@@ -183,6 +183,7 @@ namespace Projekt_v1._1
 
         private void UIKontor_TextBoxEfternavn_TextChanged(object sender, EventArgs e)
         {
+            
             if (!UIKontor_TextBoxEfternavn.Text.All(efternavn => char.IsLetter(efternavn)))
             {
                 MessageBox.Show("Skriv venligst kun bogstaver");
@@ -192,7 +193,8 @@ namespace Projekt_v1._1
 
         private void UIKontor_KnapStart_Click(object sender, EventArgs e)
         {
-            UIPatient UIPatient = new UIPatient();
+            string navn = UIKontor_TextBoxFornavn.Text + " " + UIKontor_TextBoxEfternavn.Text;
+            UIPatient UIPatient = new UIPatient(navn);
             UIPatient.Show();
         }
 
