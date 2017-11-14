@@ -8,40 +8,30 @@ using Interfaces;
 namespace LogikLayer
 {
 
-    //public class Nulpunktsjustering
-    //{
-    //    private IDataLayer DL;
+    public class Nulpunktsjustering
+    {
+        private IDataLayer DL;
 
-    //    private List<double> Nulpunktsdata = new List<double>();
-    //    public Nulpunktsjustering(IDataLayer dl)
-    //    {
-    //        DL = dl;
-    //        Nulpunktsdata1 = DL.CollectNulpunktsListe();
-    //    }
+        private List<double> Nulpunktsdata = new List<double>();
+        public Nulpunktsjustering(IDataLayer dl)
+        {
+            DL = dl;
+            Nulpunktsdata = DL.startMåling().Data;
+        }
 
-    //    public void Nulpunktsjuster()
-    //    {
-            
-    //        if (standardAfvigelse() <= 0.2)
-    //        {
-                
-    //        }
-    //    }
-
-    //    private double standardAfvigelse()
-    //    {
-    //        List<double> Nulpunktsdata = new List<double>();
-
-    //        Nulpunktsdata.Add(4);
-    //        Nulpunktsdata.Add(5);
-    //        Nulpunktsdata.Add(4);
-    //        Nulpunktsdata.Add(5);
-    //        Nulpunktsdata.Add(4);
-
-    //        double gnms = Nulpunktsdata.Sum() / Nulpunktsdata.Count;
-    //        double afvigelse = Nulpunktsdata.Select(val => (val - gnms) * (val - gnms)).Sum();
-    //        double sd = Math.Sqrt(afvigelse / Nulpunktsdata.Count);
-    //        return sd;
-    //    }
-    //}
+        public string Nulpunktsjuster()
+        {
+            StandardAfvigelse sd = new StandardAfvigelse();
+            if (sd.standardAfvigelse(Nulpunktsdata) >= 0.8)
+            {
+                return "Nulpunktsjustering er foretaget. Værdien er " + Nulpunktsdata.Sum() / Nulpunktsdata.Count + ". " +
+                       "Vil du fortsætte?";
+            }
+            else
+            {
+                return "Nulpunktsjustering er foretaget. Der var stor usikkerhed i måling, værdien blev " +
+                       Nulpunktsdata.Sum() / Nulpunktsdata.Count + ". Vil du fortsætte?";
+            }
+        }
+    }
 }

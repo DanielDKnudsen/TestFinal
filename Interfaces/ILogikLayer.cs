@@ -14,5 +14,6 @@ namespace Interfaces
 
         MålingDTO StartMåling();
 
+        string StartNPJ();
     }
 }

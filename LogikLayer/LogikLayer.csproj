@@ -42,12 +42,16 @@
   <ItemGroup>
     <Compile Include="BTMåler\BTMålerController.cs" />
     <Compile Include="HentData.cs" />
+    <Compile Include="ListerTilLogind.cs" />
     <Compile Include="LogikController.cs" />
     <Compile Include="Logind.cs" />
     <Compile Include="Nulpunktsjustering.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BTMåler\Puls.cs" />
     <Compile Include="BTMåler\Systole_Diastole.cs" />
+    <Compile Include="Puls.cs" />
+    <Compile Include="StandardAfvigelse.cs" />
+    <Compile Include="Systole_Diastole.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

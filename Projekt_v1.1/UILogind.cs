@@ -22,8 +22,6 @@ namespace Projekt_v1._1
             LL= ll;
         }
 
-        
-
         private void UILogind_buttonLogind_Click(object sender, EventArgs e)
         {
             LogindDTO LDTO = new LogindDTO();
@@ -45,7 +43,6 @@ namespace Projekt_v1._1
                 UIKontor1 kontor = new UIKontor1(LL);
                 this.Hide();
                 kontor.Show();
-                
             }
             if (værdi == 2)
             {
