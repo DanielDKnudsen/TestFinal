@@ -16,7 +16,7 @@ namespace LogikLayer
         public Nulpunktsjustering(IDataLayer dl)
         {
             DL = dl;
-            Nulpunktsdata = DL.startMåling().Data;
+            Nulpunktsdata = DL.startMålingPrøve().Data;
         }
 
         public string Nulpunktsjuster()

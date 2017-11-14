@@ -14,11 +14,13 @@ namespace Projekt_v1._1
     public partial class UIPatient : Form
     {
 
-        public UIPatient(string navn, MålingDTO dto)
+        public UIPatient(string navn, MålingDTO dto, DateTime tid)
         {
             InitializeComponent();
             UIPatient_LabelPatientNavn.Text = navn;
+            UIPatient_LabelDato.Text = tid.ToLongDateString();
             TegnGraf(dto);
+
         }
 
         private void UIPatient_LabelPatientNavn_Click(object sender, EventArgs e)
@@ -41,6 +43,10 @@ namespace Projekt_v1._1
                 t += 0.002; //Tiden øges med 0.002, da der måles med en frekvens på 500Hz. 
             }
         }
-        
+
+        private void UIPatient_LabelDato_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

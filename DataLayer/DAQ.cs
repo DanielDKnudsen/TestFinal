@@ -14,9 +14,9 @@ namespace DataLayer
         public DAQ()
         {
             _blodmåler = new NI_DAQVoltage();
-            _blodmåler.rangeMaximumVolt = 3;
-            _blodmåler.rangeMinimumVolt = -2;
-            _blodmåler.sampleRateInHz = 1000;
+            _blodmåler.rangeMaximumVolt = 4;
+            _blodmåler.rangeMinimumVolt = -4;
+            _blodmåler.sampleRateInHz = 10;
             _blodmåler.samplesPerChannel = 5000;
         }
         public MålingDTO CollectNulpunktsListe()

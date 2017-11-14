@@ -56,7 +56,10 @@ namespace LogikLayer
 
         }
 
-        
+        public string StartNPJ()
+        {
+            throw new NotImplementedException();
+        }
 
 
         public void GemPatient(PatientDTO PDTO)
