@@ -12,5 +12,6 @@ namespace Interfaces
         void GemPatient(PatientDTO PDTO);
         MålingDTO startMålingPrøve();
         MålingDTO Start();
+        List<double> LavKalibrering(int mmHg);
     }
 }
