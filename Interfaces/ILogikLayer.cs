@@ -15,5 +15,7 @@ namespace Interfaces
         MålingDTO StartMåling();
 
         string StartNPJ();
+        bool StartKalibrering(int mmHg);
+        void setKali(int mmHg);
     }
 }

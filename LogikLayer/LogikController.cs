@@ -16,14 +16,27 @@ namespace LogikLayer
         private IDataLayer DL;
         private IPresentationLayer PL;
         private BTMålerController BTMålercontroller;
-
-        
-     
+        private Kalibrering kalib;
 
         public LogikController(IDataLayer dl)
         {
             DL = dl;
+            kalib = new Kalibrering(DL);
+
         }
+
+        public bool StartKalibrering(int mmHg)
+        {
+            return kalib.startKalibrering(mmHg);
+        }
+
+        public void setKali(int mmHg)
+        {
+            kalib.setKali(mmHg);
+        }
+     
+
+        
 
         public int RequestLogind(LogindDTO LDTO)
         {
@@ -36,6 +49,9 @@ namespace LogikLayer
         //    Nulpunktsjustering NP = new Nulpunktsjustering(DL);
             
         //}
+
+
+
 
         public MålingDTO StartMåling()
         {

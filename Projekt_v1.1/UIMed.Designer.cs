@@ -52,6 +52,7 @@
             this.UIMed_buttonStartKalibrering.TabIndex = 1;
             this.UIMed_buttonStartKalibrering.Text = "Start kalibrering";
             this.UIMed_buttonStartKalibrering.UseVisualStyleBackColor = true;
+            this.UIMed_buttonStartKalibrering.Click += new System.EventHandler(this.UIMed_buttonStartKalibrering_Click);
             // 
             // label1
             // 
