@@ -52,6 +52,7 @@
             this.UILogind_textBoxBrugernavn.Name = "UILogind_textBoxBrugernavn";
             this.UILogind_textBoxBrugernavn.Size = new System.Drawing.Size(258, 22);
             this.UILogind_textBoxBrugernavn.TabIndex = 1;
+            this.UILogind_textBoxBrugernavn.Text = "123";
             // 
             // labelKodeord
             // 
@@ -68,6 +69,7 @@
             this.UILogind_textBoxKodeord.Name = "UILogind_textBoxKodeord";
             this.UILogind_textBoxKodeord.Size = new System.Drawing.Size(258, 22);
             this.UILogind_textBoxKodeord.TabIndex = 3;
+            this.UILogind_textBoxKodeord.Text = "123";
             this.UILogind_textBoxKodeord.UseSystemPasswordChar = true;
             // 
             // UILogind_radioButtonSunhedspersonale
