@@ -15,10 +15,10 @@ namespace DataLayer
             
         }
 
-        public List<double> LavKalibrering()
+        public List<double> LavKalibrering(int mmHg)
         {
             Hent_Kalibrering hentKalib = new Hent_Kalibrering();
-            return hentKalib.LavKalibrering();
+            return hentKalib.LavKalibrering(mmHg);
         }
 
         public MålingDTO startMålingPrøve()

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
-using ST2Prj2LibNI_DAQ;
+
 
 namespace DataLayer
 {
@@ -16,7 +16,7 @@ namespace DataLayer
             _blodmåler = new NI_DAQVoltage();
             _blodmåler.rangeMaximumVolt = 4;
             _blodmåler.rangeMinimumVolt = -4;
-            _blodmåler.sampleRateInHz = 10;
+            _blodmåler.sampleRateInHz = 1000;
             _blodmåler.samplesPerChannel = 5000;
         }
         public MålingDTO CollectNulpunktsListe()

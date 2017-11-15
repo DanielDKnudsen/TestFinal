@@ -39,8 +39,8 @@ namespace Projekt_v1._1
             double t = 0.000; //Tid på x-aksen
             for (int i = 0; i < 1000; i++)  //For-løkke som tegner grafen med tiden på x-aksen og EKG-målinger på y-aksen. 
             {
-                BTChart.Series["EKG"].Points.AddXY(t, dto.Data[i]);
-                t += 0.002; //Tiden øges med 0.002, da der måles med en frekvens på 500Hz. 
+                BTChart.Series["BT"].Points.AddXY(t,dto.Data[i]);
+                t += 0.001; //Tiden øges med 0.002, da der måles med en frekvens på 500Hz. 
             }
         }
 
