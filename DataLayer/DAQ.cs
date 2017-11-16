@@ -8,7 +8,7 @@ using DTO;
 
 namespace DataLayer
 {
-    public class DAQ
+    public class DAQ : SubjectDAQ
     {
         private NI_DAQVoltage _blodmåler;
         public DAQ()
@@ -34,8 +34,6 @@ namespace DataLayer
             test.Data = _blodmåler.currentVoltageSeq;
             return test;
         }
-
-
     }
 
 
