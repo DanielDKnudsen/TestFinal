@@ -13,7 +13,6 @@ namespace DataLayer
 {
     public class XML_gem
     {
-
         private void LavXML(MålingDTO mdto, PatientDTO pdto)
         {
             string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\" + pdto.Fornavn + pdto.Efternavn;

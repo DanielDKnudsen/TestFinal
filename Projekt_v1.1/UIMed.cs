@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 using Interfaces;
 
 namespace Projekt_v1._1
@@ -68,7 +69,7 @@ namespace Projekt_v1._1
                 while (gentag50)
                 {
                     MessageBox.Show(
-                        "Tilslut transducer til 10mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 50 mmHg.");
+                        "Tilslut transducer til 50mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 50 mmHg.");
 
                     if (LL.StartKalibrering(mmHg))
                     {
@@ -93,7 +94,7 @@ namespace Projekt_v1._1
                 while (gentag100)
                 {
                     MessageBox.Show(
-                        "Tilslut transducer til 10mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 100 mmHg.");
+                        "Tilslut transducer til 100mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 100 mmHg.");
 
                     if (LL.StartKalibrering(mmHg))
                     {
@@ -110,7 +111,9 @@ namespace Projekt_v1._1
                             LL.setKali(mmHg);
                             if (i == 1)
                             {
-                                LL.
+                                KalibreringDTO kalib = new KalibreringDTO();
+                                kalib.Brugernavn = _brugernavn;
+                                LL.GemKalibrering(kalib);
                             }
                         }
                         else

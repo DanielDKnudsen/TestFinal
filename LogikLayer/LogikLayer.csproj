@@ -42,7 +42,9 @@
   <ItemGroup>
     <Compile Include="BTMåler\BTMålerController.cs" />
     <Compile Include="Consumer.cs" />
+    <Compile Include="Converter.cs" />
     <Compile Include="HentData.cs" />
+    <Compile Include="IConvert.cs" />
     <Compile Include="Kalibrering.cs" />
     <Compile Include="ListerTilLogind.cs" />
     <Compile Include="LogikController.cs" />
@@ -52,6 +54,7 @@
     <Compile Include="BTMåler\Puls.cs" />
     <Compile Include="BTMåler\Systole_Diastole.cs" />
     <Compile Include="StandardAfvigelse.cs" />
+    <Compile Include="SubjectConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

@@ -31,6 +31,7 @@ namespace LogikLayer
                 }
 
                 M1.Data = B1.Datalist;
+
             }
 
             
