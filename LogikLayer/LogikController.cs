@@ -25,6 +25,11 @@ namespace LogikLayer
 
         }
 
+        public void GemKalibrering(KalibreringDTO KalibDTO)
+        {
+            DL.GemKalibrering(KalibDTO);
+        }
+
         public bool StartKalibrering(int mmHg)
         {
             return kalib.startKalibrering(mmHg);

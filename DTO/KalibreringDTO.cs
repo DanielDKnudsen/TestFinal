@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class KalibreringDTO
+    public class KalibreringDTO
     {
+        public List<double> KalibrerDoubles { get; set; }
+        public string Brugernavn { get; set; }
     }
 }

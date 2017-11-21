@@ -52,6 +52,7 @@
     <Compile Include="NI_DAQVoltage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubjectDAQ.cs" />
+    <Compile Include="XMLGemKalibrering.cs" />
     <Compile Include="XML_gem.cs" />
     <Compile Include="XML_hent.cs" />
   </ItemGroup>

@@ -13,5 +13,6 @@ namespace Interfaces
         MålingDTO startMålingPrøve();
         MålingDTO Start();
         List<double> LavKalibrering(int mmHg);
+        void GemKalibrering(KalibreringDTO KalibDTO);
     }
 }

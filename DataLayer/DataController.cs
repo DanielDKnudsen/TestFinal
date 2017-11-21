@@ -15,6 +15,11 @@ namespace DataLayer
             
         }
 
+        public void GemKalibrering(KalibreringDTO KalibDTO)
+        {
+            
+        }
+
         public List<double> LavKalibrering(int mmHg)
         {
             Hent_Kalibrering hentKalib = new Hent_Kalibrering();

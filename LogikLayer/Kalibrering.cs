@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
+using DTO;
 
 namespace LogikLayer
 {
@@ -45,9 +46,8 @@ namespace LogikLayer
             if (mmHg == 100 && i == 2) {mm1Hg100 = gnms; i = 3;}
             if (mmHg == 10 && i == 3) { mm2Hg10 = gnms; i = 4; }
             if (mmHg == 50 && i == 4) { mm2Hg50 = gnms; i = 5; }
-            if (mmHg == 100 && i == 5) { mm2Hg100 = gnms; i = 6; }
+            if (mmHg == 100 && i == 5) { mm2Hg100 = gnms; i = 6;}
         }
-        
     }
 }
 

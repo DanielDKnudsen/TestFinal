@@ -46,7 +46,7 @@ namespace Projekt_v1._1
             }
             if (værdi == 2)
             {
-                UIMed med = new UIMed(LL);
+                UIMed med = new UIMed(LL, UILogind_textBoxBrugernavn.Text);
                 this.Hide();
                 med.Show();
                 

@@ -17,5 +17,7 @@ namespace Interfaces
         string StartNPJ();
         bool StartKalibrering(int mmHg);
         void setKali(int mmHg);
+
+        void GemKalibrering(KalibreringDTO KalibDTO);
     }
 }
