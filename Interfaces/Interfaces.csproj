@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IData.cs" />
     <Compile Include="IDataLayer.cs" />
+    <Compile Include="IDataObserver.cs" />
     <Compile Include="ILogikLayer.cs" />
     <Compile Include="IPresentationLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

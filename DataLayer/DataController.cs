@@ -34,6 +34,11 @@ namespace DataLayer
             return dak.StartMåling();
         }
 
+        public void Update()
+        {
+            
+        }
+
         
     }
 }
