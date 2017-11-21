@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using Interfaces;
 
 
 namespace DataLayer
 {
-    public class DAQ
+    public class DAQ : IData
     {
         private NI_DAQVoltage _blodmåler;
         public DAQ()
@@ -17,7 +18,7 @@ namespace DataLayer
             _blodmåler.rangeMaximumVolt = 4;
             _blodmåler.rangeMinimumVolt = -4;
             _blodmåler.sampleRateInHz = 1000;
-            _blodmåler.samplesPerChannel = 5000;
+            _blodmåler.samplesPerChannel = 50;
         }
         public MålingDTO CollectNulpunktsListe()
         {
@@ -27,15 +28,11 @@ namespace DataLayer
             return målingDto;
         }
 
-        public MålingDTO StartMåling()
+        public List<double> getData()
         {
             _blodmåler.getVoltageSeqBlocking();
-            MålingDTO test = new MålingDTO();
-            test.Data = _blodmåler.currentVoltageSeq;
-            return test;
+            return _blodmåler.currentVoltageSeq;
         }
-
-
     }
 
 

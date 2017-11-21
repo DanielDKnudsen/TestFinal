@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BTMåler\BTMålerController.cs" />
+    <Compile Include="Consumer.cs" />
     <Compile Include="HentData.cs" />
     <Compile Include="Kalibrering.cs" />
     <Compile Include="ListerTilLogind.cs" />
