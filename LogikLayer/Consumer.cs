@@ -24,17 +24,15 @@ namespace LogikLayer
         {
             while (true)
             {
+                Converter convert = new Converter();
                 Bufferblock B1;
                     while (!_dataQueue.TryDequeue(out B1))
                 {
                     Thread.Sleep(0);
+                    M1.Data = B1.Datalist;
+                    convert.ConvertList(M1.Data);
                 }
-
-                M1.Data = B1.Datalist;
-
             }
-
-            
         }
     }
 }

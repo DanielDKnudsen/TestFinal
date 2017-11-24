@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IData.cs" />
+    <Compile Include="IAnalyseObserver.cs" />
     <Compile Include="IDataLayer.cs" />
     <Compile Include="IDataObserver.cs" />
     <Compile Include="ILogikLayer.cs" />

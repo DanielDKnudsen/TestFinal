@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogikLayer
+namespace Interfaces
 {
-    public interface IConvert
+    interface IAnalyseObserver
     {
-        void Update(List<double> KonverteretListe);
+        void Update();
     }
 }

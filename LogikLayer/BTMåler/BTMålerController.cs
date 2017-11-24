@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using Interfaces;
-using System.Threading.Tasks;
+using System.Threading;
 
 
 namespace LogikLayer.BTMåler
@@ -14,13 +14,10 @@ namespace LogikLayer.BTMåler
     {
         public bool PatientMåles { get; set; }
         private IDataLayer IdataLayer;
-        private Puls p1;
-        private Systole_Diastole SD;
+        private Systole SD;
 
         public BTMålerController(IDataLayer Idata)
         {
-            p1 = new Puls();
-            SD = new Systole_Diastole();
             PatientMåles = false;
             IdataLayer = Idata;
         }
@@ -29,8 +26,22 @@ namespace LogikLayer.BTMåler
         {
             PatientDTO patient = new PatientDTO();
             IdataLayer.startMålingPrøve();
+        }
 
-            
+        public void StartTråde(List<double> ConvertedList)
+        {
+            Systole SD = new Systole(ConvertedList);
+            Thread SysThread = new Thread(SD.BeregnSys);
+            SysThread.Start();
+            SD.objSys.Set();
+
+            MiddelBT mBT = new MiddelBT(ConvertedList);
+            Thread MidThread = new Thread(mBT.UdregnMiddelBT);
+            MidThread.Start();
+            mBT.objBT.Set();
+
+            SysThread.Join(1000);
+            MidThread.Join(1000);
         }
     }
 }

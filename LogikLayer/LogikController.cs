@@ -39,14 +39,6 @@ namespace LogikLayer
         {
             kalib.setKali(mmHg);
         }
-
-        public void KonverterConsumerListe(List<double> RawList)
-        {
-            Converter convert = new Converter();
-            convert.ConvertList(RawList);
-        }
-     
-
         
 
         public int RequestLogind(LogindDTO LDTO)
