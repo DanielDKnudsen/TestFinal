@@ -7,30 +7,36 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using DTO;
+using Interfaces;
 
 namespace LogikLayer
 {
-    class Consumer
+    public class Consumer
     {
         private MålingDTO M1 = new MålingDTO();
         private readonly ConcurrentQueue<Bufferblock> _dataQueue;
-
-        public Consumer(ConcurrentQueue<Bufferblock> dataQueue)
+        private Converter convert;
+        public IFilter Ifilter { get; set; }
+        public Consumer(ConcurrentQueue<Bufferblock> dataQueue, IFilter iFilter)
         {
+            Ifilter = iFilter;
             _dataQueue = dataQueue;
+            convert = new Converter();
         }
 
         public void Run()
         {
             while (true)
             {
-                Converter convert = new Converter();
+                
                 Bufferblock B1;
                     while (!_dataQueue.TryDequeue(out B1))
                 {
+                    List<double> konverteretListe = new List<double>();
                     Thread.Sleep(0);
                     M1.Data = B1.Datalist;
-                    convert.ConvertList(M1.Data);
+                    konverteretListe = convert.ConvertList(M1.Data);
+                    Ifilter.Filtrer(konverteretListe);
                 }
             }
         }

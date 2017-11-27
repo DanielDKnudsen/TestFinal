@@ -12,13 +12,18 @@ namespace LogikLayer
     {
         public List<double> KonverteretListe = new List<double>();
         private IDataLayer idal;
-        public void ConvertList(List<double> RawList)
+        private Filter _filter;
+        private LogikController LC;
+
+        public List<double> ConvertList(List<double> RawList)
         {
             foreach (var item in RawList)
             {
+
                 KonverteretListe.Add(item);
             }
             lavListe();
+            return KonverteretListe;
         }
 
         public void lavListe()
@@ -28,7 +33,8 @@ namespace LogikLayer
                 BTMålerController BTC = new BTMålerController(idal);
                 BTC.StartTråde(KonverteretListe);
             }
-
         }
+
+        
     }
 }

@@ -19,5 +19,6 @@ namespace Interfaces
         void setKali(int mmHg);
 
         void GemKalibrering(KalibreringDTO KalibDTO);
+        void SetFilter(string Filter);
     }
 }

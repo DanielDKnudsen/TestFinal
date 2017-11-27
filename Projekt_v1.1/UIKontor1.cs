@@ -200,7 +200,6 @@ namespace Projekt_v1._1
 
             UIPatient pat = new UIPatient(UIKontor_LabelFornavn + " " + UIKontor_TextBoxEfternavn,dot, UIKontor_Indlæggelsesdato.Value);
             pat.Show();
-            
         }
 
         private void UIKontor_KnapHent_Click(object sender, EventArgs e)

@@ -44,6 +44,8 @@
     <Compile Include="BTMåler\MiddelBT.cs" />
     <Compile Include="Consumer.cs" />
     <Compile Include="Converter.cs" />
+    <Compile Include="DigFilter.cs" />
+    <Compile Include="Filter.cs" />
     <Compile Include="HentData.cs" />
     <Compile Include="Kalibrering.cs" />
     <Compile Include="ListerTilLogind.cs" />
@@ -53,6 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BTMåler\Puls.cs" />
     <Compile Include="BTMåler\Systole.cs" />
+    <Compile Include="RawFilter.cs" />
     <Compile Include="StandardAfvigelse.cs" />
     <Compile Include="SubjectTransferData.cs" />
     <Compile Include="TransferData.cs" />

@@ -17,17 +17,38 @@ namespace LogikLayer
         private IPresentationLayer PL;
         private BTMålerController BTMålercontroller;
         private Kalibrering kalib;
+        private Consumer _consumer;
 
-        public LogikController(IDataLayer dl)
+        public LogikController(IDataLayer dl, Consumer consumer)
         {
             DL = dl;
             kalib = new Kalibrering(DL);
+            _consumer = consumer;
 
         }
 
         public void GemKalibrering(KalibreringDTO KalibDTO)
         {
             DL.GemKalibrering(KalibDTO);
+        }
+
+        public void SetFilter(string Filter)
+        {
+            IFilter f;
+            if (Filter == "DigFilter")
+            {
+                f = new DigFilter();
+            }
+            else 
+            {
+                f = new RawFilter();
+            }
+            _consumer.Ifilter = f;
+        }
+
+        public void FiltrerListe(List<double> RawList)
+        {
+            _filter.FiltrerListe(RawList);
         }
 
         public bool StartKalibrering(int mmHg)
@@ -66,6 +87,8 @@ namespace LogikLayer
             //int Puls = pKlasse.PulsBeregning(Systoler);
 
             MålingDTO dto = new MålingDTO();
+
+            _consumer.Run();
 
             dto = DL.Start();
 
