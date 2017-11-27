@@ -46,6 +46,7 @@
     <Compile Include="Converter.cs" />
     <Compile Include="DigFilter.cs" />
     <Compile Include="Filter.cs" />
+    <Compile Include="FilterSubject.cs" />
     <Compile Include="HentData.cs" />
     <Compile Include="Kalibrering.cs" />
     <Compile Include="ListerTilLogind.cs" />
