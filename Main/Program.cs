@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -10,6 +11,7 @@ using Interfaces;
 using LogikLayer;
 using PresentationLayer;
 using Projekt_v1._1;
+using DTO;
 
 namespace Main
 {
@@ -18,7 +20,10 @@ namespace Main
         private static ILogikLayer LL;
         private static IDataLayer DL;
         private static IPresentationLayer PL;
-        private static Consumer C;
+        private static Consumer _consumer;
+        private static ConcurrentQueue<Bufferblock> _dataqueue;
+        private static IFilter _ifilter;
+        private static DataProducer _producer;
 
         static void Main(string[] args)
         {
@@ -27,8 +32,14 @@ namespace Main
 
         public Program()
         {
+
+            _ifilter = new RawFilter();
+            _dataqueue = new ConcurrentQueue<Bufferblock>();
+            _consumer = new Consumer(_dataqueue, _ifilter);
+            _producer = new DataProducer(_dataqueue);
+
             DL = new DataController();
-            LL = new LogikController(DL, C);
+            LL = new LogikController(DL, _consumer);
             PL = new PresentationLayerController(LL);
             PL.startUpGUI();
         }

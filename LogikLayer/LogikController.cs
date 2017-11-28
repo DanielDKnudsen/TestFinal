@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,12 @@ namespace LogikLayer
             DL = dl;
             kalib = new Kalibrering(DL);
             _consumer = consumer;
+
+        }
+
+        public MålingDTO NulpunktStart(MålingDTO mDTO)
+        {
+            _consumer.
         }
 
         public void GemKalibrering(KalibreringDTO KalibDTO)

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAnalyseObserver.cs" />
+    <Compile Include="IDAQ.cs" />
     <Compile Include="IDataLayer.cs" />
     <Compile Include="IDataObserver.cs" />
     <Compile Include="IFilter.cs" />

@@ -13,7 +13,7 @@ namespace DataLayer
     public class DataProducer
     {
         private readonly ConcurrentQueue<Bufferblock> _dataQueue;
-        private IData _data;
+        private IDAQ _data;
 
         public DataProducer(ConcurrentQueue<Bufferblock> dataQueue)
         {

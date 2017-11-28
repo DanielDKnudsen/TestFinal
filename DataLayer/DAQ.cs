@@ -9,16 +9,16 @@ using Interfaces;
 
 namespace DataLayer
 {
-    public class DAQ : IData
+    public class DAQ
     {
         private NI_DAQVoltage _blodmåler;
-        public DAQ()
+        public DAQ(int samples)
         {
             _blodmåler = new NI_DAQVoltage();
             _blodmåler.rangeMaximumVolt = 4;
             _blodmåler.rangeMinimumVolt = -4;
             _blodmåler.sampleRateInHz = 1000;
-            _blodmåler.samplesPerChannel = 50;
+            _blodmåler.samplesPerChannel = samples;
         }
         public MålingDTO CollectNulpunktsListe()
         {

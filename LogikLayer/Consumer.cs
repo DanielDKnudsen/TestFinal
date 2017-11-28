@@ -26,10 +26,9 @@ namespace LogikLayer
 
         public void Run()
         {
-
+            
             while (true)
             {
-                
                 Bufferblock B1;
                     while (!_dataQueue.TryDequeue(out B1))
                 {
@@ -40,6 +39,11 @@ namespace LogikLayer
                 konverteretListe = convert.ConvertList(M1.Data);
                 Ifilter.Filtrer(konverteretListe);
             }
+        }
+
+        public MålingDTO ReturnerDTO()
+        {
+            return 
         }
     }
 }

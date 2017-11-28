@@ -38,12 +38,5 @@ namespace DataLayer
             DAQ dak = new DAQ();
             return dak.StartMåling();
         }
-
-        public void Update()
-        {
-            
-        }
-
-        
     }
 }
