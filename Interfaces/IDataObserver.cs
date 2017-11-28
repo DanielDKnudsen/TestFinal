@@ -9,6 +9,6 @@ namespace Interfaces
 {
     public interface IDataObserver
     {
-        void Update(MålingDTO mDTO);
+        void UpdateData(MålingDTO mDTO);
     }
 }

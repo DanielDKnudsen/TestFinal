@@ -198,7 +198,7 @@ namespace Projekt_v1._1
             MålingDTO dot = new MålingDTO();
             dot = LL.StartMåling();
 
-            UIPatient pat = new UIPatient(UIKontor_LabelFornavn + " " + UIKontor_TextBoxEfternavn,dot, UIKontor_Indlæggelsesdato.Value);
+            UIPatient pat = new UIPatient(UIKontor_LabelFornavn + " " + UIKontor_TextBoxEfternavn, dot, UIKontor_Indlæggelsesdato.Value, LL);
             pat.Show();
         }
 

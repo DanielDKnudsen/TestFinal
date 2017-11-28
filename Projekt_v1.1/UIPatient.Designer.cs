@@ -48,6 +48,7 @@
             this.UIPatient_LabelPatientNavn = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.UIPatient_LabelDato = new System.Windows.Forms.Label();
+            this.UIPatient_KnapStart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BTChart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             // 
             this.UIPatient_KnapNul.BackColor = System.Drawing.Color.Black;
             this.UIPatient_KnapNul.ForeColor = System.Drawing.Color.White;
-            this.UIPatient_KnapNul.Location = new System.Drawing.Point(258, 463);
+            this.UIPatient_KnapNul.Location = new System.Drawing.Point(221, 463);
             this.UIPatient_KnapNul.Margin = new System.Windows.Forms.Padding(2);
             this.UIPatient_KnapNul.Name = "UIPatient_KnapNul";
             this.UIPatient_KnapNul.Size = new System.Drawing.Size(174, 78);
@@ -67,8 +68,9 @@
             // UIPatient_KnapDigital
             // 
             this.UIPatient_KnapDigital.BackColor = System.Drawing.Color.Black;
+            this.UIPatient_KnapDigital.Enabled = false;
             this.UIPatient_KnapDigital.ForeColor = System.Drawing.Color.White;
-            this.UIPatient_KnapDigital.Location = new System.Drawing.Point(48, 463);
+            this.UIPatient_KnapDigital.Location = new System.Drawing.Point(20, 463);
             this.UIPatient_KnapDigital.Margin = new System.Windows.Forms.Padding(2);
             this.UIPatient_KnapDigital.Name = "UIPatient_KnapDigital";
             this.UIPatient_KnapDigital.Size = new System.Drawing.Size(174, 78);
@@ -80,7 +82,8 @@
             // UIPatient_KnapStopAlarm
             // 
             this.UIPatient_KnapStopAlarm.BackColor = System.Drawing.Color.Red;
-            this.UIPatient_KnapStopAlarm.Location = new System.Drawing.Point(600, 463);
+            this.UIPatient_KnapStopAlarm.Enabled = false;
+            this.UIPatient_KnapStopAlarm.Location = new System.Drawing.Point(662, 463);
             this.UIPatient_KnapStopAlarm.Margin = new System.Windows.Forms.Padding(2);
             this.UIPatient_KnapStopAlarm.Name = "UIPatient_KnapStopAlarm";
             this.UIPatient_KnapStopAlarm.Size = new System.Drawing.Size(174, 78);
@@ -297,12 +300,27 @@
             this.UIPatient_LabelDato.Text = "Dato";
             this.UIPatient_LabelDato.Click += new System.EventHandler(this.UIPatient_LabelDato_Click);
             // 
+            // UIPatient_KnapStart
+            // 
+            this.UIPatient_KnapStart.BackColor = System.Drawing.Color.Black;
+            this.UIPatient_KnapStart.Enabled = false;
+            this.UIPatient_KnapStart.ForeColor = System.Drawing.Color.White;
+            this.UIPatient_KnapStart.Location = new System.Drawing.Point(422, 463);
+            this.UIPatient_KnapStart.Margin = new System.Windows.Forms.Padding(2);
+            this.UIPatient_KnapStart.Name = "UIPatient_KnapStart";
+            this.UIPatient_KnapStart.Size = new System.Drawing.Size(174, 78);
+            this.UIPatient_KnapStart.TabIndex = 17;
+            this.UIPatient_KnapStart.Text = "Start Måling";
+            this.UIPatient_KnapStart.UseVisualStyleBackColor = false;
+            this.UIPatient_KnapStart.Click += new System.EventHandler(this.UIPatient_KnapStart_Click);
+            // 
             // UIPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(858, 577);
+            this.Controls.Add(this.UIPatient_KnapStart);
             this.Controls.Add(this.UIPatient_LabelDato);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.UIPatient_LabelPatientNavn);
@@ -348,5 +366,6 @@
         private System.Windows.Forms.Label UIPatient_LabelPatientNavn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label UIPatient_LabelDato;
+        private System.Windows.Forms.Button UIPatient_KnapStart;
     }
 }

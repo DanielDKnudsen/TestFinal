@@ -43,6 +43,7 @@
             this.UIMed_buttonStartNulpunktsjustering.TabIndex = 0;
             this.UIMed_buttonStartNulpunktsjustering.Text = "Start nulpunktsjustering";
             this.UIMed_buttonStartNulpunktsjustering.UseVisualStyleBackColor = true;
+            this.UIMed_buttonStartNulpunktsjustering.Click += new System.EventHandler(this.UIMed_buttonStartNulpunktsjustering_Click);
             // 
             // UIMed_buttonStartKalibrering
             // 

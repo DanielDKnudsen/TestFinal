@@ -12,7 +12,7 @@ using Interfaces;
 
 namespace Projekt_v1._1
 {
-    public partial class UIPatient : Form, IFilterObserver
+    public partial class UIPatient : Form, IFilterObserver, IDataObserver
     {
         private ILogikLayer LL;
         private bool DigFilter;
@@ -22,14 +22,11 @@ namespace Projekt_v1._1
             InitializeComponent();
             UIPatient_LabelPatientNavn.Text = navn;
             UIPatient_LabelDato.Text = tid.ToLongDateString();
-            TegnGraf(dto);
             LL = ll;
         }
 
         private void UIPatient_LabelPatientNavn_Click(object sender, EventArgs e)
         {
-            
-
         }
 
         private void UIPatient_KnapNul_Click(object sender, EventArgs e)
@@ -37,24 +34,33 @@ namespace Projekt_v1._1
             MessageBox.Show("Der foretages nu nulpunktsjustering");
         }
 
-        public void TegnGraf(double punkt)
-        {
-            
-        }
-
-        public void Update(List<double> filtreretListe)
+        public void UpdateData(MålingDTO mDTO)
         {
             if (InvokeRequired)
             {
-                BeginInvoke(new Action(() => Update(filtreretListe)));
+                BeginInvoke(new Action(() => UpdateData(mDTO)));
+            }
+            else
+            {
+                UIPatient_LabelMID.Text = mDTO.MiddelBT.ToString();
+                UIPatient_LabelPULS.Text = mDTO.Puls.ToString();
+                UIPatient_LabelSysDia.Text = mDTO.Sys.ToString() + "/" + mDTO.Dia.ToString();
+            }
+        }
+
+        public void UpdateChart(Queue<double> filtreretKø)
+        {
+            if (InvokeRequired)
+            {
+                BeginInvoke(new Action(() => UpdateChart(filtreretKø)));
             }
             else
             {
                 int måling = 0;
                 BTChart.Series["BT"].Points.Clear();
-                for (int i = 0; i < filtreretListe.Count; i++)
+                for (int i = 0; i < filtreretKø.Count; i++)
                 {
-                    BTChart.Series[i].Points.AddXY(måling, filtreretListe[i]);
+                    BTChart.Series[i].Points.AddXY(måling, filtreretKø.ElementAt(i));
                     måling++;
                 }
             }
@@ -62,12 +68,10 @@ namespace Projekt_v1._1
 
         private void UIPatient_LabelDato_Click(object sender, EventArgs e)
         {
-
         }
 
         private void UIPatient_KnapDigital_Click(object sender, EventArgs e)
         {
-
             string filter = "";
             if (DigFilter)
             {
@@ -83,6 +87,11 @@ namespace Projekt_v1._1
                 UIPatient_KnapDigital.BackColor = Color.Yellow;
             }
             LL.SetFilter(filter);
+        }
+
+        private void UIPatient_KnapStart_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -9,28 +9,28 @@ namespace LogikLayer
 {
     public class Filter : FilterSubject
     {
-        private List<double> filtreretListe = new List<double>();
+        private Queue<double> filtreretKø = new Queue<double>();
         public IFilter _filter;
         public Filter(IFilter filter)
         {
             _filter = filter;
-            lav0Liste();
+            lav0Kø();
         }
         public void FiltrerListe(List<double> konverteretListe)
         {
-            filtreretListe.Add(_filter.Filtrer(konverteretListe));
-            if (filtreretListe.Count > 100)
+            filtreretKø.Enqueue(_filter.Filtrer(konverteretListe));
+            if (filtreretKø.Count > 100)
             {
-                filtreretListe.RemoveAt(0);
+                filtreretKø.Dequeue();
             }
-            Notify(filtreretListe);
+            Notify(filtreretKø);
         }
 
-        private void lav0Liste()
+        private void lav0Kø()
         {
             for (int i = 0; i < 100; i++)
             {
-                filtreretListe.Add(0);
+                filtreretKø.Enqueue(0);
             }
         }
 

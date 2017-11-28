@@ -124,5 +124,10 @@ namespace Projekt_v1._1
                 }
             }
         }
+
+        private void UIMed_buttonStartNulpunktsjustering_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

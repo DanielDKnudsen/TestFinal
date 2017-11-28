@@ -9,6 +9,6 @@ namespace Interfaces
 {
     public interface IFilterObserver
     {
-        void Update(List<double> punkt);
+        void UpdateChart(Queue<double> punkt);
     }
 }

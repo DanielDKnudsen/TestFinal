@@ -15,7 +15,7 @@ namespace LogikLayer
         {
             foreach (var observer in _observers)
             {
-                observer.Update(mDTO);
+                observer.UpdateData(mDTO);
             }
         }
 

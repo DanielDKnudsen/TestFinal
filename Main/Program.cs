@@ -18,6 +18,7 @@ namespace Main
         private static ILogikLayer LL;
         private static IDataLayer DL;
         private static IPresentationLayer PL;
+        private static Consumer C;
 
         static void Main(string[] args)
         {
@@ -27,7 +28,7 @@ namespace Main
         public Program()
         {
             DL = new DataController();
-            LL = new LogikController(DL);
+            LL = new LogikController(DL, C);
             PL = new PresentationLayerController(LL);
             PL.startUpGUI();
         }

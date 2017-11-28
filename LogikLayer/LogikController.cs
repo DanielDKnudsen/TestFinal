@@ -24,7 +24,6 @@ namespace LogikLayer
             DL = dl;
             kalib = new Kalibrering(DL);
             _consumer = consumer;
-
         }
 
         public void GemKalibrering(KalibreringDTO KalibDTO)
@@ -44,11 +43,6 @@ namespace LogikLayer
                 f = new RawFilter();
             }
             _consumer.Ifilter = f;
-        }
-
-        public void FiltrerListe(List<double> RawList)
-        {
-            _filter.FiltrerListe(RawList);
         }
 
         public bool StartKalibrering(int mmHg)
