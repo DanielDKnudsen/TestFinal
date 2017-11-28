@@ -26,18 +26,19 @@ namespace LogikLayer
 
         public void Run()
         {
+
             while (true)
             {
                 
                 Bufferblock B1;
                     while (!_dataQueue.TryDequeue(out B1))
                 {
-                    List<double> konverteretListe = new List<double>();
                     Thread.Sleep(0);
-                    M1.Data = B1.Datalist;
-                    konverteretListe = convert.ConvertList(M1.Data);
-                    Ifilter.Filtrer(konverteretListe);
                 }
+                List<double> konverteretListe = new List<double>();
+                M1.Data = B1.Datalist;
+                konverteretListe = convert.ConvertList(M1.Data);
+                Ifilter.Filtrer(konverteretListe);
             }
         }
     }

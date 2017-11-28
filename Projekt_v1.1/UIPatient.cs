@@ -51,7 +51,7 @@ namespace Projekt_v1._1
             else
             {
                 int måling = 0;
-                BTChart.Series.Clear();
+                BTChart.Series["BT"].Points.Clear();
                 for (int i = 0; i < filtreretListe.Count; i++)
                 {
                     BTChart.Series[i].Points.AddXY(måling, filtreretListe[i]);
