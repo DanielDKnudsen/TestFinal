@@ -52,14 +52,5 @@ namespace DataLayer
                 xWriter.Close();
             }
         }
-        //private byte[] ConvertToBinary(List<double> data)
-        //{
-        //    var binformatter = new BinaryFormatter();
-        //    var mStream = new MemoryStream();
-
-        //    binformatter.Serialize(mStream, data);
-
-        //    return mStream.ToArray();
-        //}
     }
 }

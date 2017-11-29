@@ -11,10 +11,10 @@ namespace Interfaces
     {
         int RequestLogind(LogindDTO LDTO);
         void GemPatient(PatientDTO PDTO);
-
+        void StartTråde();
         MålingDTO StartMåling();
-
-        string StartNPJ();
+        void SetNPJ();
+        string NulpunktStart();
         bool StartKalibrering(int mmHg);
         void setKali(int mmHg);
 

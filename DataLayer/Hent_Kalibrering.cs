@@ -10,7 +10,7 @@ namespace DataLayer
     {
         public List<double> LavKalibrering(int mmHg)
         {
-            DAQ daq = new DAQ();
+            //DAQ daq = new DAQ();
             return new List<double>();
         }
     }

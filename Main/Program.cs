@@ -38,7 +38,7 @@ namespace Main
             _consumer = new Consumer(_dataqueue, _ifilter);
             _producer = new DataProducer(_dataqueue);
 
-            DL = new DataController();
+            DL = new DataController(_producer);
             LL = new LogikController(DL, _consumer);
             PL = new PresentationLayerController(LL);
             PL.startUpGUI();

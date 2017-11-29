@@ -9,7 +9,7 @@ using Interfaces;
 
 namespace DataLayer
 {
-    public class DAQ
+    public class DAQ : IDAQ
     {
         private NI_DAQVoltage _blodmåler;
         public DAQ(int samples)

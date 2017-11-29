@@ -41,9 +41,9 @@ namespace LogikLayer
             }
         }
 
-        public MålingDTO ReturnerDTO()
-        {
-            return 
-        }
+        //public MålingDTO ReturnerDTO()
+        //{
+        //    return 
+        //}
     }
 }

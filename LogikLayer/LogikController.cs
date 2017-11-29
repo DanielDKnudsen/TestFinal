@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Interfaces;
 using DTO;
@@ -13,24 +14,38 @@ namespace LogikLayer
 {
     public class LogikController : ILogikLayer
     {
-        
+
         private IDataLayer DL;
         private IPresentationLayer PL;
         private BTMålerController BTMålercontroller;
         private Kalibrering kalib;
         private Consumer _consumer;
+        private Nulpunktsjustering NPJ;
 
         public LogikController(IDataLayer dl, Consumer consumer)
         {
             DL = dl;
             kalib = new Kalibrering(DL);
             _consumer = consumer;
-
+            NPJ = new Nulpunktsjustering(DL);
         }
 
-        public MålingDTO NulpunktStart(MålingDTO mDTO)
+        public void SetNPJ()
         {
-            _consumer.
+            DL.GemNPJ(NPJ.NulpunktBeregnet());
+        }
+
+        public string NulpunktStart()
+        {
+            NPJ.Nulpunktsjuster();
+            return NPJ.FortsætString();
+        }
+
+        public void StartTråde()
+        {
+            Thread consumerThread = new Thread(_consumer.Run);
+            consumerThread.Start();
+            DL.StartProducerTråd();
         }
 
         public void GemKalibrering(KalibreringDTO KalibDTO)
@@ -45,7 +60,7 @@ namespace LogikLayer
             {
                 f = new DigFilter();
             }
-            else 
+            else
             {
                 f = new RawFilter();
             }
@@ -61,20 +76,13 @@ namespace LogikLayer
         {
             kalib.setKali(mmHg);
         }
-        
+
 
         public int RequestLogind(LogindDTO LDTO)
         {
             Logind Log = new Logind();
             return Log.CheckValues(LDTO);
         }
-
-        //public int StartNPJ()
-        //{
-        //    Nulpunktsjustering NP = new Nulpunktsjustering(DL);
-            
-        //}
-
 
 
 
@@ -89,19 +97,9 @@ namespace LogikLayer
 
             MålingDTO dto = new MålingDTO();
 
-            _consumer.Run();
-
             dto = DL.Start();
 
             return dto;
-
-
-
-        }
-
-        public string StartNPJ()
-        {
-            throw new NotImplementedException();
         }
 
 
@@ -109,6 +107,6 @@ namespace LogikLayer
         {
             DL.GemPatient(PDTO);
         }
-       
+
     }
 }
