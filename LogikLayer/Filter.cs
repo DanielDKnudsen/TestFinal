@@ -16,9 +16,9 @@ namespace LogikLayer
             _filter = filter;
             lav0Kø();
         }
-        public void FiltrerListe(List<double> konverteretListe)
+        public void FiltrerListe(double konverteretListe)
         {
-            filtreretKø.Enqueue(_filter.Filtrer(konverteretListe));
+            filtreretKø.Enqueue(konverteretListe);
             if (filtreretKø.Count > 100)
             {
                 filtreretKø.Dequeue();
@@ -26,6 +26,7 @@ namespace LogikLayer
             Notify(filtreretKø);
         }
 
+        
         private void lav0Kø()
         {
             for (int i = 0; i < 100; i++)

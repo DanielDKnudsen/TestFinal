@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using DTO;
 using Interfaces;
@@ -29,7 +30,7 @@ namespace DataLayer
                 Bufferblock B1 = new Bufferblock();
                 B1.Datalist = _data.CollectNulpunktsListe().Data;
                 _dataQueue.Enqueue(B1);
-                
+                Thread.Sleep(0);
             }
         }
 

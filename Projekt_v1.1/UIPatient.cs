@@ -18,12 +18,13 @@ namespace Projekt_v1._1
         private bool DigFilter;
         private string fortsæt;
 
-        public UIPatient(string navn, MålingDTO dto, DateTime tid, ILogikLayer ll)
+        public UIPatient(string navn, DateTime tid, ILogikLayer ll)
         {
             InitializeComponent();
             UIPatient_LabelPatientNavn.Text = navn;
             UIPatient_LabelDato.Text = tid.ToLongDateString();
             LL = ll;
+            
         }
 
         private void UIPatient_LabelPatientNavn_Click(object sender, EventArgs e)
@@ -118,7 +119,8 @@ namespace Projekt_v1._1
 
         private void UIPatient_KnapStart_Click(object sender, EventArgs e)
         {
-
+            
+            LL.StartTråde();
         }
     }
 }

@@ -195,10 +195,7 @@ namespace Projekt_v1._1
 
         private void UIKontor_KnapStart_Click(object sender, EventArgs e)
         {
-            MålingDTO dot = new MålingDTO();
-            dot = LL.StartMåling();
-
-            UIPatient pat = new UIPatient(UIKontor_LabelFornavn + " " + UIKontor_TextBoxEfternavn, dot, UIKontor_Indlæggelsesdato.Value, LL);
+            UIPatient pat = new UIPatient(UIKontor_LabelFornavn + " " + UIKontor_TextBoxEfternavn, UIKontor_Indlæggelsesdato.Value, LL);
             pat.Show();
         }
 

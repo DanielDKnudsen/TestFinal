@@ -12,10 +12,11 @@ namespace DataLayer
     {
         public MålingDTO CollectNulpunktsListe()
         {
+            Random r1 = new Random();
             List<double> liste = new List<double>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 50; i++)
             {
-                liste.Add(i);
+                liste.Add(r1.NextDouble());
             }
             MålingDTO mDTO = new MålingDTO();
             mDTO.Data = liste;

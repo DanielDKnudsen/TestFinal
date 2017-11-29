@@ -12,7 +12,6 @@ namespace Interfaces
         int RequestLogind(LogindDTO LDTO);
         void GemPatient(PatientDTO PDTO);
         void StartTråde();
-        MålingDTO StartMåling();
         void SetNPJ();
         string NulpunktStart();
         bool StartKalibrering(int mmHg);
