@@ -18,6 +18,7 @@ namespace DataLayer
             string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\" + pdto.Fornavn + pdto.Efternavn;
 
             byte[] data = new byte[mdto.Data.Count];
+            data = ConvertToBinary(mdto.Data);
             string dataString = Convert.ToBase64String(data);
 
             if (File.Exists(filNavn))
@@ -51,6 +52,15 @@ namespace DataLayer
                 xWriter.WriteEndElement();
                 xWriter.Close();
             }
+        }
+        private byte[] ConvertToBinary(List<double> data)
+        {
+            var binformatter = new BinaryFormatter();
+            var mStream = new MemoryStream();
+
+            binformatter.Serialize(mStream, data);
+
+            return mStream.ToArray();
         }
     }
 }
