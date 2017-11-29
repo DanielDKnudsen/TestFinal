@@ -12,6 +12,7 @@ using LogikLayer;
 using PresentationLayer;
 using Projekt_v1._1;
 using DTO;
+using ObserverPattern;
 
 namespace Main
 {
@@ -24,6 +25,7 @@ namespace Main
         private static ConcurrentQueue<Bufferblock> _dataqueue;
         private static IFilter _ifilter;
         private static DataProducer _producer;
+        private static DataContainer _dataContainer;
 
         static void Main(string[] args)
         {
@@ -37,10 +39,11 @@ namespace Main
             _dataqueue = new ConcurrentQueue<Bufferblock>();
             _consumer = new Consumer(_dataqueue, _ifilter);
             _producer = new DataProducer(_dataqueue);
+            _dataContainer = new DataContainer();
 
             DL = new DataController(_producer);
-            LL = new LogikController(DL, _consumer);
-            PL = new PresentationLayerController(LL);
+            LL = new LogikController(DL, _consumer,_dataContainer);
+            PL = new PresentationLayerController(LL,_dataContainer);
             PL.startUpGUI();
         }
     }

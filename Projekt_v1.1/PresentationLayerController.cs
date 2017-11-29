@@ -6,16 +6,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Interfaces;
 using Projekt_v1._1;
+using ObserverPattern;
+
 
 namespace PresentationLayer
 {
     public class PresentationLayerController : IPresentationLayer
     {
         private ILogikLayer LL;
+        private DataContainer _dct;
 
-        public PresentationLayerController(ILogikLayer ll)
+        public PresentationLayerController(ILogikLayer ll, DataContainer DCT)
         {
             LL = ll;
+            _dct = DCT;
         }
 
 
@@ -24,7 +28,7 @@ namespace PresentationLayer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.DoEvents();
-            Application.Run(new UILogind(LL));
+            Application.Run(new UILogind(LL,_dct));
         }
     }
 }

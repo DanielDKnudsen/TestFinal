@@ -11,23 +11,26 @@ using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
 using Interfaces;
 using DTO;
+using ObserverPattern;
 
 namespace Projekt_v1._1
 {
     public partial class UIKontor1 : Form
     {
         private ILogikLayer LL;
+        private DataContainer _dct;
         
-        public UIKontor1(ILogikLayer ll)
+        public UIKontor1(ILogikLayer ll,DataContainer DCT)
         {
             InitializeComponent();
             LL = ll;
+            _dct = DCT;
         }
 
         private void UIKontor_KnapLogud_Click(object sender, EventArgs e)
         {
             this.Close();
-            UILogind logind = new UILogind(LL);
+            UILogind logind = new UILogind(LL,_dct);
             logind.Show();
         }
 
@@ -195,10 +198,8 @@ namespace Projekt_v1._1
 
         private void UIKontor_KnapStart_Click(object sender, EventArgs e)
         {
-            MålingDTO dot = new MålingDTO();
-            dot = LL.StartMåling();
-
-            UIPatient pat = new UIPatient(UIKontor_TextBoxFornavn.Text + " " + UIKontor_TextBoxEfternavn.Text, dot, UIKontor_Indlæggelsesdato.Value, LL);
+            
+            UIPatient pat = new UIPatient(UIKontor_TextBoxFornavn.Text + " " + UIKontor_TextBoxEfternavn.Text, UIKontor_Indlæggelsesdato.Value, LL,_dct);
             pat.Show();
         }
 

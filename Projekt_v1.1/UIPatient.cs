@@ -9,23 +9,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using Interfaces;
+using ObserverPattern;
+
 
 namespace Projekt_v1._1
 {
-    public partial class UIPatient : Form, IFilterObserver, IDataObserver
+    public partial class UIPatient : Form, IDataObserver, IFilterObserver
     {
         private ILogikLayer LL;
         private bool DigFilter;
         private string fortsæt;
+        private DataContainer _dct;
         
 
-        public UIPatient(string navn, DateTime tid, ILogikLayer ll)
+        public UIPatient(string navn, DateTime tid, ILogikLayer ll,DataContainer DCT)
         {
             InitializeComponent();
             UIPatient_LabelPatientNavn.Text = navn;
             UIPatient_LabelDato.Text = tid.ToLongDateString();
             LL = ll;
-            
+            _dct = DCT;
         }
 
         private void UIPatient_LabelPatientNavn_Click(object sender, EventArgs e)
@@ -53,11 +56,11 @@ namespace Projekt_v1._1
             }
         }
 
-        public void UpdateChart(Queue<double> filtreretKø)
+        public void Update(Queue<double> filtreretKø)
         {
             if (InvokeRequired)
             {
-                BeginInvoke(new Action(() => UpdateChart(filtreretKø)));
+                BeginInvoke(new Action(() => Update(filtreretKø)));
             }
             else
             {

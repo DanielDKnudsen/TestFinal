@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Interfaces;
 using DTO;
 using LogikLayer.BTMåler;
+using ObserverPattern;
 
 
 namespace LogikLayer
@@ -21,13 +22,14 @@ namespace LogikLayer
         private Kalibrering kalib;
         private Consumer _consumer;
         private Nulpunktsjustering NPJ;
-
-        public LogikController(IDataLayer dl, Consumer consumer)
+        private Filter _filter;
+        public LogikController(IDataLayer dl, Consumer consumer,DataContainer DCT)
         {
             DL = dl;
             kalib = new Kalibrering(DL);
             _consumer = consumer;
             NPJ = new Nulpunktsjustering(DL);
+            _filter = new Filter(new RawFilter(), DCT);
         }
 
         public void SetNPJ()

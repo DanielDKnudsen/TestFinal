@@ -9,17 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Interfaces;
 using DTO;
+using ObserverPattern;
 
 namespace Projekt_v1._1
 {
     public partial class UILogind : Form
     {
         private ILogikLayer LL;
+        private DataContainer _dct;
 
-        public UILogind(ILogikLayer ll)
+        public UILogind(ILogikLayer ll,DataContainer DCT)
         {
             InitializeComponent();
             LL= ll;
+            _dct = DCT;
         }
 
         private void UILogind_buttonLogind_Click(object sender, EventArgs e)
@@ -40,7 +43,7 @@ namespace Projekt_v1._1
             
             if (værdi == 1)
             {
-                UIKontor1 kontor = new UIKontor1(LL);
+                UIKontor1 kontor = new UIKontor1(LL,_dct);
                 this.Hide();
                 kontor.Show();
             }

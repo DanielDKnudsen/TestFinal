@@ -4,17 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
+using ObserverPattern;
 
 namespace LogikLayer
 {
-    public class Filter : FilterSubject
+    public class Filter : DataContainerSubject
     {
         private Queue<double> filtreretKø = new Queue<double>();
         public IFilter _filter;
-        public Filter(IFilter filter)
+        public DataContainer _dct;
+        public Filter(IFilter filter,DataContainer DCT)
         {
             _filter = filter;
             lav0Kø();
+            _dct = DCT;
+
         }
         public void FiltrerListe(double konverteretListe)
         {
