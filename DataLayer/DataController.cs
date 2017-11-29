@@ -52,8 +52,8 @@ namespace DataLayer
 
         public MålingDTO startMålingPrøve()
         {
-            DAQ daq = new DAQ(10);
-            return daq.CollectNulpunktsListe();
+            
+            return IDaq.CollectNulpunktsListe();
         }
 
         public MålingDTO Start()

@@ -23,7 +23,7 @@ namespace LogikLayer
         {
             Nulpunktsdata = DL.startMålingPrøve().Data;
             StandardAfvigelse sd = new StandardAfvigelse();
-            if (sd.standardAfvigelse(Nulpunktsdata) >= 0.8)
+            if (sd.standardAfvigelse(Nulpunktsdata) <= 0.8)
             {
                 Fortsæt = "Nulpunktsjustering er foretaget. Værdien er " + Nulpunktsdata.Sum() / Nulpunktsdata.Count + ". " +
                        "Vil du fortsætte?";
