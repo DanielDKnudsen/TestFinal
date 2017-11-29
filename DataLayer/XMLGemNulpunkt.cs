@@ -21,6 +21,8 @@ namespace DataLayer
             xWriter.WriteStartElement("Nulpunkt");
             xWriter.WriteStartElement("Dato");
             xWriter.WriteString(DateTime.Now.ToString());
+            xWriter.WriteEndElement();
+            xWriter.WriteStartElement("Nulpunkt");
             xWriter.WriteString(nulpunkt);
             xWriter.WriteEndElement();
             xWriter.WriteEndElement();

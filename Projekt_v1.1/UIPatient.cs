@@ -17,6 +17,7 @@ namespace Projekt_v1._1
         private ILogikLayer LL;
         private bool DigFilter;
         private string fortsæt;
+        
 
         public UIPatient(string navn, MålingDTO dto, DateTime tid, ILogikLayer ll)
         {
@@ -28,37 +29,13 @@ namespace Projekt_v1._1
 
         private void UIPatient_LabelPatientNavn_Click(object sender, EventArgs e)
         {
+            
         }
 
         private void UIPatient_KnapNul_Click(object sender, EventArgs e)
         {
-            bool NO = true;
-            DialogResult foretages = MessageBox.Show("Der foretages nu nulpunktsjustering");
-
-            this.fortsæt = LL.NulpunktStart();
-            DialogResult godkendNulpunkt = MessageBox.Show(fortsæt, "Vil du fortsætte?", MessageBoxButtons.YesNo);
-            if (godkendNulpunkt == DialogResult.Yes)
-            {
-                LL.SetNPJ();
-            }
-            if (godkendNulpunkt == DialogResult.No)
-            {
-                DialogResult PrøvIgen = MessageBox.Show("Vil du prøve igen?", "Prøv igen?", MessageBoxButtons.YesNo);
-                while (NO)
-                {
-                    if (PrøvIgen == DialogResult.Yes)
-                    {
-                        LL.NulpunktStart();
-                    }
-                    if (PrøvIgen == DialogResult.No)
-                    {
-                        this.Close();
-                    }
-                }
-                
-            }
-               
-
+            NulpunktsGUI();
+            
         }
 
         public void UpdateData(MålingDTO mDTO)
@@ -93,6 +70,44 @@ namespace Projekt_v1._1
             }
         }
 
+        public void NulpunktsGUI()
+        {
+            bool NO = true;
+            DialogResult foretages = MessageBox.Show("Der foretages nu nulpunktsjustering");
+
+            this.fortsæt = LL.NulpunktStart();
+            DialogResult godkendNulpunkt = MessageBox.Show(fortsæt, "Vil du fortsætte?", MessageBoxButtons.YesNo);
+            if (godkendNulpunkt == DialogResult.Yes)
+            {
+                LL.SetNPJ();
+            }
+            if (godkendNulpunkt == DialogResult.No)
+            {
+                DialogResult PrøvIgen = MessageBox.Show("Vil du prøve igen?", "Prøv igen?", MessageBoxButtons.YesNo);
+                while (NO)
+                {
+                    if (PrøvIgen == DialogResult.Yes)
+                    {
+                        NulpunktsGUI();
+                        NO = false;
+                        
+                    }
+                    if (PrøvIgen == DialogResult.No)
+                    {
+                        NO = false;
+                    }
+                    
+                }
+                
+            }
+            if (NO)
+            {
+                UIPatient_KnapDigital.Enabled = true;
+                UIPatient_KnapStart.Enabled = true;
+            }
+            
+        }
+
         private void UIPatient_LabelDato_Click(object sender, EventArgs e)
         {
         }
@@ -102,17 +117,23 @@ namespace Projekt_v1._1
             string filter = "";
             if (DigFilter)
             {
-                DigFilter = false;
                 filter = "RawFilter";
                 UIPatient_KnapDigital.BackColor = Color.Black;
             }
 
-            if (!DigFilter)
+            if (DigFilter == false)
             {
-                DigFilter = true;
                 filter = "DigFilter";
                 UIPatient_KnapDigital.BackColor = Color.Yellow;
             }
+            if (DigFilter == true)
+            {
+                DigFilter = false;
+            }
+            else DigFilter = true;
+            
+                
+            
             LL.SetFilter(filter);
         }
 

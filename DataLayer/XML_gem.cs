@@ -23,7 +23,7 @@ namespace DataLayer
             if (File.Exists(filNavn))
             {
                 XmlDocument doc = new XmlDocument();
-                doc.Load(filNavn + ".xml");
+                doc.Load(filNavn);
                 XmlNode Måling = doc.CreateElement("Måling");
                 XmlNode Målingstidspunkt = doc.CreateElement("Målingstidspunkt");
                 Målingstidspunkt.InnerText = mdto.Tid.ToString();
