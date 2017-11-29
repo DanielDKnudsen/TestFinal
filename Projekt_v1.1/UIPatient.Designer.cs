@@ -306,7 +306,6 @@
             // UIPatient_KnapStart
             // 
             this.UIPatient_KnapStart.BackColor = System.Drawing.Color.Black;
-            this.UIPatient_KnapStart.Enabled = false;
             this.UIPatient_KnapStart.ForeColor = System.Drawing.Color.White;
             this.UIPatient_KnapStart.Location = new System.Drawing.Point(738, 839);
             this.UIPatient_KnapStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);

@@ -83,26 +83,6 @@ namespace LogikLayer
             Logind Log = new Logind();
             return Log.CheckValues(LDTO);
         }
-
-
-
-        public MålingDTO StartMåling()
-        {
-            //Systole_Diastole SD = new Systole_Diastole();
-            //List<double> Systoler = new List<double>();
-            //Systoler = SD.BeregnSys(DL.startMåling().Data);
-
-            //Puls pKlasse = new Puls();
-            //int Puls = pKlasse.PulsBeregning(Systoler);
-
-            MålingDTO dto = new MålingDTO();
-
-            dto = DL.Start();
-
-            return dto;
-        }
-
-
         public void GemPatient(PatientDTO PDTO)
         {
             DL.GemPatient(PDTO);

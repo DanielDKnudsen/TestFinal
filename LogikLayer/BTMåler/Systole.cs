@@ -30,7 +30,7 @@ namespace LogikLayer
                 List<double> Systoler = new List<double>();
                 double s = 0;
 
-                for (int i = 0; i < _data.Count; i++)
+                for (int i = 2; i < _data.Count-2; i++)
                 {
                     if (_data[i] > Grænseværdi && _data[i + 1] < _data[i] && _data[i + 1] < Grænseværdi)
                     {

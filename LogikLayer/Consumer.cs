@@ -16,17 +16,18 @@ namespace LogikLayer
         private MålingDTO M1 = new MålingDTO();
         private readonly ConcurrentQueue<Bufferblock> _dataQueue;
         private Converter convert;
+        private Filter filter;
         public IFilter Ifilter { get; set; }
         public Consumer(ConcurrentQueue<Bufferblock> dataQueue, IFilter iFilter)
         {
             Ifilter = iFilter;
             _dataQueue = dataQueue;
             convert = new Converter();
+            filter = new Filter(iFilter);
         }
 
         public void Run()
         {
-            
             while (true)
             {
                 Bufferblock B1;
@@ -37,13 +38,8 @@ namespace LogikLayer
                 List<double> konverteretListe = new List<double>();
                 M1.Data = B1.Datalist;
                 konverteretListe = convert.ConvertList(M1.Data);
-                Ifilter.Filtrer(konverteretListe);
+                filter.FiltrerListe(Ifilter.Filtrer(konverteretListe));
             }
         }
-
-        //public MålingDTO ReturnerDTO()
-        //{
-        //    return 
-        //}
     }
 }
