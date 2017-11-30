@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using Interfaces;
+using ObserverPattern;
 
 namespace Projekt_v1._1
 {
@@ -16,19 +17,20 @@ namespace Projekt_v1._1
     {
         private ILogikLayer LL;
         private string _brugernavn;
+        private DataContainer _dct;
 
-        public UIMed(ILogikLayer ll, string brugernavn)
+        public UIMed(ILogikLayer ll, string brugernavn,DataContainer DCT)
         {
             InitializeComponent();
             LL = ll;
             _brugernavn = brugernavn;
-
+            _dct = DCT;
         }
 
         private void UIMed_buttonLogud_Click(object sender, EventArgs e)
         {
             this.Close();
-            UILogind logind = new UILogind(LL);
+            UILogind logind = new UILogind(LL,_dct);
             logind.Show();
         }
 

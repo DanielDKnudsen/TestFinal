@@ -23,13 +23,15 @@ namespace LogikLayer
         private Consumer _consumer;
         private Nulpunktsjustering NPJ;
         private Filter _filter;
+        private DataContainer _dct;
         public LogikController(IDataLayer dl, Consumer consumer,DataContainer DCT)
         {
             DL = dl;
             kalib = new Kalibrering(DL);
             _consumer = consumer;
+            _dct = DCT;
             NPJ = new Nulpunktsjustering(DL);
-            _filter = new Filter(new RawFilter(), DCT);
+            _filter = new Filter(new RawFilter(), _dct);
         }
 
         public void SetNPJ()

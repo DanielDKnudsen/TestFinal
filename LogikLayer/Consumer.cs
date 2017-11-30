@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using DTO;
 using Interfaces;
+using ObserverPattern;
 
 namespace LogikLayer
 {
@@ -18,12 +19,14 @@ namespace LogikLayer
         private Converter convert;
         private Filter filter;
         public IFilter Ifilter { get; set; }
-        public Consumer(ConcurrentQueue<Bufferblock> dataQueue, IFilter iFilter)
+        public DataContainer _dct;
+        public Consumer(ConcurrentQueue<Bufferblock> dataQueue, IFilter iFilter,DataContainer DCT)
         {
             Ifilter = iFilter;
             _dataQueue = dataQueue;
+            _dct = DCT;
             convert = new Converter();
-            filter = new Filter(iFilter);
+            filter = new Filter(iFilter,_dct);
         }
 
         public void Run()
@@ -39,6 +42,10 @@ namespace LogikLayer
                 M1.Data = B1.Datalist;
                 konverteretListe = convert.ConvertList(M1.Data);
                 filter.FiltrerListe(Ifilter.Filtrer(konverteretListe));
+
+                //container.sys = udregn sys her
+                //conatiner.dia = udregn dia her
+                //container.Notify();
             }
         }
     }

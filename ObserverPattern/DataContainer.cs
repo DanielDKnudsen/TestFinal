@@ -6,9 +6,10 @@ namespace ObserverPattern
 {
     public class DataContainer : DataContainerSubject
     {
-        public void Done()
+
+        public void Done(Queue<double>_queue)
         {
-            Notify();
+            Notify(_queue);
 
         }
     }

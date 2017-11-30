@@ -27,7 +27,7 @@ namespace LogikLayer
             {
                 filtreretKø.Dequeue();
             }
-            Notify(filtreretKø);
+           _dct.Done(filtreretKø);
         }
 
         
@@ -38,6 +38,8 @@ namespace LogikLayer
                 filtreretKø.Enqueue(0);
             }
         }
+
+        
 
     }
 }

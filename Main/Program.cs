@@ -37,7 +37,7 @@ namespace Main
 
             _ifilter = new RawFilter();
             _dataqueue = new ConcurrentQueue<Bufferblock>();
-            _consumer = new Consumer(_dataqueue, _ifilter);
+            _consumer = new Consumer(_dataqueue, _ifilter,_dataContainer);
             _producer = new DataProducer(_dataqueue);
             _dataContainer = new DataContainer();
 
