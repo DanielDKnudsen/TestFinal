@@ -34,12 +34,12 @@ namespace Main
 
         public Program()
         {
-
+            _dataContainer = new DataContainer();
             _ifilter = new RawFilter();
             _dataqueue = new ConcurrentQueue<Bufferblock>();
             _consumer = new Consumer(_dataqueue, _ifilter,_dataContainer);
             _producer = new DataProducer(_dataqueue);
-            _dataContainer = new DataContainer();
+            
 
             DL = new DataController(_producer);
             LL = new LogikController(DL, _consumer,_dataContainer);
