@@ -35,7 +35,7 @@ namespace LogikLayer
         {
             for (int i = 0; i < 100; i++)
             {
-                filtreretKø.Enqueue(0);
+                filtreretKø.Enqueue(1);
             }
         }
 

@@ -39,7 +39,6 @@ namespace Main
             _dataqueue = new ConcurrentQueue<Bufferblock>();
             _consumer = new Consumer(_dataqueue, _ifilter,_dataContainer);
             _producer = new DataProducer(_dataqueue);
-            
 
             DL = new DataController(_producer);
             LL = new LogikController(DL, _consumer,_dataContainer);

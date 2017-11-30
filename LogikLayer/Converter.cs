@@ -28,11 +28,11 @@ namespace LogikLayer
 
         public void lavListe()
         {
-            //if (KonverteretListe.Count > 5000)
-            //{
-            //    BTMålerController BTC = new BTMålerController(idal);
-            //    BTC.StartTråde(KonverteretListe);
-            //}
+            if (KonverteretListe.Count > 5000)
+            {
+                BTMålerController BTC = new BTMålerController(idal);
+                BTC.StartTråde(KonverteretListe);
+            }
         }
 
         

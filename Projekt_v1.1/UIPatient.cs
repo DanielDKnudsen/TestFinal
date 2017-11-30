@@ -29,6 +29,7 @@ namespace Projekt_v1._1
             UIPatient_LabelDato.Text = tid.ToLongDateString();
             LL = ll;
             _dct = DCT;
+            _dct.Attach(this);
         }
 
         private void UIPatient_LabelPatientNavn_Click(object sender, EventArgs e)
@@ -66,9 +67,9 @@ namespace Projekt_v1._1
             {
                 int måling = 0;
                 BTChart.Series["BT"].Points.Clear();
-                for (int i = 0; i < filtreretKø.Count; i++)
+                for (int i = 0; i < filtreretKø.Count-1; i++)
                 {
-                    BTChart.Series[i].Points.AddXY(måling, filtreretKø.ElementAt(i));
+                    BTChart.Series["BT"].Points.AddXY(måling, filtreretKø.ElementAt(i));
                     måling++;
                 }
             }
