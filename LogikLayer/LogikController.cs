@@ -24,6 +24,7 @@ namespace LogikLayer
         private Nulpunktsjustering NPJ;
         private Filter _filter;
         private DataContainer _dct;
+        private bool tidFaktor;
         public LogikController(IDataLayer dl, Consumer consumer,DataContainer DCT)
         {
             DL = dl;
@@ -59,16 +60,25 @@ namespace LogikLayer
 
         public void SetFilter(string Filter)
         {
+            tidFaktor = false;
             IFilter f;
             if (Filter == "DigFilter")
             {
                 f = new DigFilter();
+                tidFaktor = true;
             }
             else
             {
                 f = new RawFilter();
+                tidFaktor = false;
             }
             _consumer.Ifilter = f;
+            GetTidfaktor();
+        }
+
+        public bool GetTidfaktor()
+        {
+            return tidFaktor;
         }
 
         public bool StartKalibrering(int mmHg)

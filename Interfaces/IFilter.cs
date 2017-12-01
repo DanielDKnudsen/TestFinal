@@ -8,6 +8,6 @@ namespace Interfaces
 {
     public interface IFilter
     {
-        double Filtrer(List<double> KonverteretListe);
+        List<double> Filtrer(List<double> KonverteretListe);
     }
 }

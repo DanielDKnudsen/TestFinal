@@ -19,11 +19,10 @@ namespace LogikLayer
         {
             foreach (var item in RawList)
             {
-
                 KonverteretListe.Add(item);
             }
             lavListe();
-            return KonverteretListe;
+            return RawList;
         }
 
         public void lavListe()

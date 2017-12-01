@@ -20,12 +20,15 @@ namespace LogikLayer
             _dct = DCT;
 
         }
-        public void FiltrerListe(double konverteretListe)
+        public void FiltrerListe(List<double> konverteretListe)
         {
-            filtreretKø.Enqueue(konverteretListe);
-            if (filtreretKø.Count > 100)
+            foreach (var item in konverteretListe)
             {
-                filtreretKø.Dequeue();
+                filtreretKø.Enqueue(item);
+                if (filtreretKø.Count > 50)
+                {
+                    filtreretKø.Dequeue();
+                }
             }
            _dct.Done(filtreretKø);
         }
@@ -33,7 +36,7 @@ namespace LogikLayer
         
         private void lav0Kø()
         {
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 50; i++)
             {
                 filtreretKø.Enqueue(1);
             }

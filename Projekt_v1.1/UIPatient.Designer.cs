@@ -57,7 +57,7 @@
             this.UIPatient_KnapNul.BackColor = System.Drawing.Color.Black;
             this.UIPatient_KnapNul.ForeColor = System.Drawing.Color.White;
             this.UIPatient_KnapNul.Location = new System.Drawing.Point(221, 463);
-            this.UIPatient_KnapNul.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UIPatient_KnapNul.Margin = new System.Windows.Forms.Padding(2);
             this.UIPatient_KnapNul.Name = "UIPatient_KnapNul";
             this.UIPatient_KnapNul.Size = new System.Drawing.Size(174, 78);
             this.UIPatient_KnapNul.TabIndex = 0;
@@ -70,7 +70,7 @@
             this.UIPatient_KnapDigital.BackColor = System.Drawing.Color.Black;
             this.UIPatient_KnapDigital.ForeColor = System.Drawing.Color.White;
             this.UIPatient_KnapDigital.Location = new System.Drawing.Point(20, 463);
-            this.UIPatient_KnapDigital.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UIPatient_KnapDigital.Margin = new System.Windows.Forms.Padding(2);
             this.UIPatient_KnapDigital.Name = "UIPatient_KnapDigital";
             this.UIPatient_KnapDigital.Size = new System.Drawing.Size(174, 78);
             this.UIPatient_KnapDigital.TabIndex = 1;
@@ -83,7 +83,7 @@
             this.UIPatient_KnapStopAlarm.BackColor = System.Drawing.Color.Red;
             this.UIPatient_KnapStopAlarm.Enabled = false;
             this.UIPatient_KnapStopAlarm.Location = new System.Drawing.Point(662, 463);
-            this.UIPatient_KnapStopAlarm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UIPatient_KnapStopAlarm.Margin = new System.Windows.Forms.Padding(2);
             this.UIPatient_KnapStopAlarm.Name = "UIPatient_KnapStopAlarm";
             this.UIPatient_KnapStopAlarm.Size = new System.Drawing.Size(174, 78);
             this.UIPatient_KnapStopAlarm.TabIndex = 2;
@@ -137,6 +137,7 @@
             series1.Legend = "Legend1";
             series1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             series1.Name = "BT";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.BTChart.Series.Add(series1);
             this.BTChart.Size = new System.Drawing.Size(644, 404);
@@ -305,7 +306,7 @@
             this.UIPatient_KnapStart.BackColor = System.Drawing.Color.Black;
             this.UIPatient_KnapStart.ForeColor = System.Drawing.Color.White;
             this.UIPatient_KnapStart.Location = new System.Drawing.Point(422, 463);
-            this.UIPatient_KnapStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UIPatient_KnapStart.Margin = new System.Windows.Forms.Padding(2);
             this.UIPatient_KnapStart.Name = "UIPatient_KnapStart";
             this.UIPatient_KnapStart.Size = new System.Drawing.Size(174, 78);
             this.UIPatient_KnapStart.TabIndex = 17;
@@ -337,7 +338,7 @@
             this.Controls.Add(this.UIPatient_KnapStopAlarm);
             this.Controls.Add(this.UIPatient_KnapDigital);
             this.Controls.Add(this.UIPatient_KnapNul);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UIPatient";
             this.Text = "UIPatient";
             ((System.ComponentModel.ISupportInitialize)(this.BTChart)).EndInit();

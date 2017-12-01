@@ -16,7 +16,7 @@ namespace Interfaces
         string NulpunktStart();
         bool StartKalibrering(int mmHg);
         void setKali(int mmHg);
-
+        bool GetTidfaktor();
         void GemKalibrering(KalibreringDTO KalibDTO);
         void SetFilter(string Filter);
     }

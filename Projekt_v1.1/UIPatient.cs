@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DTO;
 using Interfaces;
 using ObserverPattern;
+using System.Windows.Forms.DataVisualization.Charting;
 
 
 namespace Projekt_v1._1
@@ -20,9 +21,9 @@ namespace Projekt_v1._1
         private bool DigFilter;
         private string fortsæt;
         private DataContainer _dct;
-        
 
-        public UIPatient(string navn, DateTime tid, ILogikLayer ll,DataContainer DCT)
+
+        public UIPatient(string navn, DateTime tid, ILogikLayer ll, DataContainer DCT)
         {
             InitializeComponent();
             UIPatient_LabelPatientNavn.Text = navn;
@@ -30,17 +31,22 @@ namespace Projekt_v1._1
             LL = ll;
             _dct = DCT;
             _dct.Attach(this);
+            opsætGraf();
+        }
+
+        private void opsætGraf()
+        {
+            BTChart.ChartAreas[0].AxisX.MajorGrid.Interval = 1;
+            BTChart.ChartAreas[0].AxisY.MajorGrid.Interval = 1;
         }
 
         private void UIPatient_LabelPatientNavn_Click(object sender, EventArgs e)
         {
-            
         }
 
         private void UIPatient_KnapNul_Click(object sender, EventArgs e)
         {
             NulpunktsGUI();
-            
         }
 
         public void UpdateData(MålingDTO mDTO)
@@ -59,17 +65,31 @@ namespace Projekt_v1._1
 
         public void Update(Queue<double> filtreretKø)
         {
+            double faktor = 0;
+
             if (InvokeRequired)
             {
                 BeginInvoke(new Action(() => Update(filtreretKø)));
             }
             else
             {
-                int måling = 0;
+                double måling = 0;
                 BTChart.Series["BT"].Points.Clear();
-                for (int i = 0; i < filtreretKø.Count-1; i++)
+
+                if (LL.GetTidfaktor())
                 {
-                    BTChart.Series["BT"].Points.AddXY(måling, filtreretKø.ElementAt(i));
+                    faktor = 1;
+                    BTChart.ChartAreas[0].RecalculateAxesScale();
+                }
+                else
+                {
+                    faktor = 5;
+                    BTChart.ChartAreas[0].AxisX.MajorGrid.Interval = 5;
+                    BTChart.ChartAreas[0].RecalculateAxesScale();
+                }
+                for (int i = 0; i < filtreretKø.Count - 1; i++)
+                {
+                    BTChart.Series["BT"].Points.AddXY(måling/faktor,filtreretKø.ElementAt(i));
                     måling++;
                 }
             }
@@ -95,22 +115,18 @@ namespace Projekt_v1._1
                     {
                         NulpunktsGUI();
                         NO = false;
-                        
                     }
                     if (PrøvIgen == DialogResult.No)
                     {
                         NO = false;
                     }
-                    
                 }
-                
             }
             if (NO)
             {
                 UIPatient_KnapDigital.Enabled = true;
                 UIPatient_KnapStart.Enabled = true;
             }
-            
         }
 
         private void UIPatient_LabelDato_Click(object sender, EventArgs e)
@@ -136,15 +152,13 @@ namespace Projekt_v1._1
                 DigFilter = false;
             }
             else DigFilter = true;
-            
-                
-            
+
+
             LL.SetFilter(filter);
         }
 
         private void UIPatient_KnapStart_Click(object sender, EventArgs e)
         {
-            
             LL.StartTråde();
         }
     }

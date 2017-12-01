@@ -9,9 +9,13 @@ namespace LogikLayer
 {
     public class DigFilter : IFilter
     {
-        public double Filtrer(List<double> konverteretListe)
+
+        
+        public List<double> Filtrer(List<double> konverteretListe)
         {
-            return konverteretListe.Average();
+            List<double> DigListe = new List<double>();
+            DigListe.Add(konverteretListe.Average());
+            return DigListe;
         }
     }
 }
