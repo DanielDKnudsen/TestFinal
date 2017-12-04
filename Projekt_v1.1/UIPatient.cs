@@ -36,8 +36,8 @@ namespace Projekt_v1._1
 
         private void opsætGraf()
         {
-            BTChart.ChartAreas[0].AxisX.MajorGrid.Interval = 1;
-            BTChart.ChartAreas[0].AxisY.MajorGrid.Interval = 1;
+            BTChart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            BTChart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
         }
 
         private void UIPatient_LabelPatientNavn_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace Projekt_v1._1
 
         public void Update(Queue<double> filtreretKø)
         {
-            double faktor = 0;
+            
 
             if (InvokeRequired)
             {
@@ -75,21 +75,10 @@ namespace Projekt_v1._1
             {
                 double måling = 0;
                 BTChart.Series["BT"].Points.Clear();
-
-                if (LL.GetTidfaktor())
-                {
-                    faktor = 1;
-                    BTChart.ChartAreas[0].RecalculateAxesScale();
-                }
-                else
-                {
-                    faktor = 5;
-                    BTChart.ChartAreas[0].AxisX.MajorGrid.Interval = 5;
-                    BTChart.ChartAreas[0].RecalculateAxesScale();
-                }
+                
                 for (int i = 0; i < filtreretKø.Count - 1; i++)
                 {
-                    BTChart.Series["BT"].Points.AddXY(måling/faktor,filtreretKø.ElementAt(i));
+                    BTChart.Series["BT"].Points.AddXY(måling,filtreretKø.ElementAt(i));
                     måling++;
                 }
             }
@@ -160,6 +149,11 @@ namespace Projekt_v1._1
         private void UIPatient_KnapStart_Click(object sender, EventArgs e)
         {
             LL.StartTråde();
+        }
+
+        private void UIPatient_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
