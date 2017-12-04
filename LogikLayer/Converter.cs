@@ -14,10 +14,16 @@ namespace LogikLayer
         private IDataLayer idal;
         private Filter _filter;
         private LogikController LC;
+        private BTMålerController _BTMålerController;
 
         private double _npj;
 
-        
+        public Converter(BTMålerController BTMålerController)
+        {
+            _BTMålerController = BTMålerController;
+        }
+
+
         public List<double> ConvertList(List<double> RawList)
         {
             foreach (var item in RawList)
@@ -32,8 +38,7 @@ namespace LogikLayer
         {
             if (KonverteretListe.Count > 5000)
             {
-                BTMålerController BTC = new BTMålerController(idal);
-                BTC.StartTråde(KonverteretListe);
+                _BTMålerController.StartTråde(KonverteretListe);
             }
         }
 

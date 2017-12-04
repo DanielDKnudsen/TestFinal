@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using DataLayer;
 using Interfaces;
 using LogikLayer;
+using LogikLayer.BTMåler;
 using PresentationLayer;
 using Projekt_v1._1;
 using DTO;
@@ -34,10 +35,13 @@ namespace Main
 
         public Program()
         {
+            _målingContainer = new MålingContainer();
             _dataContainer = new DataContainer();
             _ifilter = new RawFilter();
+
+            _BTcontroller = new BTMålerController(_målingContainer);
             _dataqueue = new ConcurrentQueue<Bufferblock>();
-            _consumer = new Consumer(_dataqueue, _ifilter,_dataContainer);
+            _consumer = new Consumer(_dataqueue, _ifilter,_dataContainer, _BTcontroller);
             _producer = new DataProducer(_dataqueue);
 
             DL = new DataController(_producer);

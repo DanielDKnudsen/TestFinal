@@ -18,7 +18,6 @@ namespace LogikLayer
 
         private IDataLayer DL;
         private IPresentationLayer PL;
-        private BTMålerController BTMålercontroller;
         private Kalibrering kalib;
         private Consumer _consumer;
         private Nulpunktsjustering NPJ;

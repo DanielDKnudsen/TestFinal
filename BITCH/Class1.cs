@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace ObserverPattern
+
+namespace BITCH
 {
-    public interface IFilterObserver
+    public class Class1
     {
-        void Update(Queue<double> _queue);
     }
 }
