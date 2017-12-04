@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,22 +11,16 @@ using System.Threading;
 
 namespace LogikLayer.BTMåler
 {
-    class BTMålerController
+    public class BTMålerController
     {
         public bool PatientMåles { get; set; }
-        private IDataLayer IdataLayer;
+        private MålingContainer _målingContainer;
         private Systole SD;
 
-        public BTMålerController(IDataLayer Idata)
+        public BTMålerController(MålingContainer Målingcontainer)
         {
+            _målingContainer = Målingcontainer;
             PatientMåles = false;
-            IdataLayer = Idata;
-        }
-
-        public void StartMålingAsync(IPresentationLayer uiPatient)
-        {
-            PatientDTO patient = new PatientDTO();
-            IdataLayer.startMålingPrøve();
         }
 
         public void StartTråde(List<double> ConvertedList)
