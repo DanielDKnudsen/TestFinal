@@ -85,10 +85,6 @@
       <Project>{8292df5d-9907-40ca-985b-78f241945284}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ObserverPattern\ObserverPattern.csproj">
-      <Project>{51905deb-892d-4cdb-83e0-eed214292b3d}</Project>
-      <Name>ObserverPattern</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UIKontor1.resx">

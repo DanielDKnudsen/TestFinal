@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login.Test.Unit", "Login.Te
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test.Unit", "Test.Unit", "{7159DCB3-56D6-49FA-9476-0E2751DF54E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverPattern", "ObserverPattern\ObserverPattern.csproj", "{51905DEB-892D-4CDB-83E0-EED214292B3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverPatternVol2", "ObserverPatternVol2\ObserverPatternVol2.csproj", "{9AB86EFB-F1F8-422C-BF24-3DF226DC5BC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,10 +55,10 @@ Global
 		{C3006D25-EE99-4B36-A023-D0B90269CC1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3006D25-EE99-4B36-A023-D0B90269CC1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3006D25-EE99-4B36-A023-D0B90269CC1E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51905DEB-892D-4CDB-83E0-EED214292B3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51905DEB-892D-4CDB-83E0-EED214292B3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51905DEB-892D-4CDB-83E0-EED214292B3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51905DEB-892D-4CDB-83E0-EED214292B3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AB86EFB-F1F8-422C-BF24-3DF226DC5BC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AB86EFB-F1F8-422C-BF24-3DF226DC5BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AB86EFB-F1F8-422C-BF24-3DF226DC5BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AB86EFB-F1F8-422C-BF24-3DF226DC5BC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
