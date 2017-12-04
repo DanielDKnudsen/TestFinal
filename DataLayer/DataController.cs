@@ -49,7 +49,6 @@ namespace DataLayer
             string værdi = node.InnerText;
 
             return Convert.ToDouble(værdi);
-
         }
 
         public void StartProducerTråd()

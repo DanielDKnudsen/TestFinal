@@ -38,6 +38,7 @@ namespace LogikLayer
         public void SetNPJ()
         {
             DL.GemNPJ(NPJ.NulpunktBeregnet());
+            _consumer.GetNPJ(NPJ.NulpunktBeregnet());
         }
 
         public string NulpunktStart()

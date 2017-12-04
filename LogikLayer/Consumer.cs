@@ -49,5 +49,10 @@ namespace LogikLayer
                 //container.Notify();
             }
         }
+
+        public void GetNPJ(double NPJ)
+        {
+            convert.SetNPJ(NPJ);
+        }
     }
 }

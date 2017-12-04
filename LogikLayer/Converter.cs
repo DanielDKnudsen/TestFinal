@@ -20,8 +20,6 @@ namespace LogikLayer
         
         public List<double> ConvertList(List<double> RawList)
         {
-            _npj = idal.hentNPJ();
-
             foreach (var item in RawList)
             {
                 KonverteretListe.Add((item - _npj) / (5 * 0.000005 * 736.294));
@@ -39,7 +37,9 @@ namespace LogikLayer
             }
         }
 
-        
-        
+        public void SetNPJ(double NPJ)
+        {
+            _npj = NPJ;
+        }
     }
 }
