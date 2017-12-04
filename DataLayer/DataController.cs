@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml;
 using Interfaces;
 using DTO;
 
@@ -36,6 +37,19 @@ namespace DataLayer
         public void GemNPJ(double Nulpunkt)
         {
             NPJ.GemXMLNulpunkt(Nulpunkt);
+        }
+
+        public double hentNPJ()
+        {
+            string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\";
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load(filNavn + "Nulpunkt" + ".xml");
+            XmlNode node = doc.DocumentElement.SelectSingleNode("Nulpunkt.xml");
+            string værdi = node.InnerText;
+
+            return Convert.ToDouble(værdi);
+
         }
 
         public void StartProducerTråd()

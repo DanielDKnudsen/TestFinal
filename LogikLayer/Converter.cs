@@ -15,11 +15,16 @@ namespace LogikLayer
         private Filter _filter;
         private LogikController LC;
 
+        private double _npj;
+
+        
         public List<double> ConvertList(List<double> RawList)
         {
+            _npj = idal.hentNPJ();
+
             foreach (var item in RawList)
             {
-                KonverteretListe.Add(item);
+                KonverteretListe.Add((item - _npj) / (5 * 0.000005 * 736.294));
             }
             lavListe();
             return RawList;
@@ -34,6 +39,7 @@ namespace LogikLayer
             }
         }
 
+        
         
     }
 }

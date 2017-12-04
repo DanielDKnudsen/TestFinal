@@ -46,6 +46,7 @@ namespace LogikLayer
             return NPJ.FortsætString();
         }
 
+        
         public void StartTråde()
         {
             Thread consumerThread = new Thread(_consumer.Run);

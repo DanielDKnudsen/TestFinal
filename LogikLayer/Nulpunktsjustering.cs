@@ -12,6 +12,7 @@ namespace LogikLayer
     {
         private IDataLayer DL;
         private string Fortsæt;
+        private double _npj;
 
         private List<double> Nulpunktsdata = new List<double>();
         public Nulpunktsjustering(IDataLayer dl)
@@ -25,13 +26,13 @@ namespace LogikLayer
             StandardAfvigelse sd = new StandardAfvigelse();
             if (sd.standardAfvigelse(Nulpunktsdata) <= 0.8)
             {
-                Fortsæt = "Nulpunktsjustering er foretaget. Værdien er " + Nulpunktsdata.Sum() / Nulpunktsdata.Count + ". " +
+                Fortsæt = "Nulpunktsjustering er foretaget. Værdien er " + NulpunktBeregnet() + ". " +
                        "Vil du fortsætte?";
             }
             else
             {
                 Fortsæt = "Nulpunktsjustering er foretaget. Der var stor usikkerhed i måling, værdien blev " +
-                       Nulpunktsdata.Sum() / Nulpunktsdata.Count + ". Vil du fortsætte?";
+                          NulpunktBeregnet() + ". Vil du fortsætte?";
             }
         }
 
@@ -42,7 +43,8 @@ namespace LogikLayer
 
         public double NulpunktBeregnet()
         {
-            return Nulpunktsdata.Sum() / Nulpunktsdata.Count;
+           _npj = Nulpunktsdata.Sum() / Nulpunktsdata.Count;
+            return _npj;
         }
     }
 }

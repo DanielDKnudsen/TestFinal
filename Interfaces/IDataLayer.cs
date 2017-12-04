@@ -16,5 +16,6 @@ namespace Interfaces
         void GemKalibrering(KalibreringDTO KalibDTO);
         void StartProducerTråd();
         void GemNPJ(double Nulpunkt);
+        double hentNPJ();
     }
 }
