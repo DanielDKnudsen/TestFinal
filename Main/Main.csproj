@@ -65,6 +65,10 @@
       <Project>{2a2f546c-a60f-41d0-bd4b-9daf05b68689}</Project>
       <Name>LogikLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ObserverPatternVol2\ObserverPatternVol2.csproj">
+      <Project>{9ab86efb-f1f8-422c-bf24-3df226dc5bc9}</Project>
+      <Name>ObserverPatternVol2</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Projekt_v1.1\PresentationLayer.csproj">
       <Project>{dc76af0a-d5c6-4562-b3d7-4de682af5977}</Project>
       <Name>PresentationLayer</Name>

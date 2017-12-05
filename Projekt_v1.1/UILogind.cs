@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Interfaces;
 using DTO;
-using ObserverPattern;
+using ObserverPatternVol2;
 
 namespace Projekt_v1._1
 {

@@ -11,7 +11,7 @@ using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
 using Interfaces;
 using DTO;
-using ObserverPattern;
+using ObserverPatternVol2;
 
 namespace Projekt_v1._1
 {

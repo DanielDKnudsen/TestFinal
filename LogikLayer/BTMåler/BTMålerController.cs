@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using DTO;
 using Interfaces;
 using System.Threading;
+using ObserverPatternVol2;
 
 
 namespace LogikLayer.BTMåler

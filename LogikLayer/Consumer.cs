@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using DTO;
 using Interfaces;
 using LogikLayer.BTMåler;
-using ObserverPattern;
+using ObserverPatternVol2;
 
 namespace LogikLayer
 {

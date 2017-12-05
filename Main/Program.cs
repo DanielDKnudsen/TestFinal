@@ -13,7 +13,7 @@ using LogikLayer.BTMåler;
 using PresentationLayer;
 using Projekt_v1._1;
 using DTO;
-using ObserverPattern;
+using ObserverPatternVol2;
 
 namespace Main
 {
@@ -27,6 +27,8 @@ namespace Main
         private static IFilter _ifilter;
         private static DataProducer _producer;
         private static DataContainer _dataContainer;
+        private static MålingContainer _målingContainer;
+        private static BTMålerController _BTcontroller;
 
         static void Main(string[] args)
         {

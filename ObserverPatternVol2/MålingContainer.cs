@@ -7,7 +7,7 @@ using DTO;
 
 namespace ObserverPatternVol2
 {
-    class MålingContainer : MålingContainerSubject
+    public class MålingContainer : MålingContainerSubject
     {
         public void Done(MålingDTO _mdto)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Interfaces;
 using Projekt_v1._1;
-using ObserverPattern;
+using ObserverPatternVol2;
 
 
 namespace PresentationLayer
