@@ -19,18 +19,20 @@ namespace Projekt_v1._1
     {
         private ILogikLayer LL;
         private DataContainer _dct;
-        
-        public UIKontor1(ILogikLayer ll,DataContainer DCT)
+        private MålingContainer _målingContainer;
+
+        public UIKontor1(ILogikLayer ll,DataContainer DCT, MålingContainer målingContainer)
         {
             InitializeComponent();
             LL = ll;
             _dct = DCT;
+            _målingContainer = målingContainer;
         }
 
         private void UIKontor_KnapLogud_Click(object sender, EventArgs e)
         {
             this.Close();
-            UILogind logind = new UILogind(LL,_dct);
+            UILogind logind = new UILogind(LL,_dct,_målingContainer);
             logind.Show();
         }
 
@@ -199,7 +201,7 @@ namespace Projekt_v1._1
         private void UIKontor_KnapStart_Click(object sender, EventArgs e)
         {
             
-            UIPatient pat = new UIPatient(UIKontor_TextBoxFornavn.Text + " " + UIKontor_TextBoxEfternavn.Text, UIKontor_Indlæggelsesdato.Value, LL,_dct);
+            UIPatient pat = new UIPatient(UIKontor_TextBoxFornavn.Text + " " + UIKontor_TextBoxEfternavn.Text, UIKontor_Indlæggelsesdato.Value, LL,_dct, _målingContainer);
             pat.Show();
         }
 

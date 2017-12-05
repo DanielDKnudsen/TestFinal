@@ -11,7 +11,6 @@ namespace LogikLayer
     {
         private double total;
         private List<double> Sidste2Punkter = new List<double>();
-        private double average;
 
         public DigFilter()
         {

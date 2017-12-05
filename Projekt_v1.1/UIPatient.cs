@@ -15,15 +15,15 @@ using ObserverPatternVol2;
 
 namespace Projekt_v1._1
 {
-    public partial class UIPatient : Form, IDataObserver, IFilterObserver
+    public partial class UIPatient : Form, IDataObserver, IFilterObserver, IMålingObserver
     {
         private ILogikLayer LL;
         private bool DigFilter;
         private string fortsæt;
         private DataContainer _dct;
+        private MålingContainer _målingContainer;
 
-
-        public UIPatient(string navn, DateTime tid, ILogikLayer ll, DataContainer DCT)
+        public UIPatient(string navn, DateTime tid, ILogikLayer ll, DataContainer DCT, MålingContainer målingContainer)
         {
             InitializeComponent();
             UIPatient_LabelPatientNavn.Text = navn;
@@ -31,6 +31,8 @@ namespace Projekt_v1._1
             LL = ll;
             _dct = DCT;
             _dct.Attach(this);
+            _målingContainer = målingContainer;
+            _målingContainer.Attach(this);
             opsætGraf();
         }
 
@@ -65,8 +67,6 @@ namespace Projekt_v1._1
 
         public void Update(Queue<double> filtreretKø)
         {
-            
-
             if (InvokeRequired)
             {
                 BeginInvoke(new Action(() => Update(filtreretKø)));
@@ -154,6 +154,20 @@ namespace Projekt_v1._1
         private void UIPatient_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void UpdateAnalyse(MålingDTO _mdto)
+        {
+            if (InvokeRequired)
+            {
+                BeginInvoke(new Action(() => UpdateAnalyse(_mdto)));
+            }
+            else
+            {
+                UIPatient_LabelMID.Text = Convert.ToString(_mdto.MiddelBT);
+                UIPatient_LabelPULS.Text = Convert.ToString(_mdto.Puls);
+                UIPatient_LabelSysDia.Text = Convert.ToString(_mdto.Sys) + "/" + Convert.ToString(_mdto.Dia);
+            }
         }
     }
 }

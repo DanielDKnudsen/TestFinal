@@ -14,6 +14,7 @@ namespace DataLayer
     {
         private DataProducer _producer;
         private XMLGemNulpunkt NPJ;
+        private HentNulpunktXML HentNPJ;
         private IDAQ IDaq;
 
 
@@ -22,6 +23,7 @@ namespace DataLayer
             _producer = producer;
             NPJ = new XMLGemNulpunkt();
             IDaq = new FakeDAQ();
+            HentNPJ = new HentNulpunktXML();
         }
 
         public void GemPatient(PatientDTO PDTO)
@@ -41,14 +43,7 @@ namespace DataLayer
 
         public double hentNPJ()
         {
-            string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\";
-
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filNavn + "Nulpunkt" + ".xml");
-            XmlNode node = doc.DocumentElement.SelectSingleNode("Nulpunkt.xml");
-            string værdi = node.InnerText;
-
-            return Convert.ToDouble(værdi);
+            return HentNPJ.HentNPJ();
         }
 
         public void StartProducerTråd()

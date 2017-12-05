@@ -48,7 +48,7 @@ namespace Main
 
             DL = new DataController(_producer);
             LL = new LogikController(DL, _consumer,_dataContainer);
-            PL = new PresentationLayerController(LL,_dataContainer);
+            PL = new PresentationLayerController(LL,_dataContainer, _målingContainer);
             PL.startUpGUI();
         }
     }

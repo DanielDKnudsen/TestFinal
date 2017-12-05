@@ -15,11 +15,13 @@ namespace PresentationLayer
     {
         private ILogikLayer LL;
         private DataContainer _dct;
+        private MålingContainer _målingContainer;
 
-        public PresentationLayerController(ILogikLayer ll, DataContainer DCT)
+        public PresentationLayerController(ILogikLayer ll, DataContainer DCT, MålingContainer målingContainer)
         {
             LL = ll;
             _dct = DCT;
+            _målingContainer = målingContainer;
         }
 
 
@@ -28,7 +30,7 @@ namespace PresentationLayer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.DoEvents();
-            Application.Run(new UILogind(LL,_dct));
+            Application.Run(new UILogind(LL,_dct,_målingContainer));
         }
     }
 }

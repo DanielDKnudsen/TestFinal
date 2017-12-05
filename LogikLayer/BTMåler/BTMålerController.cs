@@ -17,6 +17,8 @@ namespace LogikLayer.BTMåler
         public bool PatientMåles { get; set; }
         private MålingContainer _målingContainer;
         private Systole SD;
+        private MiddelBT mBT;
+        private Diastole DS;
 
         public BTMålerController(MålingContainer Målingcontainer)
         {
@@ -26,15 +28,18 @@ namespace LogikLayer.BTMåler
 
         public void StartTråde(List<double> ConvertedList)
         {
-            Systole SD = new Systole(ConvertedList);
+            SD = new Systole(ConvertedList, _målingContainer);
             Thread SysThread = new Thread(SD.BeregnSys);
             SysThread.Start();
             SD.objSys.Set();
 
-            MiddelBT mBT = new MiddelBT(ConvertedList);
+            mBT = new MiddelBT(ConvertedList, _målingContainer);
             Thread MidThread = new Thread(mBT.UdregnMiddelBT);
             MidThread.Start();
             mBT.objBT.Set();
+
+            DS = new Diastole(ConvertedList, _målingContainer);
+            DS.BeregnDiastole();
 
             SysThread.Join(1000);
             MidThread.Join(1000);

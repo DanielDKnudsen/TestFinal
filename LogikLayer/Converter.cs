@@ -39,6 +39,10 @@ namespace LogikLayer
             if (KonverteretListe.Count > 5000)
             {
                 _BTMålerController.StartTråde(KonverteretListe);
+                for (int i = 0; i < 1000; i++)
+                {
+                    KonverteretListe.RemoveAt(i);
+                }
             }
         }
 
