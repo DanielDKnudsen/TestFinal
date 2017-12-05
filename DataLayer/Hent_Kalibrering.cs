@@ -12,7 +12,7 @@ namespace DataLayer
 {
     public class Hent_Kalibrering
     {
-        private string filNavnDaniel = @"C:\Users\Daniel\sourcezXq  zQX\repos\TestFinal";
+        private string filNavnDaniel = @"C:\Users\Daniel\source\repos\TestFinal";
         private string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\";
 
         public List<double> HentKal()

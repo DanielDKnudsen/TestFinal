@@ -26,29 +26,41 @@ namespace LogikLayer
 
         public void BeregnSys()
         {
-            
+
             objSys.WaitOne();
 
             if (_data.Count > 5000)
             {
                 Grænseværdi = _data.Max() * 0.8;
+                List<double> SS = new List<double>();
                 List<double> Systoler = new List<double>();
+                List<double> tid = new List<double>();
                 double s = 0;
 
-                for (int i = 2; i < _data.Count-2; i++)
+                for (int i = 0; i < _data.Count-2; i++)
                 {
-                    if (_data[i] > Grænseværdi && _data[i + 1] < _data[i] && _data[i + 1] < Grænseværdi)
+                    if (_data[i] > Grænseværdi)
                     {
-                       Systoler.Add(s);
-                        i = i + 50;
+                        SS.Add(_data[i]);
+
+                        if (_data[i + 1] < Grænseværdi)
+                        {
+                            i++;
+                            Systoler.Add(SS.Max());
+                            tid.Add(SS.IndexOf(SS.Max()) * 0.001);
+                            SS.Clear();
+                        }
                     }
-                    s += 0.001;
+
                 }
 
-                P = new Puls(Systoler, _målingContainer);
+
+
+
+                P = new Puls(tid, _målingContainer);
                 P.PulsBeregning();
 
-                _målingContainer.setSys(Convert.ToInt32(_data.Max()));
+                _målingContainer.setSys(Convert.ToInt32(Systoler[Systoler.Count - 1]));
             }
         }
     }
