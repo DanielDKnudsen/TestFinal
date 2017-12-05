@@ -21,8 +21,10 @@ namespace DataLayer
             doc.Load(filNavnDaniel + "Kalibrering" + ".xml");
 
             byte[] KalibBytes = Convert.FromBase64String(Convert.ToString(doc.DocumentElement.SelectSingleNode("/Kalibrering/Dato/Brugernavn/Kalibreringsdata")));
-            
-            return new List<double>();
+
+
+
+            return ConvertToList(KalibBytes);
         }
 
         public void GemXML(KalibreringDTO kalibreringDTO)
@@ -46,14 +48,14 @@ namespace DataLayer
             xWriter.Close();
         }
 
-        private byte[] ConvertToBinary(List<double> data)
+        private List<double> ConvertToList(byte[] Byte)
         {
-            var binformatter = new BinaryFormatter();
-            var mStream = new MemoryStream();
-
-            binformatter.Serialize(mStream, data);
-
-            return mStream.ToArray();
+            List<double> list = new List<double>();
+            foreach (var item in Byte)       
+            {
+                list.Add(item);
+            }
+            return list;
         }
     }
 }
