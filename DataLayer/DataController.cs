@@ -16,6 +16,7 @@ namespace DataLayer
         private XMLGemNulpunkt NPJ;
         private HentNulpunktXML HentNPJ;
         private IDAQ IDaq;
+        private int t = 0;
 
 
         public DataController(DataProducer producer)
