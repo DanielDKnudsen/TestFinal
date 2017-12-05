@@ -14,6 +14,7 @@ namespace LogikLayer
         private string Fortsæt;
         private double _npj;
 
+
         private List<double> Nulpunktsdata = new List<double>();
         public Nulpunktsjustering(IDataLayer dl)
         {

@@ -103,5 +103,11 @@ namespace LogikLayer
             DL.GemPatient(PDTO);
         }
 
+        public List<double> kalibliste()
+        {
+            return kalib.TegnKalibGraf();
+            
+        }
+
     }
 }

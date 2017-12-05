@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DTO;
 using Interfaces;
 using ObserverPatternVol2;
+using PresentationLayer;
 
 namespace Projekt_v1._1
 {
@@ -18,7 +19,7 @@ namespace Projekt_v1._1
         private ILogikLayer LL;
         private string _brugernavn;
         private DataContainer _dct;
-
+        private string fortsæt;
         public UIMed(ILogikLayer ll, string brugernavn,DataContainer DCT)
         {
             InitializeComponent();
@@ -45,6 +46,7 @@ namespace Projekt_v1._1
             {
                 while (gentag10)
                 {
+                    bool NO = true;
                     MessageBox.Show(
                         "Tilslut transducer til 10mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 10 mmHg.");
 
@@ -56,45 +58,87 @@ namespace Projekt_v1._1
                     }
                     else
                     {
-                        DialogResult diares = MessageBox.Show("Værdien for målingen er udenfor grænsen - Vil du godkende værdien og fortsætte kalibrering så tryk 'YES'", "Værdier udenfor grænsen", MessageBoxButtons.YesNo);
-                        if (diares == DialogResult.Yes)
+                        while (NO == true)
                         {
-                            gentag10 = false;
-                            LL.setKali(mmHg);
-                        }
-                        else
-                        {
-                            gentag10 = true;
+                            DialogResult diares = MessageBox.Show("Værdien for målingen er udenfor grænsen - Vil du godkende værdien og fortsætte kalibrering så tryk 'YES'", "Værdier udenfor grænsen", MessageBoxButtons.YesNo);
+                            if (diares == DialogResult.Yes)
+                            {
+                                gentag10 = false;
+                                LL.setKali(mmHg);
+                                NO = false;
+                            }
+                            else
+                            {
+                                DialogResult prøvigen = MessageBox.Show("Vil du prøve igen?", "Værdier udenfor grænsen", MessageBoxButtons.YesNo);
+                                if (prøvigen == DialogResult.Yes)
+                                {
+                                    gentag10 = true;
+                                    LL.setKali(mmHg);
+                                    NO = false;
+                                }
+                                if (prøvigen == DialogResult.No)
+                                {
+                                    gentag10 = false;
+                                    gentag50 = false;
+                                    gentag100 = false;
+                                    i = 2;
+                                    NO = false;
+                                }
+                            }
                         }
                     }
                 }
                 while (gentag50)
                 {
+                    bool NO = true;
                     MessageBox.Show(
                         "Tilslut transducer til 50mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 50 mmHg.");
 
                     if (LL.StartKalibrering(mmHg))
                     {
-                        MessageBox.Show("Måling blev foretaget korrekt. Tilslut transducer til 50mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 100 mmHg");
+                        MessageBox.Show(
+                            "Måling blev foretaget korrekt. Tilslut transducer til 50mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 100 mmHg");
                         gentag50 = false;
                         LL.setKali(mmHg);
                     }
                     else
                     {
-                        DialogResult diares = MessageBox.Show("Værdien for målingen er udenfor grænsen - Vil du godkende værdien og fortsætte kalibrering så tryk 'YES'", "Værdier udenfor grænsen", MessageBoxButtons.YesNo);
-                        if (diares == DialogResult.Yes)
+                        while (NO == true)
                         {
-                            gentag50 = false;
-                            LL.setKali(mmHg);
-                        }
-                        else
-                        {
-                            gentag50 = true;
+                            DialogResult diares = MessageBox.Show(
+                                "Værdien for målingen er udenfor grænsen - Vil du godkende værdien og fortsætte kalibrering så tryk 'YES'",
+                                "Værdier udenfor grænsen", MessageBoxButtons.YesNo);
+                            if (diares == DialogResult.Yes)
+                            {
+                                gentag50 = false;
+                                LL.setKali(mmHg);
+                                NO = false;
+                            }
+                            else
+                            {
+                                DialogResult prøvigen = MessageBox.Show("Vil du prøve igen?", "Værdier udenfor grænsen",
+                                    MessageBoxButtons.YesNo);
+                                if (prøvigen == DialogResult.Yes)
+                                {
+                                    gentag50 = true;
+                                    LL.setKali(mmHg);
+                                    NO = false;
+                                }
+                                if (prøvigen == DialogResult.No)
+                                {
+                                    gentag10 = false;
+                                    gentag50 = false;
+                                    gentag100 = false;
+                                    i = 2;
+                                    NO = false;
+                                }
+                            }
                         }
                     }
                 }
                 while (gentag100)
                 {
+                    bool NO = true;
                     MessageBox.Show(
                         "Tilslut transducer til 100mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 100 mmHg.");
 
@@ -106,21 +150,36 @@ namespace Projekt_v1._1
                     }
                     else
                     {
-                        DialogResult diares = MessageBox.Show("Værdien for målingen er udenfor grænsen - Vil du godkende værdien og fortsætte kalibrering så tryk 'YES'", "Værdier udenfor grænsen", MessageBoxButtons.YesNo);
-                        if (diares == DialogResult.Yes)
+                        while (NO == true)
                         {
-                            gentag100 = false;
-                            LL.setKali(mmHg);
-                            if (i == 1)
+                            DialogResult diares = MessageBox.Show(
+                                "Værdien for målingen er udenfor grænsen - Vil du godkende værdien og fortsætte kalibrering så tryk 'YES'",
+                                "Værdier udenfor grænsen", MessageBoxButtons.YesNo);
+                            if (diares == DialogResult.Yes)
                             {
-                                KalibreringDTO kalib = new KalibreringDTO();
-                                kalib.Brugernavn = _brugernavn;
-                                LL.GemKalibrering(kalib);
+                                gentag100 = false;
+                                LL.setKali(mmHg);
+                                NO = false;
                             }
-                        }
-                        else
-                        {
-                            gentag100 = true;
+                            else
+                            {
+                                DialogResult prøvigen = MessageBox.Show("Vil du prøve igen?", "Værdier udenfor grænsen",
+                                    MessageBoxButtons.YesNo);
+                                if (prøvigen == DialogResult.Yes)
+                                {
+                                    gentag100 = true;
+                                    LL.setKali(mmHg);
+                                    NO = false;
+                                }
+                                if (prøvigen == DialogResult.No)
+                                {
+                                    gentag10 = false;
+                                    gentag50 = false;
+                                    gentag100 = false;
+                                    i = 2;
+                                    NO = false;
+                                }
+                            }
                         }
                     }
                 }
@@ -129,7 +188,44 @@ namespace Projekt_v1._1
 
         private void UIMed_buttonStartNulpunktsjustering_Click(object sender, EventArgs e)
         {
+            NulpunktsMED();
+        }
+        public void NulpunktsMED()
+        {
+            bool NO = true;
+            DialogResult foretages = MessageBox.Show("Der foretages nu nulpunktsjustering");
 
+            this.fortsæt = LL.NulpunktStart();
+            DialogResult godkendNulpunkt = MessageBox.Show(fortsæt, "Vil du fortsætte?", MessageBoxButtons.YesNo);
+            if (godkendNulpunkt == DialogResult.Yes)
+            {
+                LL.SetNPJ();
+            }
+            if (godkendNulpunkt == DialogResult.No)
+            {
+                DialogResult PrøvIgen = MessageBox.Show("Vil du prøve igen?", "Prøv igen?", MessageBoxButtons.YesNo);
+                while (NO)
+                {
+                    if (PrøvIgen == DialogResult.Yes)
+                    {
+                        NulpunktsMED();
+                        NO = false;
+                    }
+                    if (PrøvIgen == DialogResult.No)
+                    {
+                        NO = false;
+                    }
+                }
+            }
+            
+        }
+
+        private void UIMed_Knap_VisGraf_Click(object sender, EventArgs e)
+        {
+            
+            KalibreringGraf K1 = new KalibreringGraf(LL.kalibliste());
+            
+            K1.Show();
         }
     }
 }
