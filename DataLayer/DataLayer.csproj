@@ -49,6 +49,7 @@
     <Compile Include="Database\GemIDatabase.cs" />
     <Compile Include="DataProducer.cs" />
     <Compile Include="FakeDAQ.cs" />
+    <Compile Include="HentNulpunktXML.cs" />
     <Compile Include="Hent_Kalibrering.cs" />
     <Compile Include="NI_DAQVoltage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

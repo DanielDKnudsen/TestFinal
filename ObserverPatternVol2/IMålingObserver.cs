@@ -9,6 +9,6 @@ namespace ObserverPatternVol2
 {
     public interface IMålingObserver
     {
-        void Update(MålingDTO _mdto);
+        void UpdateAnalyse(MålingDTO _mdto);
     }
 }

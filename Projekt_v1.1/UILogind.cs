@@ -17,12 +17,14 @@ namespace Projekt_v1._1
     {
         private ILogikLayer LL;
         private DataContainer _dct;
+        private MålingContainer _målingContainer;
 
-        public UILogind(ILogikLayer ll,DataContainer DCT)
+        public UILogind(ILogikLayer ll,DataContainer DCT, MålingContainer målingContainer)
         {
             InitializeComponent();
             LL= ll;
             _dct = DCT;
+            _målingContainer = målingContainer;
         }
 
         private void UILogind_buttonLogind_Click(object sender, EventArgs e)
@@ -43,13 +45,13 @@ namespace Projekt_v1._1
             
             if (værdi == 1)
             {
-                UIKontor1 kontor = new UIKontor1(LL,_dct);
+                UIKontor1 kontor = new UIKontor1(LL,_dct,_målingContainer);
                 this.Hide();
                 kontor.Show();
             }
             if (værdi == 2)
             {
-                UIMed med = new UIMed(LL, UILogind_textBoxBrugernavn.Text,_dct);
+                UIMed med = new UIMed(LL, UILogind_textBoxBrugernavn.Text,_dct,_målingContainer);
                 this.Hide();
                 med.Show();
                 

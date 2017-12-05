@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using DTO;
 using LogikLayer.BTMåler;
+using ObserverPatternVol2;
 
 namespace LogikLayer
 {
@@ -14,14 +15,18 @@ namespace LogikLayer
         public AutoResetEvent objSys = new AutoResetEvent(false);
         public double Grænseværdi { get; set; }
         private List<double> _data;
+        private MålingContainer _målingContainer;
+        private Puls P;
 
-        public Systole(List<double> convertedList)
+        public Systole(List<double> convertedList, MålingContainer målingContainer)
         {
             _data = convertedList;
+            _målingContainer = målingContainer;
         }
 
         public void BeregnSys()
         {
+            
             objSys.WaitOne();
 
             if (_data.Count > 5000)
@@ -38,8 +43,11 @@ namespace LogikLayer
                     }
                     s += 0.001;
                 }
-                Puls p = new Puls();
-                p.PulsBeregning(Systoler);
+
+                P = new Puls(Systoler, _målingContainer);
+                P.PulsBeregning();
+
+                _målingContainer.setSys(Convert.ToInt32(_data.Max()));
             }
         }
     }

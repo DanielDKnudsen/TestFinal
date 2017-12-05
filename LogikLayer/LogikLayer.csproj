@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BTMåler\BTMålerController.cs" />
+    <Compile Include="BTMåler\Diastole.cs" />
     <Compile Include="BTMåler\MiddelBT.cs" />
     <Compile Include="Consumer.cs" />
     <Compile Include="Converter.cs" />

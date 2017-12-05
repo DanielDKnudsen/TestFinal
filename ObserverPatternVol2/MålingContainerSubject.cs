@@ -24,7 +24,7 @@ namespace ObserverPatternVol2
         {
             foreach (var observer in _observers)
             {
-                observer.Update(_mdto);
+                observer.UpdateAnalyse(_mdto);
             }
         }
     }

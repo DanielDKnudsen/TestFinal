@@ -19,19 +19,22 @@ namespace Projekt_v1._1
         private ILogikLayer LL;
         private string _brugernavn;
         private DataContainer _dct;
+        private MålingContainer _målingContainer;
+
         private string fortsæt;
-        public UIMed(ILogikLayer ll, string brugernavn,DataContainer DCT)
+        public UIMed(ILogikLayer ll, string brugernavn,DataContainer DCT, MålingContainer målingContainer)
         {
             InitializeComponent();
             LL = ll;
             _brugernavn = brugernavn;
             _dct = DCT;
+            _målingContainer = målingContainer;
         }
 
         private void UIMed_buttonLogud_Click(object sender, EventArgs e)
         {
             this.Close();
-            UILogind logind = new UILogind(LL,_dct);
+            UILogind logind = new UILogind(LL,_dct,_målingContainer);
             logind.Show();
         }
 

@@ -13,10 +13,11 @@ namespace DataLayer
     public class XMLGemNulpunkt
     {
         private string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\Nulpunkt.xml";
+        private string filNavnDaniel = @"C:\Users\Daniel\source\repos\TestFinal.xml";
         public void GemXMLNulpunkt(double Nulpunkt)
         {
             string nulpunkt = Convert.ToString(Nulpunkt);
-            XmlTextWriter xWriter = new XmlTextWriter(filNavn, Encoding.UTF8);
+            XmlTextWriter xWriter = new XmlTextWriter(filNavnDaniel, Encoding.UTF8);
             xWriter.Formatting = Formatting.Indented;
             xWriter.WriteStartElement("Nulpunkt");
             xWriter.WriteStartElement("Dato");
