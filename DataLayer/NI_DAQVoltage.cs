@@ -74,7 +74,7 @@ namespace DataLayer
             rangeMinimumVolt = -1;
             rangeMaximumVolt = 1;
             samplesPerChannel = 3600;
-            deviceName = "Dev3/ai0";
+            deviceName = "Dev2/ai0";
             seqTimeOut = -1;
 
         }

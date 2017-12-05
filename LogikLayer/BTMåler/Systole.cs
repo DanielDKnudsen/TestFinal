@@ -40,6 +40,7 @@ namespace LogikLayer
                     if (_data[i] > Grænseværdi && _data[i + 1] < _data[i] && _data[i + 1] < Grænseværdi)
                     {
                        Systoler.Add(s);
+                        i = i + 50;
                     }
                     s += 0.001;
                 }

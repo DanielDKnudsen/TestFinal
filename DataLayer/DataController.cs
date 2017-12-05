@@ -22,7 +22,7 @@ namespace DataLayer
         {
             _producer = producer;
             NPJ = new XMLGemNulpunkt();
-            IDaq = new FakeDAQ();
+            IDaq = new DAQ(50);
             HentNPJ = new HentNulpunktXML();
         }
 
@@ -55,7 +55,7 @@ namespace DataLayer
         public List<double> LavKalibrering(int mmHg)
         {
             Hent_Kalibrering hentKalib = new Hent_Kalibrering();
-            return hentKalib.LavKalibrering(mmHg);
+            return hentKalib.HentKal();
         }
 
         public MålingDTO startMålingPrøve()
