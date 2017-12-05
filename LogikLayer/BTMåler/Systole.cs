@@ -47,15 +47,11 @@ namespace LogikLayer
                         {
                             i++;
                             Systoler.Add(SS.Max());
-                            tid.Add(SS.IndexOf(SS.Max()) * 0.001);
+                            tid.Add(_data.IndexOf(SS.Max()) * 0.001);
                             SS.Clear();
                         }
                     }
-
                 }
-
-
-
 
                 P = new Puls(tid, _målingContainer);
                 P.PulsBeregning();
