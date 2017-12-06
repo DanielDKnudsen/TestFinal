@@ -26,24 +26,22 @@ namespace LogikLayer
 
         public void BeregnSys()
         {
-
             objSys.WaitOne();
 
             if (_data.Count > 5000)
             {
-                Grænseværdi = _data.Max() * 0.8;
                 List<double> SS = new List<double>();
+                Grænseværdi = _data.Max() * 0.7;
                 List<double> Systoler = new List<double>();
                 List<double> tid = new List<double>();
-                double s = 0;
 
-                for (int i = 0; i < _data.Count-2; i++)
+                for (int i = 0; i < _data.Count-22; i++)
                 {
                     if (_data[i] > Grænseværdi)
                     {
                         SS.Add(_data[i]);
 
-                        if (_data[i + 1] < Grænseværdi)
+                        if (_data[i + 20] < Grænseværdi)
                         {
                             i++;
                             Systoler.Add(SS.Max());
