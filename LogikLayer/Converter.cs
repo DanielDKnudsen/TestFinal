@@ -39,10 +39,7 @@ namespace LogikLayer
             if (KonverteretListe.Count > 5000)
             {
                 FixListe();
-                for (int i = 0; i < 1000; i++)
-                {
-                    KonverteretListe.RemoveAt(i);
-                }
+                KonverteretListe.RemoveRange(0, 5000);
             }
         }
 
