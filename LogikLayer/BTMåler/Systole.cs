@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -41,16 +42,16 @@ namespace LogikLayer
                     {
                         SS.Add(_data[i]);
 
-                        if (_data[i + 20] < Grænseværdi)
+                        if (_data[i + 10] < Grænseværdi)
                         {
-                            i++;
+                            i = i+10 ;
                             Systoler.Add(SS.Max());
-                            tid.Add(_data.IndexOf(SS.Max()) * 0.001);
+                            tid.Add((i-(SS.Count*0.5)) * 0.001);
                             SS.Clear();
+                            
                         }
                     }
                 }
-
                 P = new Puls(tid, _målingContainer);
                 P.PulsBeregning();
 
