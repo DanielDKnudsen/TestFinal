@@ -40,9 +40,6 @@ namespace LogikLayer.BTMåler
 
             DS = new Diastole(ConvertedList, _målingContainer);
             DS.BeregnDiastole();
-
-            SysThread.Join(1000);
-            MidThread.Join(1000);
         }
     }
 }
