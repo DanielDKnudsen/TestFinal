@@ -25,7 +25,7 @@ namespace LogikLayer
             foreach (var item in konverteretListe)
             {
                 filtreretKø.Enqueue(item);
-                if (filtreretKø.Count > 300)
+                if (filtreretKø.Count > 100)
                 {
                     filtreretKø.Dequeue();
                 }
@@ -36,7 +36,7 @@ namespace LogikLayer
         
         private void lav0Kø()
         {
-            for (int i = 0; i < 300; i++)
+            for (int i = 0; i < 100; i++)
             {
                 filtreretKø.Enqueue(1);
             }

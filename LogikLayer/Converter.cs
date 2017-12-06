@@ -10,7 +10,7 @@ namespace LogikLayer
 {
     public class Converter
     {
-        public List<double> KonverteretListe = new List<double>();
+        private List<double> KonverteretListe = new List<double>();
         private IDataLayer idal;
         private Filter _filter;
         private LogikController LC;
@@ -38,7 +38,7 @@ namespace LogikLayer
         {
             if (KonverteretListe.Count > 5000)
             {
-                _BTMålerController.StartTråde(KonverteretListe);
+                FixListe();
                 for (int i = 0; i < 1000; i++)
                 {
                     KonverteretListe.RemoveAt(i);
@@ -49,6 +49,16 @@ namespace LogikLayer
         public void SetNPJ(double NPJ)
         {
             _npj = NPJ;
+        }
+
+        private void FixListe()
+        {
+            List<double> konverteretTrådliste = new List<double>();
+            foreach (var item in KonverteretListe)
+            {
+                konverteretTrådliste.Add(item);
+            }
+            _BTMålerController.StartTråde(konverteretTrådliste);
         }
     }
 }

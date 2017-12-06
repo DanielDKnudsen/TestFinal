@@ -40,6 +40,7 @@ namespace LogikLayer.BTMåler
 
             DS = new Diastole(ConvertedList, _målingContainer);
             DS.BeregnDiastole();
+            
         }
     }
 }
