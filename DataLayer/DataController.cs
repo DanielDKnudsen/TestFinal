@@ -22,7 +22,7 @@ namespace DataLayer
         {
             _producer = producer;
             NPJ = new XMLGemNulpunkt();
-            IDaq = new FakeDAQ();
+            IDaq = new DAQ(50);
             HentNPJ = new HentNulpunktXML();
         }
 
