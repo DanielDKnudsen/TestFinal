@@ -16,14 +16,13 @@ namespace DataLayer
         private XMLGemNulpunkt NPJ;
         private HentNulpunktXML HentNPJ;
         private IDAQ IDaq;
-        private int t = 0;
 
 
         public DataController(DataProducer producer)
         {
             _producer = producer;
             NPJ = new XMLGemNulpunkt();
-            IDaq = new FakeDAQ();
+            IDaq = new DAQ(50);
             HentNPJ = new HentNulpunktXML();
         }
 

@@ -35,7 +35,6 @@ namespace LogikLayer
                 List<double> SS = new List<double>();
                 List<double> Systoler = new List<double>();
                 List<double> tid = new List<double>();
-                double s = 0;
 
                 for (int i = 0; i < _data.Count-2; i++)
                 {
