@@ -12,6 +12,7 @@ namespace DataLayer
 {
     public class XMLGemKalibrering
     {
+        private string filNavnDaniel = @"C:\Users\Daniel\source\repos\TestFinal\Kalibrering.xml";
         private string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\Kalibrering.xml";
         public void GemXML(KalibreringDTO kalibreringDTO)
         {

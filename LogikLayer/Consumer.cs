@@ -21,6 +21,7 @@ namespace LogikLayer
         private Filter filter;
         public IFilter Ifilter { get; set; }
         public DataContainer _dct;
+        private List<double> test = new List<double>();
         public Consumer(ConcurrentQueue<Bufferblock> dataQueue, IFilter iFilter,DataContainer DCT, BTMålerController BTMålerController)
         {
             Ifilter = iFilter;
@@ -43,6 +44,17 @@ namespace LogikLayer
                 M1.Data = B1.Datalist;
                 konverteretListe = convert.ConvertList(M1.Data);
                 filter.FiltrerListe(Ifilter.Filtrer(konverteretListe));
+
+                //for (int i = 0; i < B1.Datalist.Count; i++)
+                //{
+                //    test.Add(B1.Datalist[i]);
+                //}
+
+                //if (test.Count > 5000)
+                //{
+                //    int t = 2;
+                //}
+
             }
         }
 

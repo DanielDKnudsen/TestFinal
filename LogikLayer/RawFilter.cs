@@ -32,10 +32,10 @@ namespace LogikLayer
                 RawListe.Add(total);
             }
 
-            if (listeliste.Count > 4999)
-            {
-                int t = 4;
-            }
+            //if (listeliste.Count > 4999)
+            //{
+            //    int t = 4;
+            //}
 
             return RawListe;
         }
