@@ -32,11 +32,11 @@ namespace LogikLayer
             if (_data.Count > 5000)
             {
                 List<double> SS = new List<double>();
-                Grænseværdi = _data.Max() * 0.7;
+                Grænseværdi = _data.Max() * 0.8;
                 List<double> Systoler = new List<double>();
                 List<double> tid = new List<double>();
 
-                for (int i = 0; i < _data.Count-22; i++)
+                for (int i = 0; i < _data.Count-12; i++)
                 {
                     if (_data[i] > Grænseværdi)
                     {
@@ -48,16 +48,13 @@ namespace LogikLayer
                             Systoler.Add(SS.Max());
                             tid.Add((i-(SS.Count*0.5)) * 0.001);
                             SS.Clear();
-                            
                         }
                     }
                 }
                 P = new Puls(tid, _målingContainer);
                 P.PulsBeregning();
-               
-
                 _målingContainer.setSys(Convert.ToInt32(Systoler[Systoler.Count - 1]));
-                Systoler.Clear();
+                
             }
         }
     }
