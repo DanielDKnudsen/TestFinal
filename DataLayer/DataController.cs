@@ -15,6 +15,7 @@ namespace DataLayer
         private DataProducer _producer;
         private XMLGemNulpunkt NPJ;
         private HentNulpunktXML HentNPJ;
+        private XMLGemKalibrering Kalib;
         private IDAQ IDaq;
 
 
@@ -33,7 +34,7 @@ namespace DataLayer
 
         public void GemKalibrering(KalibreringDTO KalibDTO)
         {
-            
+            Kalib.GemXML(KalibDTO);
         }
 
         public void GemNPJ(double Nulpunkt)
