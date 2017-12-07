@@ -54,8 +54,10 @@ namespace LogikLayer
                 }
                 P = new Puls(tid, _målingContainer);
                 P.PulsBeregning();
+               
 
                 _målingContainer.setSys(Convert.ToInt32(Systoler[Systoler.Count - 1]));
+                Systoler.Clear();
             }
         }
     }
