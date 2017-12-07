@@ -43,8 +43,6 @@ namespace LogikLayer
                 M1.Data = B1.Datalist;
                 konverteretListe = convert.ConvertList(M1.Data);
                 filter.FiltrerListe(Ifilter.Filtrer(konverteretListe));
-                
-
             }
         }
 

@@ -28,7 +28,7 @@ namespace LogikLayer
         {
             foreach (var item in RawList)
             {
-                KonverteretListe.Add((item - _npj) / (5 * 0.000005 * 736.294));
+                KonverteretListe.Add((item -_npj) / (5 * 0.000005 * 736.294));
             }
             lavListe();
             return RawList;
@@ -39,7 +39,7 @@ namespace LogikLayer
             if (KonverteretListe.Count > 5000)
             {
                 FixListe();
-                KonverteretListe.RemoveRange(0, 5000);
+                KonverteretListe.RemoveRange(0, 1000);
             }
         }
 

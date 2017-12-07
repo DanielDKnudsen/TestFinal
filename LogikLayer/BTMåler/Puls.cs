@@ -22,7 +22,7 @@ namespace LogikLayer
         {
             double tidIalt = 0;
             tidIalt = systoler[systoler.Count-1] - systoler[0];
-            double puls = ((systoler.Count-2) / tidIalt) * 60;
+            double puls = ((systoler.Count-1) / tidIalt) * 60;
             _målingContainer.setPuls(Convert.ToInt32(puls));
         }
     }
