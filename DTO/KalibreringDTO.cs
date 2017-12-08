@@ -8,7 +8,7 @@ namespace DTO
 {
     public class KalibreringDTO
     {
-        public List<double> KalibrerDoubles { get; set; }
+        public List<double> KalibrerDoubles;
         public string Brugernavn { get; set; }
     }
 }

@@ -52,8 +52,8 @@ namespace Projekt_v1._1
                     bool NO = true;
                     MessageBox.Show(
                         "Tilslut transducer til 10mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 10 mmHg.");
-
-                    if (LL.StartKalibrering(mmHg))
+                    gentag10 = LL.StartKalibrering(mmHg);
+                    if (gentag10)
                     {
                         MessageBox.Show("Måling blev foretaget korrekt. Tilslut transducer til 50mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 50 mmHg");
                         gentag10 = false;
@@ -93,11 +93,12 @@ namespace Projekt_v1._1
                 }
                 while (gentag50)
                 {
+                    mmHg = 50;
                     bool NO = true;
                     MessageBox.Show(
                         "Tilslut transducer til 50mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 50 mmHg.");
-
-                    if (LL.StartKalibrering(mmHg))
+                    gentag50 = LL.StartKalibrering(mmHg);
+                    if (gentag50)
                     {
                         MessageBox.Show(
                             "Måling blev foretaget korrekt. Tilslut transducer til 50mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 100 mmHg");
@@ -141,11 +142,13 @@ namespace Projekt_v1._1
                 }
                 while (gentag100)
                 {
+                    mmHg = 100;
                     bool NO = true;
                     MessageBox.Show(
                         "Tilslut transducer til 100mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 100 mmHg.");
 
-                    if (LL.StartKalibrering(mmHg))
+                    gentag100 = LL.StartKalibrering(mmHg);
+                    if (gentag100)
                     {
                         MessageBox.Show("Måling blev foretaget korrekt. Tilslut transducer til 50mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 100 mmHg");
                         gentag100 = false;
