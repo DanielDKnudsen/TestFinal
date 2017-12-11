@@ -57,14 +57,9 @@ namespace LogikLayer
             _npj = NPJ;
         }
 
-        public void HentKalib(KalibreringDTO kDTO)
+        public double GetSlope(KalibreringDTO KalibDTO)
         {
-            _UdKal.GetKalibrering(kDTO);
-        }
-
-        public double GetSlope()
-        {
-            return _UdKal.Slope();
+            return _UdKal.Slope(KalibDTO);
         }
 
         public void SetKalib(double Kalib)

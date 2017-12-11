@@ -59,15 +59,11 @@ namespace LogikLayer
         {
             convert.SetKalib(Kalib);
         }
+        
 
-        public void HentKalib(KalibreringDTO kDTO)
+        public double GetSlope(KalibreringDTO KalibDTO)
         {
-            convert.HentKalib(kDTO);
-        }
-
-        public double GetSlope()
-        {
-            return convert.GetSlope();
+            return convert.GetSlope(KalibDTO);
         }
     }
 }
