@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,8 +23,15 @@ namespace Projekt_v1._1
         private string fortsæt;
         private DataContainer _dct;
         private MålingContainer _målingContainer;
+        private int _DiaMax = 0;
+        private int _DiaMin = 0;
+        private int _SysMax = 0;
+        private int _SysMin = 0;
 
-        public UIPatient(string navn, DateTime tid, ILogikLayer ll, DataContainer DCT, MålingContainer målingContainer)
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\mikke\Documents\GitHub\TestFinal\Alarm.wav");
+        Stopwatch STP =  new Stopwatch();
+
+        public UIPatient(string navn, DateTime tid, ILogikLayer ll, DataContainer DCT, MålingContainer målingContainer, string DiaMax,string DiaMin, string SysMax,string SysMin)
         {
             InitializeComponent();
             UIPatient_LabelPatientNavn.Text = navn;
@@ -34,6 +42,11 @@ namespace Projekt_v1._1
             _målingContainer = målingContainer;
             _målingContainer.Attach(this);
             opsætGraf();
+            _DiaMax = Convert.ToInt16(DiaMax);
+            _DiaMin = Convert.ToInt16(DiaMin);
+            _SysMax = Convert.ToInt16(SysMax);
+            _SysMin = Convert.ToInt16(SysMin);
+
         }
 
         private void opsætGraf()
@@ -135,6 +148,7 @@ namespace Projekt_v1._1
             {
                 filter = "DigFilter";
                 UIPatient_KnapDigital.BackColor = Color.Yellow;
+                UIPatient_KnapDigital.ForeColor = Color.Black;
             }
             if (DigFilter == true)
             {
@@ -164,10 +178,39 @@ namespace Projekt_v1._1
             }
             else
             {
+                if (VScroll)
+                {
+                    
+                }
+                Alarm(_mdto);
+
                 UIPatient_LabelMID.Text = Convert.ToString(_mdto.MiddelBT);
                 UIPatient_LabelPULS.Text = Convert.ToString(_mdto.Puls);
                 UIPatient_LabelSysDia.Text = Convert.ToString(_mdto.Sys) + "/" + Convert.ToString(_mdto.Dia);
             }
         }
+
+        public void Alarm(MålingDTO mDTO)
+        {
+            
+            if (mDTO.Sys > _SysMax || mDTO.Sys < _SysMin)
+            {
+                player.PlayLooping();
+                UIPatient_KnapStopAlarm.Enabled = true;
+            }
+            if (mDTO.Dia > _DiaMax || mDTO.Sys < _DiaMin)
+            {
+                player.PlayLooping();
+                UIPatient_KnapStopAlarm.Enabled = true;
+            }
+        }
+
+        private void UIPatient_KnapStopAlarm_Click(object sender, EventArgs e)
+        {
+            player.Stop();
+            STP.Start();
+            
+        }
     }
+
 }

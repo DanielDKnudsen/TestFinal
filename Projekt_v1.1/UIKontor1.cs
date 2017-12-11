@@ -201,7 +201,7 @@ namespace Projekt_v1._1
         private void UIKontor_KnapStart_Click(object sender, EventArgs e)
         {
             
-            UIPatient pat = new UIPatient(UIKontor_TextBoxFornavn.Text + " " + UIKontor_TextBoxEfternavn.Text, UIKontor_Indlæggelsesdato.Value, LL,_dct, _målingContainer);
+            UIPatient pat = new UIPatient(UIKontor_TextBoxFornavn.Text + " " + UIKontor_TextBoxEfternavn.Text, UIKontor_Indlæggelsesdato.Value, LL,_dct, _målingContainer,UIKontor_TextBoxDiaMax.Text,UIKontor_TextBoxDiaMin.Text,UIKontor_TextBoxSysMax.Text, UIKontor_TextBoxSysMin.Text);
             pat.Show();
         }
 
@@ -216,8 +216,6 @@ namespace Projekt_v1._1
             var doc = XDocument.Load("cd_catalog.xml");
 
             var node = doc.Descendants("MÅLING").FirstOrDefault(cd => cd.Element("DATO").Value == "12/12/2012:06:44:23");
-
-
         }
     }
 }
