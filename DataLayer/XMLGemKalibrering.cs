@@ -16,10 +16,11 @@ namespace DataLayer
         private string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\Kalibrering.xml";
         public void GemXML1(KalibreringDTO kalibreringDTO)
         {
-            byte[] data = new byte[kalibreringDTO.KalibrerDoubles.Count];
-            string dataString = Convert.ToBase64String(data);
+            //byte[] data = new byte[kalibreringDTO.KalibrerDoubles.Count];
+            //data = ConvertToBinary(kalibreringDTO.KalibrerDoubles);
+            //string dataString = Convert.ToBase64String(data);
 
-            XmlTextWriter xWriter = new XmlTextWriter(filNavn, Encoding.UTF8);
+            XmlTextWriter xWriter = new XmlTextWriter(filNavnDaniel, Encoding.UTF8);
             xWriter.Formatting = Formatting.Indented;
             xWriter.WriteStartElement("Kalibrering");
             xWriter.WriteStartElement("Dato");
@@ -29,7 +30,12 @@ namespace DataLayer
             xWriter.WriteString(kalibreringDTO.Brugernavn);
             xWriter.WriteEndElement();
             xWriter.WriteStartElement("Kalibreringsdata");
-            xWriter.WriteString(dataString);
+            for (int i = 0; i < kalibreringDTO.KalibrerDoubles.Count; i++)
+            {
+                xWriter.WriteStartElement("Måling");
+                xWriter.WriteString(Convert.ToString(kalibreringDTO.KalibrerDoubles[i]));
+                xWriter.WriteEndElement();
+            }
             xWriter.WriteEndElement();
             xWriter.WriteEndElement();
             xWriter.Close();
@@ -41,7 +47,7 @@ namespace DataLayer
             var mStream = new MemoryStream();
 
             binformatter.Serialize(mStream, data);
-
+            
             return mStream.ToArray();
         }
     }

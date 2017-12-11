@@ -29,6 +29,8 @@ namespace Main
         private static DataContainer _dataContainer;
         private static MålingContainer _målingContainer;
         private static BTMålerController _BTcontroller;
+        private static Kalibrering _kalib;
+        private static UdregnKalibrering _UdKal;
 
         static void Main(string[] args)
         {
@@ -37,17 +39,23 @@ namespace Main
 
         public Program()
         {
+            
             _målingContainer = new MålingContainer();
             _dataContainer = new DataContainer();
             _ifilter = new RawFilter();
+            
 
             _BTcontroller = new BTMålerController(_målingContainer);
             _dataqueue = new ConcurrentQueue<Bufferblock>();
-            _consumer = new Consumer(_dataqueue, _ifilter,_dataContainer, _BTcontroller);
+            
             _producer = new DataProducer(_dataqueue);
-
             DL = new DataController(_producer);
-            LL = new LogikController(DL, _consumer,_dataContainer);
+            _kalib = new Kalibrering(DL);
+
+            
+            _UdKal = new UdregnKalibrering();
+            _consumer = new Consumer(_dataqueue, _ifilter, _dataContainer, _BTcontroller, _UdKal);
+            LL = new LogikController(DL, _consumer,_dataContainer, _kalib);
             PL = new PresentationLayerController(LL,_dataContainer, _målingContainer);
             PL.startUpGUI();
         }

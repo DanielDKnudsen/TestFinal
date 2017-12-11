@@ -17,6 +17,7 @@ namespace DataLayer
         private HentNulpunktXML HentNPJ;
         private XMLGemKalibrering Kalib;
         private IDAQ IDaq;
+        private Hent_Kalibrering HentKalib;
 
 
         public DataController(DataProducer producer)
@@ -26,6 +27,7 @@ namespace DataLayer
             IDaq = new DAQ();
             HentNPJ = new HentNulpunktXML();
             Kalib = new XMLGemKalibrering();
+            HentKalib = new Hent_Kalibrering();
         }
 
         public void GemPatient(PatientDTO PDTO)
@@ -35,7 +37,7 @@ namespace DataLayer
 
         public void GemKalibrering(KalibreringDTO KalibDTO)
         {
-            Kalib.GemXML1(KalibDTO);
+            Kalib.GemXML(KalibDTO);
         }
 
         public void GemNPJ(double Nulpunkt)
@@ -46,6 +48,11 @@ namespace DataLayer
         public double hentNPJ()
         {
             return HentNPJ.HentNPJ();
+        }
+
+        public List<double> HentKalibrering()
+        {
+            return HentKalib.HentKal();
         }
 
         public void StartProducerTråd()

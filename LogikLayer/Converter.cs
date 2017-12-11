@@ -15,12 +15,15 @@ namespace LogikLayer
         private Filter _filter;
         private LogikController LC;
         private BTMålerController _BTMålerController;
+        private UdregnKalibrering _UdKal;
 
+        private double _kalib;
         private double _npj;
 
-        public Converter(BTMålerController BTMålerController)
+        public Converter(BTMålerController BTMålerController, UdregnKalibrering UdKal)
         {
             _BTMålerController = BTMålerController;
+            _UdKal = UdKal;
         }
 
 
@@ -47,6 +50,17 @@ namespace LogikLayer
         {
             _npj = NPJ;
         }
+
+        public void HentKalib(List<double> KalibListe)
+        {
+            _UdKal.GetKalibrering(KalibListe);
+        }
+
+        public void SetKalib(double Kalib)
+        {
+            _kalib = Kalib;
+        }
+
 
         private void FixListe()
         {

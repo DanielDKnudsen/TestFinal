@@ -12,50 +12,28 @@ namespace DataLayer
 {
     public class Hent_Kalibrering
     {
-        private string filNavnDaniel = @"C:\Users\Daniel\source\repos\TestFinal";
+        private string filNavnDaniel = @"C:\Users\Daniel\source\repos\TestFinal\";
         private string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\";
+        List<double> Kalibreringsliste = new List<double>();
 
         public List<double> HentKal()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(filNavn + "Kalibrering" + ".xml");
+            doc.Load(filNavnDaniel + "Kalibrering" + ".xml");
+            XmlNodeList Node = doc.GetElementsByTagName("Måling");
 
-            byte[] KalibBytes = Convert.FromBase64String(Convert.ToString(doc.DocumentElement.SelectSingleNode("/Kalibrering/Dato/Brugernavn/Kalibreringsdata")));
-
-
-
-            return ConvertToList(KalibBytes);
-        }
-
-        public void GemXML(KalibreringDTO kalibreringDTO)
-        {
-            byte[] data = new byte[kalibreringDTO.KalibrerDoubles.Count];
-            string dataString = Convert.ToBase64String(data);
-
-            XmlTextWriter xWriter = new XmlTextWriter(filNavn, Encoding.UTF8);
-            xWriter.Formatting = Formatting.Indented;
-            xWriter.WriteStartElement("Kalibrering");
-            xWriter.WriteStartElement("Dato");
-            xWriter.WriteString(DateTime.Now.ToString());
-            xWriter.WriteEndElement();
-            xWriter.WriteStartElement("Brugernavn");
-            xWriter.WriteString(kalibreringDTO.Brugernavn);
-            xWriter.WriteEndElement();
-            xWriter.WriteStartElement("Kalibreringsdata");
-            xWriter.WriteString(dataString);
-            xWriter.WriteEndElement();
-            xWriter.WriteEndElement();
-            xWriter.Close();
-        }
-
-        private List<double> ConvertToList(byte[] Byte)
-        {
-            List<double> list = new List<double>();
-            foreach (var item in Byte)       
+            for (int i = 0; i < Node.Count; i++)
             {
-                list.Add(item);
+                Kalibreringsliste.Add(Convert.ToDouble(Node[i].InnerText));
             }
-            return list;
+            return Kalibreringsliste;
         }
+
+        //public List<double> ConvertFromByteArray(byte[] data)
+        //{
+        //    double[] darray = new double[data.Length / sizeof(double)];
+        //    Buffer.BlockCopy(data, 0, darray, 0, data.Length);
+        //    return darray.ToList<double>();
+        //}
     }
 }

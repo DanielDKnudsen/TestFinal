@@ -17,5 +17,6 @@ namespace Interfaces
         void StartProducerTråd();
         void GemNPJ(double Nulpunkt);
         double hentNPJ();
+        List<double> HentKalibrering();
     }
 }

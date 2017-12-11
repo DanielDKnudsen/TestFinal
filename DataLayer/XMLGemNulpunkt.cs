@@ -13,7 +13,7 @@ namespace DataLayer
     public class XMLGemNulpunkt
     {
         private string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\Nulpunkt.xml";
-        private string filNavnDaniel = @"C:\Users\Daniel\source\repos\TestFinal.xml";
+        private string filNavnDaniel = @"C:\Users\Daniel\source\repos\TestFinal\Nulpunkt.xml";
         public void GemXMLNulpunkt(double Nulpunkt)
         {
             string nulpunkt = Convert.ToString(Nulpunkt);

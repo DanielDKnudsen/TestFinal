@@ -24,14 +24,26 @@ namespace LogikLayer
         private Filter _filter;
         private DataContainer _dct;
         private bool tidFaktor;
-        public LogikController(IDataLayer dl, Consumer consumer,DataContainer DCT)
+        
+        
+
+        public LogikController(IDataLayer dl, Consumer consumer,DataContainer DCT, Kalibrering Kalib)
         {
             DL = dl;
-            kalib = new Kalibrering(DL);
             _consumer = consumer;
             _dct = DCT;
             NPJ = new Nulpunktsjustering(DL);
             _filter = new Filter(new RawFilter(), _dct);
+            kalib = Kalib;
+            HentKalibrering();
+            
+        }
+
+        public void HentKalibrering()
+        {
+            List<double> KalibListe = new List<double>();
+            KalibListe = DL.HentKalibrering();
+            _consumer.HentKalib(KalibListe);
         }
 
         public void SetNPJ()

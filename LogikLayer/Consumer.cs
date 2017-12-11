@@ -22,12 +22,14 @@ namespace LogikLayer
         public IFilter Ifilter { get; set; }
         public DataContainer _dct;
         private List<double> test = new List<double>();
-        public Consumer(ConcurrentQueue<Bufferblock> dataQueue, IFilter iFilter,DataContainer DCT, BTMålerController BTMålerController)
+
+
+        public Consumer(ConcurrentQueue<Bufferblock> dataQueue, IFilter iFilter,DataContainer DCT, BTMålerController BTMålerController, UdregnKalibrering UdKal)
         {
             Ifilter = iFilter;
             _dataQueue = dataQueue;
             _dct = DCT;
-            convert = new Converter(BTMålerController);
+            convert = new Converter(BTMålerController, UdKal);
             filter = new Filter(iFilter,_dct);
         }
 
@@ -61,6 +63,16 @@ namespace LogikLayer
         public void GetNPJ(double NPJ)
         {
             convert.SetNPJ(NPJ);
+        }
+
+        public void GetKalib(double Kalib)
+        {
+            convert.SetKalib(Kalib);
+        }
+
+        public void HentKalib(List<double> KalibListe)
+        {
+            convert.HentKalib(KalibListe);
         }
     }
 }
