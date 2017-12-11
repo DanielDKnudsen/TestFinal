@@ -25,6 +25,7 @@ namespace DataLayer
             NPJ = new XMLGemNulpunkt();
             IDaq = new DAQ();
             HentNPJ = new HentNulpunktXML();
+            Kalib = new XMLGemKalibrering();
         }
 
         public void GemPatient(PatientDTO PDTO)
@@ -34,7 +35,7 @@ namespace DataLayer
 
         public void GemKalibrering(KalibreringDTO KalibDTO)
         {
-            Kalib.GemXML(KalibDTO);
+            Kalib.GemXML1(KalibDTO);
         }
 
         public void GemNPJ(double Nulpunkt)

@@ -17,7 +17,7 @@ namespace DataLayer
         public void GemXMLNulpunkt(double Nulpunkt)
         {
             string nulpunkt = Convert.ToString(Nulpunkt);
-            XmlTextWriter xWriter = new XmlTextWriter(filNavnDaniel, Encoding.UTF8);
+            XmlTextWriter xWriter = new XmlTextWriter(filNavn, Encoding.UTF8);
             xWriter.Formatting = Formatting.Indented;
             xWriter.WriteStartElement("Nulpunkt");
             xWriter.WriteStartElement("Dato");

@@ -18,7 +18,7 @@ namespace DataLayer
             _blodmåler.rangeMaximumVolt = 2.5;
             _blodmåler.rangeMinimumVolt = -2.5;
             _blodmåler.sampleRateInHz = 1000;
-            _blodmåler.samplesPerChannel = 50;
+            _blodmåler.samplesPerChannel = 5000;
         }
         public MålingDTO CollectNulpunktsListe()
         {

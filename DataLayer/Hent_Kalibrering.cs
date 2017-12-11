@@ -18,7 +18,7 @@ namespace DataLayer
         public List<double> HentKal()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(filNavnDaniel + "Kalibrering" + ".xml");
+            doc.Load(filNavn + "Kalibrering" + ".xml");
 
             byte[] KalibBytes = Convert.FromBase64String(Convert.ToString(doc.DocumentElement.SelectSingleNode("/Kalibrering/Dato/Brugernavn/Kalibreringsdata")));
 
