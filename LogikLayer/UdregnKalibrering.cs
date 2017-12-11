@@ -7,6 +7,7 @@ using Accord.Math.Transforms;
 using Accord.Statistics.Models;
 using Accord.MachineLearning;
 using Accord.Statistics.Models.Regression.Linear;
+using DTO;
 using Interfaces;
 
 namespace LogikLayer
@@ -15,21 +16,27 @@ namespace LogikLayer
     {
         private double[] kalibreringer;
         private double[] output;
+        private double slope;
 
         public UdregnKalibrering()
         {
-            var untzuntzunztz = new OrdinaryLeastSquares();
+
         }
 
-        public void GetKalibrering(List<double> kalibList)
+        public void GetKalibrering(KalibreringDTO kDTO)
         {
-            double[] kalibreringer = new double[] { (kalibList[0] + kalibList[3]) / 2,  (kalibList[1] + kalibList[4]) / 2, (kalibList[2] + kalibList[5]) / 2};
+            double[] kalibreringer = new double[] { (kDTO.KalibrerDoubles[0] + kDTO.KalibrerDoubles[3]) / 2,  (kDTO.KalibrerDoubles[1] + kDTO.KalibrerDoubles[4]) / 2, (kDTO.KalibrerDoubles[2] + kDTO.KalibrerDoubles[5]) / 2};
             double[] output = new double[] { 10, 50, 100 };
+
         }
 
-        public void Slope()
+        public double Slope()
         {
-            
+
+            OrdinaryLeastSquares ols = new OrdinaryLeastSquares();
+            SimpleLinearRegression regression = ols.Learn(kalibreringer, output);
+            slope = regression.Slope;
+            return slope;
         }
     }
 }

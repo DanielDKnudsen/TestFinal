@@ -12,11 +12,11 @@ namespace Interfaces
         void GemPatient(PatientDTO PDTO);
         MålingDTO startMålingPrøve();
         MålingDTO Start();
-        List<double> LavKalibrering(int mmHg);
+        KalibreringDTO LavKalibrering(int mmHg);
         void GemKalibrering(KalibreringDTO KalibDTO);
         void StartProducerTråd();
         void GemNPJ(double Nulpunkt);
         double hentNPJ();
-        List<double> HentKalibrering();
+        KalibreringDTO HentKalibrering();
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 using Interfaces;
 using LogikLayer.BTMåler;
 
@@ -56,9 +57,14 @@ namespace LogikLayer
             _npj = NPJ;
         }
 
-        public void HentKalib(List<double> KalibListe)
+        public void HentKalib(KalibreringDTO kDTO)
         {
-            _UdKal.GetKalibrering(KalibListe);
+            _UdKal.GetKalibrering(kDTO);
+        }
+
+        public double GetSlope()
+        {
+            return _UdKal.Slope();
         }
 
         public void SetKalib(double Kalib)

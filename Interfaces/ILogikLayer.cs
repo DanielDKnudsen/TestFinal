@@ -19,6 +19,6 @@ namespace Interfaces
         bool GetTidfaktor();
         void GemKalibrering(KalibreringDTO KalibDTO);
         void SetFilter(string Filter);
-        List<double> kalibliste();
+        KalibreringDTO kalibliste();
     }
 }
