@@ -23,8 +23,8 @@ namespace LogikLayer
 
         public double Slope(KalibreringDTO kDTO)
         {
-            //double[] kalibreringer = new double[] { (kDTO.KalibrerDoubles[0] + kDTO.KalibrerDoubles[3]) / 2, (kDTO.KalibrerDoubles[1] + kDTO.KalibrerDoubles[4]) / 2, (kDTO.KalibrerDoubles[2] + kDTO.KalibrerDoubles[5]) / 2 };
-            double[] kalibreringer = new double[] { kDTO.KalibrerDoubles[0], kDTO.KalibrerDoubles[1], kDTO.KalibrerDoubles[2] };
+            double[] kalibreringer = new double[] { (kDTO.KalibrerDoubles[0] + kDTO.KalibrerDoubles[3]) / 2, (kDTO.KalibrerDoubles[1] + kDTO.KalibrerDoubles[4]) / 2, (kDTO.KalibrerDoubles[2] + kDTO.KalibrerDoubles[5]) / 2 };
+      
             double[] output = new double[] { 10, 50, 100 };
 
             OrdinaryLeastSquares ols = new OrdinaryLeastSquares();

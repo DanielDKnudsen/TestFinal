@@ -40,13 +40,14 @@ namespace Projekt_v1._1
 
         private void UIMed_buttonStartKalibrering_Click(object sender, EventArgs e)
         {
-            int mmHg = 10;            
-            bool gentag10 = true;
-            bool gentag50 = true;
-            bool gentag100 = true;
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 2; i++)
             {
+                int mmHg = 10;
+                bool gentag10 = true;
+                bool gentag50 = true;
+                bool gentag100 = true;
+
                 while (gentag10)
                 {
                     bool NO = true;

@@ -55,16 +55,16 @@ namespace LogikLayer
         {
             if (mmHg == 10 && i == 0) { mm1Hg10 = gnms; i = 1; }
             if (mmHg == 50 && i == 1) { mm1Hg50 = gnms; i = 2; }
-            if (mmHg == 100 && i == 2) { mm1Hg100 = gnms; i = 3; LavGemDTO(); }
-            //if (mmHg == 10 && i == 3) { mm2Hg10 = gnms; i = 4; }
-            //if (mmHg == 50 && i == 4) { mm2Hg50 = gnms; i = 5; }
-            //if (mmHg == 100 && i == 5) { mm2Hg100 = gnms; i = 6; }
+            if (mmHg == 100 && i == 2) { mm1Hg100 = gnms; i = 3; }
+            if (mmHg == 10 && i == 3) { mm2Hg10 = gnms; i = 4; }
+            if (mmHg == 50 && i == 4) { mm2Hg50 = gnms; i = 5; }
+            if (mmHg == 100 && i == 5) { mm2Hg100 = gnms; i = 6; LavGemDTO(); }
         }
 
         public List<double> TegnKalibGraf()
         {
             List<double> KalibGraf = new List<double>();
-            if (i == 3)
+            if (i == 6)
             {
                 KalibGraf.Add(mm1Hg10);
                 KalibGraf.Add(mm1Hg50);
@@ -79,15 +79,15 @@ namespace LogikLayer
         public void LavGemDTO()
         {
             
-            if (i == 3)
+            if (i == 6)
             {
                 KDTO.KalibrerDoubles = new List<double>();
-                KDTO.KalibrerDoubles.Add(mm1Hg10*10);
-                KDTO.KalibrerDoubles.Add(mm1Hg50 * 10);
-                KDTO.KalibrerDoubles.Add(mm1Hg100 * 10);
-                KDTO.KalibrerDoubles.Add(mm2Hg10+2);
-                KDTO.KalibrerDoubles.Add(mm2Hg50+3);
-                KDTO.KalibrerDoubles.Add(mm2Hg100+4);
+                KDTO.KalibrerDoubles.Add(mm1Hg10);
+                KDTO.KalibrerDoubles.Add(mm1Hg50);
+                KDTO.KalibrerDoubles.Add(mm1Hg100);
+                KDTO.KalibrerDoubles.Add(mm2Hg10);
+                KDTO.KalibrerDoubles.Add(mm2Hg50);
+                KDTO.KalibrerDoubles.Add(mm2Hg100);
                 Gem = true;
             }
            
