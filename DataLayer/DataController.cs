@@ -37,7 +37,7 @@ namespace DataLayer
 
         public void GemKalibrering(KalibreringDTO KalibDTO)
         {
-            Kalib.GemXML(KalibDTO);
+            Kalib.GemXML1(KalibDTO);
         }
 
         public void GemNPJ(double Nulpunkt)
