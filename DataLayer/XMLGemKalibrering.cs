@@ -30,6 +30,7 @@ namespace DataLayer
             xWriter.WriteString(kalibreringDTO.Brugernavn);
             xWriter.WriteEndElement();
             xWriter.WriteStartElement("Kalibreringsdata");
+            
             for (int i = 0; i < kalibreringDTO.KalibrerDoubles.Count; i++)
             {
                 xWriter.WriteStartElement("Måling");
@@ -37,6 +38,8 @@ namespace DataLayer
                 xWriter.WriteEndElement();
             }
             xWriter.WriteEndElement();
+            xWriter.WriteStartElement("Slope");
+            xWriter.WriteString(Convert.ToString(kalibreringDTO.slope));
             xWriter.WriteEndElement();
             xWriter.Close();
         }

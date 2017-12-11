@@ -25,7 +25,6 @@ namespace LogikLayer
         private DataContainer _dct;
         private bool tidFaktor;
         
-        
 
         public LogikController(IDataLayer dl, Consumer consumer,DataContainer DCT, Kalibrering Kalib)
         {
@@ -41,9 +40,9 @@ namespace LogikLayer
 
         public void HentKalibrering()
         {
-            List<double> KalibListe = new List<double>();
-            KalibListe = DL.HentKalibrering();
-            _consumer.HentKalib(KalibListe);
+            KalibreringDTO kDTO = new KalibreringDTO();
+            kDTO = DL.HentKalibrering();
+            _consumer.HentKalib(kDTO);
         }
 
         public void SetNPJ()
@@ -66,10 +65,12 @@ namespace LogikLayer
             DL.StartProducerTråd();
         }
 
-        public void GemKalibrering(KalibreringDTO KalibDTO)
-        {
-            DL.GemKalibrering(KalibDTO);
-        }
+        //public void GemKalibrering(KalibreringDTO KalibDTO)
+        //{
+        //    KalibDTO.slope = _consumer.GetSlope();
+
+        //    DL.GemKalibrering(KalibDTO);
+        //}
 
         public void SetFilter(string Filter)
         {
@@ -102,6 +103,15 @@ namespace LogikLayer
         public void setKali(int mmHg)
         {
             kalib.setKali(mmHg);
+            if (kalib.Gem == true)
+            {
+                KalibreringDTO KalibDTO = new KalibreringDTO();
+                KalibDTO = kalib.KDTO;
+                _consumer.HentKalib(KalibDTO);
+                KalibDTO.slope = _consumer.GetSlope();
+
+                DL.GemKalibrering(KalibDTO);
+            }
         }
 
 
@@ -115,11 +125,17 @@ namespace LogikLayer
             DL.GemPatient(PDTO);
         }
 
-        public List<double> kalibliste()
+        public KalibreringDTO kalibliste()
         {
-            return kalib.TegnKalibGraf();
-            
+            KalibreringDTO kdto = new KalibreringDTO();
+            kdto = DL.HentKalibrering();
+
+            return kdto;
         }
 
+        public void GemKalibrering(KalibreringDTO KalibDTO)
+        {
+            
+        }
     }
 }

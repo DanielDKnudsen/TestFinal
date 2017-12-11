@@ -19,13 +19,16 @@ namespace LogikLayer
         private double mm2Hg50;
         private double mm2Hg100;
         private int i = 0;
-        private KalibreringDTO  KDTO = new KalibreringDTO();
+        public KalibreringDTO KDTO;
+        public bool Gem;
         private List<double> Kalib = new List<double>();
 
 
         public Kalibrering(IDataLayer dl)
         {
+            Gem = false;
             DL = dl;
+            KDTO = new KalibreringDTO();
             mm1Hg10 = 0;
             mm1Hg50 = 0;
             mm1Hg100 = 0;
@@ -78,7 +81,6 @@ namespace LogikLayer
             
             if (i == 3)
             {
-                KDTO = new KalibreringDTO();
                 KDTO.KalibrerDoubles = new List<double>();
                 KDTO.KalibrerDoubles.Add(mm1Hg10*10);
                 KDTO.KalibrerDoubles.Add(mm1Hg50 * 10);
@@ -86,8 +88,9 @@ namespace LogikLayer
                 KDTO.KalibrerDoubles.Add(mm2Hg10+2);
                 KDTO.KalibrerDoubles.Add(mm2Hg50+3);
                 KDTO.KalibrerDoubles.Add(mm2Hg100+4);
+                Gem = true;
             }
-            DL.GemKalibrering(KDTO);
+           
         }
     }
 }

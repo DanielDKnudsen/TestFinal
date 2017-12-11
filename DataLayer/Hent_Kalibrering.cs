@@ -14,26 +14,30 @@ namespace DataLayer
     {
         private string filNavnDaniel = @"C:\Users\Daniel\source\repos\TestFinal\";
         private string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\";
-        List<double> Kalibreringsliste = new List<double>();
+        private KalibreringDTO kDTO;
 
-        public List<double> HentKal()
+        public KalibreringDTO HentKal()
         {
+            kDTO = new KalibreringDTO();
+            kDTO.KalibrerDoubles = new List<double>();
+
             XmlDocument doc = new XmlDocument();
             doc.Load(filNavn + "Kalibrering" + ".xml");
             XmlNodeList Node = doc.GetElementsByTagName("Måling");
 
             for (int i = 0; i < Node.Count; i++)
             {
-                Kalibreringsliste.Add(Convert.ToDouble(Node[i].InnerText));
+                kDTO.KalibrerDoubles.Add(Convert.ToDouble(Node[i].InnerText));
             }
-            return Kalibreringsliste;
-        }
 
-        //public List<double> ConvertFromByteArray(byte[] data)
-        //{
-        //    double[] darray = new double[data.Length / sizeof(double)];
-        //    Buffer.BlockCopy(data, 0, darray, 0, data.Length);
-        //    return darray.ToList<double>();
-        //}
+            XmlNodeList NodeSlope = doc.GetElementsByTagName("Slope");
+
+            for (int i = 0; i < 1; i++)
+            {
+                kDTO.slope = Convert.ToDouble(NodeSlope[0].InnerText);
+            }
+
+            return kDTO;
+        }
     }
 }

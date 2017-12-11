@@ -50,7 +50,7 @@ namespace DataLayer
             return HentNPJ.HentNPJ();
         }
 
-        public List<double> HentKalibrering()
+        public KalibreringDTO HentKalibrering()
         {
             return HentKalib.HentKal();
         }
@@ -61,7 +61,7 @@ namespace DataLayer
             producerThread.Start();
         }
 
-        public List<double> LavKalibrering(int mmHg)
+        public KalibreringDTO LavKalibrering(int mmHg)
         {
             Hent_Kalibrering hentKalib = new Hent_Kalibrering();
             return hentKalib.HentKal();

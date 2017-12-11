@@ -10,5 +10,6 @@ namespace DTO
     {
         public List<double> KalibrerDoubles;
         public string Brugernavn { get; set; }
+        public double slope { get; set; }
     }
 }
