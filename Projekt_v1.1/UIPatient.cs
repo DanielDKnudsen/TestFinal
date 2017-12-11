@@ -53,6 +53,8 @@ namespace Projekt_v1._1
         {
             BTChart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
             BTChart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+            //BTChart.ChartAreas[0].AxisX.Title = "Tid i Sekunder";
+            //BTChart.ChartAreas[0].AxisY.Title = "Tryk i mmHg";
         }
 
         private void UIPatient_LabelPatientNavn_Click(object sender, EventArgs e)
