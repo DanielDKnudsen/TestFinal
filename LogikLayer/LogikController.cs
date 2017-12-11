@@ -42,7 +42,6 @@ namespace LogikLayer
         {
             KalibreringDTO kDTO = new KalibreringDTO();
             kDTO = DL.HentKalibrering();
-            _consumer.HentKalib(kDTO);
         }
 
         public void SetNPJ()
@@ -107,8 +106,7 @@ namespace LogikLayer
             {
                 KalibreringDTO KalibDTO = new KalibreringDTO();
                 KalibDTO = kalib.KDTO;
-                _consumer.HentKalib(KalibDTO);
-                KalibDTO.slope = _consumer.GetSlope();
+                KalibDTO.slope = _consumer.GetSlope(KalibDTO);
 
                 DL.GemKalibrering(KalibDTO);
             }
