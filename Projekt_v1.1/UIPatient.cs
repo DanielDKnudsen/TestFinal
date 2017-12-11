@@ -178,12 +178,11 @@ namespace Projekt_v1._1
             }
             else
             {
-                if (VScroll)
+                if (STP.ElapsedMilliseconds == 0 || STP.ElapsedMilliseconds >= 10000)
                 {
-                    
+                    Alarm(_mdto);
                 }
-                Alarm(_mdto);
-
+                
                 UIPatient_LabelMID.Text = Convert.ToString(_mdto.MiddelBT);
                 UIPatient_LabelPULS.Text = Convert.ToString(_mdto.Puls);
                 UIPatient_LabelSysDia.Text = Convert.ToString(_mdto.Sys) + "/" + Convert.ToString(_mdto.Dia);
@@ -207,9 +206,13 @@ namespace Projekt_v1._1
 
         private void UIPatient_KnapStopAlarm_Click(object sender, EventArgs e)
         {
+            StopAlarm();
+        }
+
+        private void StopAlarm()
+        {
             player.Stop();
             STP.Start();
-            
         }
     }
 
