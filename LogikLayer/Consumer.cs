@@ -47,16 +47,6 @@ namespace LogikLayer
                 konverteretListe = convert.ConvertList(M1.Data);
                 filter.FiltrerListe(Ifilter.Filtrer(konverteretListe));
 
-                //for (int i = 0; i < B1.Datalist.Count; i++)
-                //{
-                //    test.Add(B1.Datalist[i]);
-                //}
-
-                //if (test.Count > 5000)
-                //{
-                //    int t = 2;
-                //}
-
             }
         }
 

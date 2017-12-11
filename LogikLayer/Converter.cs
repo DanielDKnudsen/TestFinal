@@ -11,6 +11,7 @@ namespace LogikLayer
     public class Converter
     {
         private List<double> KonverteretListe = new List<double>();
+        private List<int> TickCount = new List<int>();
         private IDataLayer idal;
         private Filter _filter;
         private LogikController LC;
@@ -29,6 +30,7 @@ namespace LogikLayer
 
         public List<double> ConvertList(List<double> RawList)
         {
+            
             foreach (var item in RawList)
             {
                 KonverteretListe.Add((item -_npj) / (5 * 0.000005 * 736.294));
@@ -39,10 +41,13 @@ namespace LogikLayer
 
         public void lavListe()
         {
+            TickCount.Add(Environment.TickCount);
+
             if (KonverteretListe.Count > 5000)
             {
                 FixListe();
                 KonverteretListe.RemoveRange(0, 1000);
+                TickCount.RemoveRange(0, 20);
             }
         }
 
@@ -69,7 +74,7 @@ namespace LogikLayer
             {
                 konverteretTrådliste.Add(item);
             }
-            _BTMålerController.StartTråde(konverteretTrådliste);
+            _BTMålerController.StartTråde(konverteretTrådliste, TickCount);
         }
     }
 }

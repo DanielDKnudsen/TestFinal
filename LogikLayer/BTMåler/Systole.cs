@@ -19,12 +19,14 @@ namespace LogikLayer
         private List<double> _data;
         private MålingContainer _målingContainer;
         private Puls P;
+        private List<int> _TickList;
         
 
-        public Systole(List<double> convertedList, MålingContainer målingContainer)
+        public Systole(List<double> convertedList, MålingContainer målingContainer, List<int> TickList)
         {
             _data = convertedList;
             _målingContainer = målingContainer;
+            _TickList = TickList;
         }
 
         public void BeregnSys()
@@ -33,31 +35,27 @@ namespace LogikLayer
 
             if (_data.Count > 5000)
             {
+                double TimeElapsed = (_TickList[_TickList.Count - 1] - _TickList[0]);
+                double forhold = TimeElapsed / 5000;
 
                 List<double> SS = new List<double>();
                 Grænseværdi = _data.Max() * 0.8;
                 List<double> Systoler = new List<double>();
                 List<double> tid = new List<double>();
-                
-
-               
 
                 for (int i = 0; i < _data.Count-12; i++)
                 {
                     if (_data[i] > Grænseværdi)
                     {
                         SS.Add(_data[i]);
-                        
 
                         if (_data[i + 10] < Grænseværdi)
                         {
-                            int tickcounnt = Environment.TickCount;
                             i = i+10 ;
                             Systoler.Add(SS.Max());
-                            tid.Add(tickcounnt);
+                            tid.Add(((i-(SS.Count/2))*forhold)/1000);
                             SS.Clear();
                         }
-                        
                     }
                 }
                 P = new Puls(tid, _målingContainer);

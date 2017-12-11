@@ -26,9 +26,9 @@ namespace LogikLayer.BTMåler
             PatientMåles = false;
         }
 
-        public void StartTråde(List<double> ConvertedList)
+        public void StartTråde(List<double> ConvertedList, List<int> TickList)
         {
-            SD = new Systole(ConvertedList, _målingContainer);
+            SD = new Systole(ConvertedList, _målingContainer, TickList);
             Thread SysThread = new Thread(SD.BeregnSys);
             SysThread.Start();
             SD.objSys.Set();
