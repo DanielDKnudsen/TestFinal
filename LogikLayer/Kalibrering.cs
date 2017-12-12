@@ -45,7 +45,7 @@ namespace LogikLayer
             
             gnms = ((Kalib.Sum() / Kalib.Count) / (5 * 0.000005 * 736.294)) - _npj;
 
-            if (gnms < mmHg + 0.5 && gnms > mmHg - 0.5)
+            if (gnms < mmHg + 3 && gnms > mmHg - 3)
             {
                 return true;
             }

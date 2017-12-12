@@ -16,7 +16,7 @@ namespace DataLayer
         private string filNavnDaniel = @"C:\Users\Daniel\source\repos\TestFinal\Nulpunkt.xml";
         public void GemXMLNulpunkt(double Nulpunkt)
         {
-            string nulpunkt = Convert.ToString(Nulpunkt);
+            string nulpunkt = Convert.ToString(Nulpunkt / (5 * 0.000005 * 736.294));
             XmlTextWriter xWriter = new XmlTextWriter(filNavn, Encoding.UTF8);
             xWriter.Formatting = Formatting.Indented;
             xWriter.WriteStartElement("Nulpunkt");

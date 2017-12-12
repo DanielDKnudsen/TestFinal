@@ -56,7 +56,7 @@ namespace Projekt_v1._1
                     gentag10 = LL.StartKalibrering(mmHg);
                     if (gentag10)
                     {
-                        MessageBox.Show("Måling blev foretaget korrekt. Tilslut transducer til 50mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 50 mmHg");
+                        MessageBox.Show("Måling blev foretaget korrekt.");
                         gentag10 = false;
                         LL.setKali(mmHg);
                     }
@@ -102,7 +102,7 @@ namespace Projekt_v1._1
                     if (gentag50)
                     {
                         MessageBox.Show(
-                            "Måling blev foretaget korrekt. Tilslut transducer til 100mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 100 mmHg");
+                            "Måling blev foretaget korrekt.");
                         gentag50 = false;
                         LL.setKali(mmHg);
                     }
@@ -151,7 +151,7 @@ namespace Projekt_v1._1
                     gentag100 = LL.StartKalibrering(mmHg);
                     if (gentag100)
                     {
-                        MessageBox.Show("Måling blev foretaget korrekt. Tilslut transducer til 50mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 100 mmHg");
+                        MessageBox.Show("Måling blev foretaget korrekt.");
                         gentag100 = false;
                         LL.setKali(mmHg);
                     }
