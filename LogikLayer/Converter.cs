@@ -34,7 +34,7 @@ namespace LogikLayer
             
             foreach (var item in RawList)
             {
-                KonverteretListe.Add((item -_npj) / (5 * 0.000005 * 736.294));
+                KonverteretListe.Add(((item -_npj) / (5 * 0.000005 * 736.294))*_kalib);
             }
             lavListe();
             return RawList;

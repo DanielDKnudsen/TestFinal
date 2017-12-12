@@ -42,6 +42,7 @@ namespace LogikLayer
         {
             KalibreringDTO kDTO = new KalibreringDTO();
             kDTO = DL.HentKalibrering();
+            _consumer.GetKalib(kDTO);
         }
 
         public void SetNPJ()

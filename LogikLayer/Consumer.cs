@@ -55,9 +55,9 @@ namespace LogikLayer
             convert.SetNPJ(NPJ);
         }
 
-        public void GetKalib(double Kalib)
+        public void GetKalib(KalibreringDTO Kalib)
         {
-            convert.SetKalib(Kalib);
+            convert.SetKalib(Kalib.slope);
         }
         
 
