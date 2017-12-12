@@ -22,7 +22,7 @@ namespace DataLayer
             kDTO.KalibrerDoubles = new List<double>();
 
             XmlDocument doc = new XmlDocument();
-            doc.Load(filNavnDaniel + "Kalibrering" + ".xml");
+            doc.Load(filNavn + "Kalibrering" + ".xml");
             XmlNodeList Node = doc.GetElementsByTagName("Måling");
 
             for (int i = 0; i < Node.Count; i++)

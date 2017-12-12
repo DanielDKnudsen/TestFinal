@@ -77,5 +77,7 @@ namespace LogikLayer
             }
             _BTMålerController.StartTråde(konverteretTrådliste, TickCount);
         }
+
+        
     }
 }

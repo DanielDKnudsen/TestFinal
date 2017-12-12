@@ -15,7 +15,7 @@ namespace DataLayer
             string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\";
 
             XmlDocument doc = new XmlDocument();
-            doc.Load(filNavnDaniel + "Nulpunkt" + ".xml");
+            doc.Load(filNavn + "Nulpunkt" + ".xml");
             XmlNode node = doc.DocumentElement.SelectSingleNode("Nulpunkt.xml");
             string værdi = node.InnerText;
 
