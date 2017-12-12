@@ -46,6 +46,7 @@ namespace Projekt_v1._1
             _DiaMin = Convert.ToInt16(DiaMin);
             _SysMax = Convert.ToInt16(SysMax);
             _SysMin = Convert.ToInt16(SysMin);
+            
 
         }
 
