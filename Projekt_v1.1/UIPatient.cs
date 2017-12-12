@@ -151,7 +151,7 @@ namespace Projekt_v1._1
             {
                 filter = "DigFilter";
                 UIPatient_KnapDigital.BackColor = Color.Yellow;
-                UIPatient_KnapDigital.ForeColor = Color.Black;
+
             }
             if (DigFilter == true)
             {
@@ -199,11 +199,13 @@ namespace Projekt_v1._1
             {
                 player.PlayLooping();
                 UIPatient_KnapStopAlarm.Enabled = true;
+                STP.Reset();
             }
             if (mDTO.Dia > _DiaMax || mDTO.Sys < _DiaMin)
             {
                 player.PlayLooping();
                 UIPatient_KnapStopAlarm.Enabled = true;
+                STP.Reset();
             }
         }
 

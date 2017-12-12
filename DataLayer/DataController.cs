@@ -71,11 +71,14 @@ namespace DataLayer
         {
             
             return IDaq.CollectNulpunktsListe();
+            
         }
 
         public MålingDTO Start()
         {
             return IDaq.CollectNulpunktsListe();
         }
+
+        
     }
 }

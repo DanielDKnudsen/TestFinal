@@ -102,7 +102,7 @@ namespace Projekt_v1._1
                     if (gentag50)
                     {
                         MessageBox.Show(
-                            "Måling blev foretaget korrekt. Tilslut transducer til 50mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 100 mmHg");
+                            "Måling blev foretaget korrekt. Tilslut transducer til 100mmHg. Tryk 'OK' når du er klar til at starte kalibrering med 100 mmHg");
                         gentag50 = false;
                         LL.setKali(mmHg);
                     }

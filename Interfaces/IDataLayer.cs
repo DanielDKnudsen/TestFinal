@@ -18,5 +18,6 @@ namespace Interfaces
         void GemNPJ(double Nulpunkt);
         double hentNPJ();
         KalibreringDTO HentKalibrering();
+        
     }
 }

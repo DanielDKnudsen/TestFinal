@@ -9,15 +9,19 @@ namespace DataLayer
 {
     public class HentNulpunktXML
     {
+        public string værdi = "";
         public double HentNPJ()
         {
+
+       
             string filNavnDaniel = @"C:\Users\Daniel\source\repos\TestFinal";
             string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\";
 
             XmlDocument doc = new XmlDocument();
             doc.Load(filNavn + "Nulpunkt" + ".xml");
-            XmlNode node = doc.DocumentElement.SelectSingleNode("Nulpunkt.xml");
-            string værdi = node.InnerText;
+
+            XmlNode node = doc.DocumentElement.LastChild;
+                string værdi = node.InnerText;
 
             return Convert.ToDouble(værdi);
         }
