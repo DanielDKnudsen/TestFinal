@@ -27,12 +27,14 @@ namespace Projekt_v1._1
         private int _DiaMin = 0;
         private int _SysMax = 0;
         private int _SysMin = 0;
+        private UIKontor1 _UIkontor;
 
         System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\mikke\Documents\GitHub\TestFinal\Alarm.wav");
         Stopwatch STP =  new Stopwatch();
 
-        public UIPatient(string navn, DateTime tid, ILogikLayer ll, DataContainer DCT, MålingContainer målingContainer, string DiaMax,string DiaMin, string SysMax,string SysMin)
+        public UIPatient(UIKontor1 UIkontor, string navn, DateTime tid, ILogikLayer ll, DataContainer DCT, MålingContainer målingContainer, string DiaMax,string DiaMin, string SysMax,string SysMin)
         {
+            _UIkontor = UIkontor;
             InitializeComponent();
             UIPatient_LabelPatientNavn.Text = navn;
             UIPatient_LabelDato.Text = tid.ToLongDateString();
@@ -169,6 +171,7 @@ namespace Projekt_v1._1
             LL.StartTråde();
             UIPatient_KnapStart.Enabled = false;
             button2.Enabled = true;
+            _UIkontor.EnableIndicator();
         }
 
         private void UIPatient_Load(object sender, EventArgs e)
@@ -235,7 +238,7 @@ namespace Projekt_v1._1
             PDTO.IndlæggelsesDato = Convert.ToDateTime(UIPatient_LabelDato.Text);
             UIPatient_KnapStart.Enabled = true;
             button2.Enabled = false;
-
+            _UIkontor.DisableIndicator();
 
             LL.GemAlleMålinger(PDTO);
         }
