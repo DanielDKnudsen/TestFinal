@@ -24,6 +24,8 @@ namespace LogikLayer
         private Filter _filter;
         private DataContainer _dct;
         private bool tidFaktor;
+        private List<double> HeleMålingen = new List<double>();
+        private bool GemMålinger;
         
 
         public LogikController(IDataLayer dl, Consumer consumer,DataContainer DCT, Kalibrering Kalib)
@@ -35,7 +37,19 @@ namespace LogikLayer
             _filter = new Filter(new RawFilter(), _dct);
             kalib = Kalib;
             HentKalibrering();
-            
+            GemMålinger = false;
+        }
+
+        //Hent måling fra consumer-klassen:
+        public void MålingTilDB()
+        {
+            List<double> halvtredsMålinger = new List<double>();
+            halvtredsMålinger = _consumer.SendTilLogikLag();
+
+            foreach (var item in halvtredsMålinger)
+            {
+                HeleMålingen.Add(item);
+            }
         }
 
         public void HentKalibrering()
@@ -43,6 +57,16 @@ namespace LogikLayer
             KalibreringDTO kDTO = new KalibreringDTO();
             kDTO = DL.HentKalibrering();
             _consumer.GetKalib(kDTO);
+        }
+
+        public void GemAlleMålinger(PatientDTO pDTO)
+        {
+            _consumer.kør = false;
+            DL.StopProducerTråd();
+            MålingDTO mDTO = new MålingDTO();
+            mDTO.Data = HeleMålingen;
+            DL.GemMålingIXML(pDTO, mDTO);
+
         }
 
         public void SetNPJ()
@@ -60,6 +84,7 @@ namespace LogikLayer
         
         public void StartTråde()
         {
+            _consumer.kør = true;
             Thread consumerThread = new Thread(_consumer.Run);
             consumerThread.Start();
             DL.StartProducerTråd();

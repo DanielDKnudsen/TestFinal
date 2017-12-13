@@ -20,7 +20,7 @@ namespace DataLayer
             //data = ConvertToBinary(kalibreringDTO.KalibrerDoubles);
             //string dataString = Convert.ToBase64String(data);
 
-            XmlTextWriter xWriter = new XmlTextWriter(filNavn, Encoding.UTF8);
+            XmlTextWriter xWriter = new XmlTextWriter(filNavnDaniel, Encoding.UTF8);
             xWriter.Formatting = Formatting.Indented;
             xWriter.WriteStartElement("Kalibrering");
             xWriter.WriteStartElement("Dato");
