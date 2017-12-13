@@ -107,7 +107,6 @@ namespace Projekt_v1._1
                     Patient.DiaMaximum = Convert.ToInt32(UIKontor_TextBoxDiaMax.Text);
                     UIKontor_TextBoxCPR2.Text = UIKontor_TextBoxCPR1.Text;
                     UIKontor_TextBoxStue2.Text = UIKontor_TextBoxStue1.Text;
-                    LL.GemPatient(Patient);
                     UIKontor_KnapGem.Enabled = false;
                     UIKontor_KnapAnnuller.Enabled = false;
                     UIKontor_KnapUdskriv.Enabled = true;
