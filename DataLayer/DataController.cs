@@ -18,6 +18,7 @@ namespace DataLayer
         private XMLGemKalibrering Kalib;
         private IDAQ IDaq;
         private Hent_Kalibrering HentKalib;
+        private XML_gem GemMåling;
 
 
         public DataController(DataProducer producer)
@@ -28,11 +29,12 @@ namespace DataLayer
             HentNPJ = new HentNulpunktXML();
             Kalib = new XMLGemKalibrering();
             HentKalib = new Hent_Kalibrering();
+            GemMåling = new XML_gem();
         }
 
-        public void GemPatient(PatientDTO PDTO)
+        public void GemMålingIXML(PatientDTO PDTO, MålingDTO MDTO)
         {
-            
+            GemMåling.LavXML(MDTO, PDTO);
         }
 
         public void GemKalibrering(KalibreringDTO KalibDTO)
@@ -57,6 +59,7 @@ namespace DataLayer
 
         public void StartProducerTråd()
         {
+            _producer.kør = true;
             Thread producerThread = new Thread(_producer.Run);
             producerThread.Start();
         }
@@ -65,6 +68,11 @@ namespace DataLayer
         {
             Hent_Kalibrering hentKalib = new Hent_Kalibrering();
             return hentKalib.HentKal();
+        }
+
+        public void StopProducerTråd()
+        {
+            _producer.kør = false;
         }
 
         public MålingDTO startMålingPrøve()

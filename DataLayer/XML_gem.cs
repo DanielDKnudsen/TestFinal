@@ -13,9 +13,10 @@ namespace DataLayer
 {
     public class XML_gem
     {
-        private void LavXML(MålingDTO mdto, PatientDTO pdto)
+        public void LavXML(MålingDTO mdto, PatientDTO pdto)
         {
-            string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\" + pdto.Fornavn + pdto.Efternavn;
+            string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\" + pdto.Fornavn;
+            string filNavnDaniel = @"C:\Users\Daniel\source\repos\TestFinal\" + pdto.Fornavn;
 
             byte[] data = new byte[mdto.Data.Count];
             data = ConvertToBinary(mdto.Data);
@@ -24,7 +25,7 @@ namespace DataLayer
             if (File.Exists(filNavn))
             {
                 XmlDocument doc = new XmlDocument();
-                doc.Load(filNavn);
+                doc.Load(filNavnDaniel);
                 XmlNode Måling = doc.CreateElement("Måling");
                 XmlNode Målingstidspunkt = doc.CreateElement("Målingstidspunkt");
                 Målingstidspunkt.InnerText = mdto.Tid.ToString();
@@ -38,7 +39,7 @@ namespace DataLayer
 
             else
             {
-                XmlTextWriter xWriter = new XmlTextWriter(filNavn, Encoding.UTF8);
+                XmlTextWriter xWriter = new XmlTextWriter(filNavnDaniel, Encoding.UTF8);
                 xWriter.Formatting = Formatting.Indented;
                 xWriter.WriteStartElement(pdto.Fornavn + pdto.Efternavn);
                 xWriter.WriteStartElement("Måling");

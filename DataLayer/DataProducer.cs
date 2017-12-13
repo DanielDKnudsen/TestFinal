@@ -16,6 +16,7 @@ namespace DataLayer
         private readonly ConcurrentQueue<Bufferblock> _dataQueue;
         private IDAQ _data;
         private List<double> test = new List<double>();
+        public bool kør { get; set; }
 
         public DataProducer(ConcurrentQueue<Bufferblock> dataQueue)
         {
@@ -25,7 +26,7 @@ namespace DataLayer
 
         public void Run()
         {
-            while (true)
+            while (kør)
             {
                 Bufferblock B1 = new Bufferblock();
                 B1.Datalist = _data.CollectNulpunktsListe().Data;

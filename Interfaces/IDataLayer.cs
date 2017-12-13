@@ -9,7 +9,6 @@ namespace Interfaces
 {
     public interface IDataLayer
     {
-        void GemPatient(PatientDTO PDTO);
         MålingDTO startMålingPrøve();
         MålingDTO Start();
         KalibreringDTO LavKalibrering(int mmHg);
@@ -18,6 +17,8 @@ namespace Interfaces
         void GemNPJ(double Nulpunkt);
         double hentNPJ();
         KalibreringDTO HentKalibrering();
-        
+        void StopProducerTråd();
+        void GemMålingIXML(PatientDTO PDTO, MålingDTO MDTO);
+
     }
 }

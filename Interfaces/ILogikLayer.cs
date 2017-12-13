@@ -20,5 +20,6 @@ namespace Interfaces
         void GemKalibrering(KalibreringDTO KalibDTO);
         void SetFilter(string Filter);
         KalibreringDTO kalibliste();
+        void GemAlleMålinger(PatientDTO PDTO);
     }
 }

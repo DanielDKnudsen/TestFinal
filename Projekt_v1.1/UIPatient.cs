@@ -221,6 +221,15 @@ namespace Projekt_v1._1
             player.Stop();
             STP.Start();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PatientDTO PDTO = new PatientDTO();
+            PDTO.Fornavn = UIPatient_LabelPatientNavn.Text;
+            PDTO.IndlæggelsesDato = Convert.ToDateTime(UIPatient_LabelDato.Text);
+
+            LL.GemAlleMålinger(PDTO);
+        }
     }
 
 }

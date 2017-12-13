@@ -22,6 +22,8 @@ namespace LogikLayer
         public IFilter Ifilter { get; set; }
         public DataContainer _dct;
         private List<double> test = new List<double>();
+        private List<double> konverteretListe = new List<double>();
+        public bool kør { get; set; } 
 
 
         public Consumer(ConcurrentQueue<Bufferblock> dataQueue, IFilter iFilter,DataContainer DCT, BTMålerController BTMålerController, UdregnKalibrering UdKal)
@@ -35,18 +37,18 @@ namespace LogikLayer
 
         public void Run()
         {
-            while (true)
+            while (kør)
             {
                 Bufferblock B1;
                     while (!_dataQueue.TryDequeue(out B1))
                 {
                     Thread.Sleep(0);
                 }
-                List<double> konverteretListe = new List<double>();
                 M1.Data = B1.Datalist;
                 konverteretListe = convert.ConvertList(M1.Data);
+                SendTilLogikLag();
                 filter.FiltrerListe(Ifilter.Filtrer(konverteretListe));
-
+                konverteretListe.Clear();
             }
         }
 
@@ -54,6 +56,12 @@ namespace LogikLayer
         {
             convert.SetNPJ(NPJ);
         }
+
+        public List<double> SendTilLogikLag()
+        {
+            return konverteretListe;
+        }
+        
 
         public void GetKalib(KalibreringDTO Kalib)
         {
