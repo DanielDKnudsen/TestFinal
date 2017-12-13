@@ -52,7 +52,7 @@ namespace LogikLayer
                         if (_data[i + 10] < Grænseværdi)
                         {
                             i = i+10 ;
-                            Systoler.Add(SS.Max());
+                            Systoler.Add(SS.Max() / (5 * 0.000005 * 736.294));
                             tid.Add(((i-(SS.Count/2))*forhold)/1000);
                             SS.Clear();
                         }

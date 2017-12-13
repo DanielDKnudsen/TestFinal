@@ -131,6 +131,7 @@ namespace Projekt_v1._1
             {
                 UIPatient_KnapDigital.Enabled = true;
                 UIPatient_KnapStart.Enabled = true;
+                UIPatient_KnapNul.Enabled = false;
             }
         }
 
@@ -166,6 +167,7 @@ namespace Projekt_v1._1
         private void UIPatient_KnapStart_Click(object sender, EventArgs e)
         {
             LL.StartTråde();
+            UIPatient_KnapStart.Enabled = false;
         }
 
         private void UIPatient_Load(object sender, EventArgs e)

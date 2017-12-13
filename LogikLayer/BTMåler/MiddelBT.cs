@@ -22,7 +22,7 @@ namespace LogikLayer.BTMåler
         public void UdregnMiddelBT()
         {
             objBT.WaitOne();
-            _målingContainer.setBT(Convert.ToInt32(_convertedlist.Average()));
+            _målingContainer.setBT(Convert.ToInt32(_convertedlist.Average() / (5 * 0.000005 * 736.294)));
         }
     }
 }

@@ -20,7 +20,7 @@ namespace LogikLayer.BTMåler
 
         public void BeregnDiastole()
         {
-            _målingContainer.setDia(Convert.ToInt32(_convertedlist.Min()));
+            _målingContainer.setDia(Convert.ToInt32(_convertedlist.Min() / (5 * 0.000005 * 736.294)));
         }
     }
 }
