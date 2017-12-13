@@ -28,12 +28,12 @@ namespace PresentationLayer
         {
             //for (int i = 0; i < 100; i++)
             //{
-            //    this.chart1.Series["Slope"].Points.AddXY(i, _kDTO.slope);
+            //    this.chart1.Series["Slope"].Points.AddXY(i,i* _kDTO.slope);
 
             //    if (i == 10)
             //    {
-            //        this.chart1.Series["Kalib"].Points.AddXY(i,_list[0]);
-            //        this.chart1.Series["Kalib"].Points.AddXY(i,_list[3]);
+            //        this.chart1.Series["Kalib"].Points.AddXY(i, _list[0]);
+            //        this.chart1.Series["Kalib"].Points.AddXY(i, _list[3]);
             //    }
             //    if (i == 50)
             //    {

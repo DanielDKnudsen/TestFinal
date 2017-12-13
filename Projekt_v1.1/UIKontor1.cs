@@ -20,6 +20,8 @@ namespace Projekt_v1._1
         private ILogikLayer LL;
         private DataContainer _dct;
         private MålingContainer _målingContainer;
+        private bool _farve = false;
+
 
         public UIKontor1(ILogikLayer ll,DataContainer DCT, MålingContainer målingContainer)
         {
@@ -27,6 +29,7 @@ namespace Projekt_v1._1
             LL = ll;
             _dct = DCT;
             _målingContainer = målingContainer;
+
         }
 
         private void UIKontor_KnapLogud_Click(object sender, EventArgs e)
@@ -108,9 +111,7 @@ namespace Projekt_v1._1
                     UIKontor_KnapGem.Enabled = false;
                     UIKontor_KnapAnnuller.Enabled = false;
                     UIKontor_KnapUdskriv.Enabled = true;
-                    UIKontor_KnapHent.Enabled = true;
                     UIKontor_KnapStart.Enabled = true;
-                    UIKontor_KnapStop.Enabled = true;
                     UIKontor_TextBoxCPR1.Enabled = false;
                     UIKontor_TextBoxStue1.Enabled = false;
                     UIKontor_TextBoxFornavn.Enabled = false;
@@ -203,19 +204,14 @@ namespace Projekt_v1._1
             
             UIPatient pat = new UIPatient(UIKontor_TextBoxFornavn.Text + " " + UIKontor_TextBoxEfternavn.Text, UIKontor_Indlæggelsesdato.Value, LL,_dct, _målingContainer,UIKontor_TextBoxDiaMax.Text,UIKontor_TextBoxDiaMin.Text,UIKontor_TextBoxSysMax.Text, UIKontor_TextBoxSysMin.Text);
             pat.Show();
+            _farve = true;
+            if (_farve == true)
+            {
+                UIKontor_FarveIndikator.BackColor = Color.Black;
+            }
         }
 
-        private void UIKontor_KnapHent_Click(object sender, EventArgs e)
-        {
-            UIPrint UIPrint = new UIPrint();
-            UIPrint.Show();
-        }
 
-        private void UIKontor_KnapStop_Click(object sender, EventArgs e)
-        {
-            var doc = XDocument.Load("cd_catalog.xml");
-
-            var node = doc.Descendants("MÅLING").FirstOrDefault(cd => cd.Element("DATO").Value == "12/12/2012:06:44:23");
-        }
+        
     }
 }
