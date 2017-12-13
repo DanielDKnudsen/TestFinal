@@ -168,6 +168,7 @@ namespace Projekt_v1._1
         {
             LL.StartTråde();
             UIPatient_KnapStart.Enabled = false;
+            button2.Enabled = true;
         }
 
         private void UIPatient_Load(object sender, EventArgs e)
@@ -224,9 +225,17 @@ namespace Projekt_v1._1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             PatientDTO PDTO = new PatientDTO();
             PDTO.Fornavn = UIPatient_LabelPatientNavn.Text;
             PDTO.IndlæggelsesDato = Convert.ToDateTime(UIPatient_LabelDato.Text);
+            UIPatient_KnapStart.Enabled = true;
+            button2.Enabled = false;
+
 
             LL.GemAlleMålinger(PDTO);
         }
