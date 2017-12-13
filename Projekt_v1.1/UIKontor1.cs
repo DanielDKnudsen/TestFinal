@@ -206,16 +206,19 @@ namespace Projekt_v1._1
 
         private void UIKontor_KnapStart_Click(object sender, EventArgs e)
         {
-
-            UIPatient pat = new UIPatient(UIKontor_TextBoxFornavn.Text + " " + UIKontor_TextBoxEfternavn.Text,
-                UIKontor_Indlæggelsesdato.Value, LL, _dct, _målingContainer, UIKontor_TextBoxDiaMax.Text,
-                UIKontor_TextBoxDiaMin.Text, UIKontor_TextBoxSysMax.Text, UIKontor_TextBoxSysMin.Text);
+            
+            UIPatient pat = new UIPatient(this, UIKontor_TextBoxFornavn.Text + " " + UIKontor_TextBoxEfternavn.Text, UIKontor_Indlæggelsesdato.Value, LL,_dct, _målingContainer,UIKontor_TextBoxDiaMax.Text,UIKontor_TextBoxDiaMin.Text,UIKontor_TextBoxSysMax.Text, UIKontor_TextBoxSysMin.Text);
             pat.Show();
-            _farve = true;
-            if (_farve == true)
-            {
+        }
+
+        public void DisableIndicator()
+        {
+            UIKontor_FarveIndikator.BackColor = Color.White;
+        }
+
+        public void EnableIndicator()
+        {
                 UIKontor_FarveIndikator.BackColor = Color.Black;
-            }
         }
 
         private void UIKontor_KnapUdskriv_Click(object sender, EventArgs e)
