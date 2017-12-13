@@ -10,7 +10,6 @@ namespace Interfaces
     public interface ILogikLayer
     {
         int RequestLogind(LogindDTO LDTO);
-        void GemPatient(PatientDTO PDTO);
         void StartTråde();
         void SetNPJ();
         string NulpunktStart();
