@@ -234,7 +234,7 @@ namespace Projekt_v1._1
             PDTO.Fornavn = UIPatient_LabelPatientNavn.Text;
             PDTO.IndlæggelsesDato = Convert.ToDateTime(UIPatient_LabelDato.Text);
             UIPatient_KnapStart.Enabled = true;
-            button2.Enabled = false;
+            button2.Enabled = true;
 
 
             LL.GemAlleMålinger(PDTO);

@@ -40,45 +40,48 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 34);
+            this.label1.Location = new System.Drawing.Point(91, 62);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 17);
+            this.label1.Size = new System.Drawing.Size(142, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Brugernavn:";
             // 
             // UILogind_textBoxBrugernavn
             // 
-            this.UILogind_textBoxBrugernavn.Location = new System.Drawing.Point(55, 55);
+            this.UILogind_textBoxBrugernavn.Location = new System.Drawing.Point(96, 100);
+            this.UILogind_textBoxBrugernavn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.UILogind_textBoxBrugernavn.Name = "UILogind_textBoxBrugernavn";
-            this.UILogind_textBoxBrugernavn.Size = new System.Drawing.Size(258, 22);
+            this.UILogind_textBoxBrugernavn.Size = new System.Drawing.Size(448, 35);
             this.UILogind_textBoxBrugernavn.TabIndex = 1;
-            this.UILogind_textBoxBrugernavn.Text = "123";
             // 
             // labelKodeord
             // 
             this.labelKodeord.AutoSize = true;
-            this.labelKodeord.Location = new System.Drawing.Point(55, 109);
+            this.labelKodeord.Location = new System.Drawing.Point(96, 198);
+            this.labelKodeord.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelKodeord.Name = "labelKodeord";
-            this.labelKodeord.Size = new System.Drawing.Size(66, 17);
+            this.labelKodeord.Size = new System.Drawing.Size(113, 29);
             this.labelKodeord.TabIndex = 2;
             this.labelKodeord.Text = "Kodeord:";
             // 
             // UILogind_textBoxKodeord
             // 
-            this.UILogind_textBoxKodeord.Location = new System.Drawing.Point(55, 130);
+            this.UILogind_textBoxKodeord.Location = new System.Drawing.Point(96, 236);
+            this.UILogind_textBoxKodeord.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.UILogind_textBoxKodeord.Name = "UILogind_textBoxKodeord";
-            this.UILogind_textBoxKodeord.Size = new System.Drawing.Size(258, 22);
+            this.UILogind_textBoxKodeord.Size = new System.Drawing.Size(448, 35);
             this.UILogind_textBoxKodeord.TabIndex = 3;
-            this.UILogind_textBoxKodeord.Text = "123";
             this.UILogind_textBoxKodeord.UseSystemPasswordChar = true;
             // 
             // UILogind_radioButtonSunhedspersonale
             // 
             this.UILogind_radioButtonSunhedspersonale.AutoSize = true;
             this.UILogind_radioButtonSunhedspersonale.Checked = true;
-            this.UILogind_radioButtonSunhedspersonale.Location = new System.Drawing.Point(55, 191);
+            this.UILogind_radioButtonSunhedspersonale.Location = new System.Drawing.Point(96, 346);
+            this.UILogind_radioButtonSunhedspersonale.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.UILogind_radioButtonSunhedspersonale.Name = "UILogind_radioButtonSunhedspersonale";
-            this.UILogind_radioButtonSunhedspersonale.Size = new System.Drawing.Size(156, 21);
+            this.UILogind_radioButtonSunhedspersonale.Size = new System.Drawing.Size(261, 33);
             this.UILogind_radioButtonSunhedspersonale.TabIndex = 4;
             this.UILogind_radioButtonSunhedspersonale.TabStop = true;
             this.UILogind_radioButtonSunhedspersonale.Text = "Sundhedspersonale";
@@ -87,18 +90,20 @@
             // UILogind_radioButtonMedicoTekniker
             // 
             this.UILogind_radioButtonMedicoTekniker.AutoSize = true;
-            this.UILogind_radioButtonMedicoTekniker.Location = new System.Drawing.Point(234, 191);
+            this.UILogind_radioButtonMedicoTekniker.Location = new System.Drawing.Point(410, 346);
+            this.UILogind_radioButtonMedicoTekniker.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.UILogind_radioButtonMedicoTekniker.Name = "UILogind_radioButtonMedicoTekniker";
-            this.UILogind_radioButtonMedicoTekniker.Size = new System.Drawing.Size(136, 21);
+            this.UILogind_radioButtonMedicoTekniker.Size = new System.Drawing.Size(229, 33);
             this.UILogind_radioButtonMedicoTekniker.TabIndex = 5;
             this.UILogind_radioButtonMedicoTekniker.Text = "Medico-teknikker";
             this.UILogind_radioButtonMedicoTekniker.UseVisualStyleBackColor = true;
             // 
             // UILogind_buttonLogind
             // 
-            this.UILogind_buttonLogind.Location = new System.Drawing.Point(109, 232);
+            this.UILogind_buttonLogind.Location = new System.Drawing.Point(191, 420);
+            this.UILogind_buttonLogind.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.UILogind_buttonLogind.Name = "UILogind_buttonLogind";
-            this.UILogind_buttonLogind.Size = new System.Drawing.Size(174, 78);
+            this.UILogind_buttonLogind.Size = new System.Drawing.Size(304, 141);
             this.UILogind_buttonLogind.TabIndex = 6;
             this.UILogind_buttonLogind.Text = "Logind";
             this.UILogind_buttonLogind.UseVisualStyleBackColor = true;
@@ -106,9 +111,9 @@
             // 
             // UILogind
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 345);
+            this.ClientSize = new System.Drawing.Size(780, 625);
             this.Controls.Add(this.UILogind_buttonLogind);
             this.Controls.Add(this.UILogind_radioButtonMedicoTekniker);
             this.Controls.Add(this.UILogind_radioButtonSunhedspersonale);
@@ -116,6 +121,7 @@
             this.Controls.Add(this.labelKodeord);
             this.Controls.Add(this.UILogind_textBoxBrugernavn);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "UILogind";
             this.Text = "UILogin";
             this.ResumeLayout(false);

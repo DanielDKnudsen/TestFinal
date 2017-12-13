@@ -83,6 +83,7 @@
             this.UIKontor_KnapUdskriv.TabIndex = 1;
             this.UIKontor_KnapUdskriv.Text = "Udskriv";
             this.UIKontor_KnapUdskriv.UseVisualStyleBackColor = true;
+            this.UIKontor_KnapUdskriv.Click += new System.EventHandler(this.UIKontor_KnapUdskriv_Click);
             // 
             // UIKontor_KnapGem
             // 
@@ -265,7 +266,6 @@
             this.UIKontor_TextBoxCPR1.Name = "UIKontor_TextBoxCPR1";
             this.UIKontor_TextBoxCPR1.Size = new System.Drawing.Size(286, 35);
             this.UIKontor_TextBoxCPR1.TabIndex = 19;
-            this.UIKontor_TextBoxCPR1.Text = "1111111111";
             this.UIKontor_TextBoxCPR1.TextChanged += new System.EventHandler(this.UIKontor_TextBoxCPR1_TextChanged);
             // 
             // UIKontor_TextBoxStue1
@@ -276,7 +276,6 @@
             this.UIKontor_TextBoxStue1.Name = "UIKontor_TextBoxStue1";
             this.UIKontor_TextBoxStue1.Size = new System.Drawing.Size(286, 35);
             this.UIKontor_TextBoxStue1.TabIndex = 20;
-            this.UIKontor_TextBoxStue1.Text = "123";
             this.UIKontor_TextBoxStue1.TextChanged += new System.EventHandler(this.UIKontor_TextBoxStue1_TextChanged);
             // 
             // UIKontor_TextBoxEfternavn
@@ -287,7 +286,6 @@
             this.UIKontor_TextBoxEfternavn.Name = "UIKontor_TextBoxEfternavn";
             this.UIKontor_TextBoxEfternavn.Size = new System.Drawing.Size(286, 35);
             this.UIKontor_TextBoxEfternavn.TabIndex = 22;
-            this.UIKontor_TextBoxEfternavn.Text = "Dan";
             this.UIKontor_TextBoxEfternavn.TextChanged += new System.EventHandler(this.UIKontor_TextBoxEfternavn_TextChanged);
             // 
             // UIKontor_TextBoxFornavn
@@ -298,7 +296,6 @@
             this.UIKontor_TextBoxFornavn.Name = "UIKontor_TextBoxFornavn";
             this.UIKontor_TextBoxFornavn.Size = new System.Drawing.Size(286, 35);
             this.UIKontor_TextBoxFornavn.TabIndex = 21;
-            this.UIKontor_TextBoxFornavn.Text = "Mik";
             this.UIKontor_TextBoxFornavn.TextChanged += new System.EventHandler(this.UIKontor_TextBoxFornavn_TextChanged);
             // 
             // UIKontor_TextBoxSysMax
@@ -309,7 +306,6 @@
             this.UIKontor_TextBoxSysMax.Name = "UIKontor_TextBoxSysMax";
             this.UIKontor_TextBoxSysMax.Size = new System.Drawing.Size(286, 35);
             this.UIKontor_TextBoxSysMax.TabIndex = 24;
-            this.UIKontor_TextBoxSysMax.Text = "1000";
             this.UIKontor_TextBoxSysMax.TextChanged += new System.EventHandler(this.UIKontor_TextBoxSysMax_TextChanged);
             // 
             // UIKontor_TextBoxSysMin
@@ -320,7 +316,6 @@
             this.UIKontor_TextBoxSysMin.Name = "UIKontor_TextBoxSysMin";
             this.UIKontor_TextBoxSysMin.Size = new System.Drawing.Size(286, 35);
             this.UIKontor_TextBoxSysMin.TabIndex = 23;
-            this.UIKontor_TextBoxSysMin.Text = "0";
             this.UIKontor_TextBoxSysMin.TextChanged += new System.EventHandler(this.UIKontor_TextBoxSysMin_TextChanged);
             // 
             // UIKontor_TextBoxDiaMax
@@ -331,7 +326,6 @@
             this.UIKontor_TextBoxDiaMax.Name = "UIKontor_TextBoxDiaMax";
             this.UIKontor_TextBoxDiaMax.Size = new System.Drawing.Size(286, 35);
             this.UIKontor_TextBoxDiaMax.TabIndex = 26;
-            this.UIKontor_TextBoxDiaMax.Text = "1000";
             this.UIKontor_TextBoxDiaMax.TextChanged += new System.EventHandler(this.UIKontor_TextBoxDiaMax_TextChanged);
             // 
             // UIKontor_TextBoxDiaMin
@@ -342,7 +336,6 @@
             this.UIKontor_TextBoxDiaMin.Name = "UIKontor_TextBoxDiaMin";
             this.UIKontor_TextBoxDiaMin.Size = new System.Drawing.Size(286, 35);
             this.UIKontor_TextBoxDiaMin.TabIndex = 25;
-            this.UIKontor_TextBoxDiaMin.Text = "-1000";
             this.UIKontor_TextBoxDiaMin.TextChanged += new System.EventHandler(this.UIKontor_TextBoxDiaMin_TextChanged);
             // 
             // UIKontor_TextBoxStue2

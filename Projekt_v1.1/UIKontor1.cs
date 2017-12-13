@@ -23,7 +23,7 @@ namespace Projekt_v1._1
         private bool _farve = false;
 
 
-        public UIKontor1(ILogikLayer ll,DataContainer DCT, MålingContainer målingContainer)
+        public UIKontor1(ILogikLayer ll, DataContainer DCT, MålingContainer målingContainer)
         {
             InitializeComponent();
             LL = ll;
@@ -35,7 +35,7 @@ namespace Projekt_v1._1
         private void UIKontor_KnapLogud_Click(object sender, EventArgs e)
         {
             this.Close();
-            UILogind logind = new UILogind(LL,_dct,_målingContainer);
+            UILogind logind = new UILogind(LL, _dct, _målingContainer);
             logind.Show();
         }
 
@@ -86,7 +86,7 @@ namespace Projekt_v1._1
             PatientDTO Patient = new PatientDTO();
             if (UIKontor_TextBoxCPR1.Text == "" || UIKontor_TextBoxStue1.Text == "" ||
                 UIKontor_TextBoxFornavn.Text == "" || UIKontor_TextBoxEfternavn.Text == "" ||
-                UIKontor_TextBoxSysMin.Text == "" || UIKontor_TextBoxSysMax.Text == "" || 
+                UIKontor_TextBoxSysMin.Text == "" || UIKontor_TextBoxSysMax.Text == "" ||
                 UIKontor_TextBoxDiaMin.Text == "" || UIKontor_TextBoxDiaMax.Text == "")
                 MessageBox.Show("Udfyld venligst alle felter.");
             else
@@ -127,7 +127,7 @@ namespace Projekt_v1._1
 
         private void UIKontor_TextBoxCPR1_TextChanged(object sender, EventArgs e)
         {
-            if(System.Text.RegularExpressions.Regex.IsMatch(UIKontor_TextBoxCPR1.Text, "[^0-9]"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(UIKontor_TextBoxCPR1.Text, "[^0-9]"))
             {
                 MessageBox.Show("Skriv venligst kun tal.");
                 UIKontor_TextBoxCPR1.Text = UIKontor_TextBoxCPR1.Text.Remove(UIKontor_TextBoxCPR1.Text.Length - 1);
@@ -148,7 +148,8 @@ namespace Projekt_v1._1
             if (System.Text.RegularExpressions.Regex.IsMatch(UIKontor_TextBoxSysMin.Text, "[^0-9]"))
             {
                 MessageBox.Show("Skriv venligst kun tal.");
-                UIKontor_TextBoxSysMin.Text = UIKontor_TextBoxSysMin.Text.Remove(UIKontor_TextBoxSysMin.Text.Length - 1);
+                UIKontor_TextBoxSysMin.Text =
+                    UIKontor_TextBoxSysMin.Text.Remove(UIKontor_TextBoxSysMin.Text.Length - 1);
             }
         }
 
@@ -157,7 +158,8 @@ namespace Projekt_v1._1
             if (System.Text.RegularExpressions.Regex.IsMatch(UIKontor_TextBoxSysMax.Text, "[^0-9]"))
             {
                 MessageBox.Show("Skriv venligst kun tal.");
-                UIKontor_TextBoxSysMax.Text = UIKontor_TextBoxSysMax.Text.Remove(UIKontor_TextBoxSysMax.Text.Length - 1);
+                UIKontor_TextBoxSysMax.Text =
+                    UIKontor_TextBoxSysMax.Text.Remove(UIKontor_TextBoxSysMax.Text.Length - 1);
             }
         }
 
@@ -166,7 +168,8 @@ namespace Projekt_v1._1
             if (System.Text.RegularExpressions.Regex.IsMatch(UIKontor_TextBoxDiaMin.Text, "[^0-9]"))
             {
                 MessageBox.Show("Skriv venligst kun tal.");
-                UIKontor_TextBoxDiaMin.Text = UIKontor_TextBoxDiaMin.Text.Remove(UIKontor_TextBoxDiaMin.Text.Length - 1);
+                UIKontor_TextBoxDiaMin.Text =
+                    UIKontor_TextBoxDiaMin.Text.Remove(UIKontor_TextBoxDiaMin.Text.Length - 1);
             }
         }
 
@@ -175,7 +178,8 @@ namespace Projekt_v1._1
             if (System.Text.RegularExpressions.Regex.IsMatch(UIKontor_TextBoxDiaMax.Text, "[^0-9]"))
             {
                 MessageBox.Show("Skriv venligst kun tal.");
-                UIKontor_TextBoxDiaMax.Text = UIKontor_TextBoxDiaMax.Text.Remove(UIKontor_TextBoxDiaMax.Text.Length - 1);
+                UIKontor_TextBoxDiaMax.Text =
+                    UIKontor_TextBoxDiaMax.Text.Remove(UIKontor_TextBoxDiaMax.Text.Length - 1);
             }
         }
 
@@ -184,24 +188,28 @@ namespace Projekt_v1._1
             if (!UIKontor_TextBoxFornavn.Text.All(fornavn => char.IsLetter(fornavn)))
             {
                 MessageBox.Show("Skriv venligst kun bogstaver");
-                UIKontor_TextBoxFornavn.Text = UIKontor_TextBoxFornavn.Text.Remove(UIKontor_TextBoxFornavn.Text.Length - 1);
+                UIKontor_TextBoxFornavn.Text =
+                    UIKontor_TextBoxFornavn.Text.Remove(UIKontor_TextBoxFornavn.Text.Length - 1);
             }
         }
 
         private void UIKontor_TextBoxEfternavn_TextChanged(object sender, EventArgs e)
         {
-            
+
             if (!UIKontor_TextBoxEfternavn.Text.All(efternavn => char.IsLetter(efternavn)))
             {
                 MessageBox.Show("Skriv venligst kun bogstaver");
-                UIKontor_TextBoxEfternavn.Text = UIKontor_TextBoxEfternavn.Text.Remove(UIKontor_TextBoxEfternavn.Text.Length - 1);
+                UIKontor_TextBoxEfternavn.Text =
+                    UIKontor_TextBoxEfternavn.Text.Remove(UIKontor_TextBoxEfternavn.Text.Length - 1);
             }
         }
 
         private void UIKontor_KnapStart_Click(object sender, EventArgs e)
         {
-            
-            UIPatient pat = new UIPatient(UIKontor_TextBoxFornavn.Text + " " + UIKontor_TextBoxEfternavn.Text, UIKontor_Indlæggelsesdato.Value, LL,_dct, _målingContainer,UIKontor_TextBoxDiaMax.Text,UIKontor_TextBoxDiaMin.Text,UIKontor_TextBoxSysMax.Text, UIKontor_TextBoxSysMin.Text);
+
+            UIPatient pat = new UIPatient(UIKontor_TextBoxFornavn.Text + " " + UIKontor_TextBoxEfternavn.Text,
+                UIKontor_Indlæggelsesdato.Value, LL, _dct, _målingContainer, UIKontor_TextBoxDiaMax.Text,
+                UIKontor_TextBoxDiaMin.Text, UIKontor_TextBoxSysMax.Text, UIKontor_TextBoxSysMin.Text);
             pat.Show();
             _farve = true;
             if (_farve == true)
@@ -210,7 +218,21 @@ namespace Projekt_v1._1
             }
         }
 
-
-        
+        private void UIKontor_KnapUdskriv_Click(object sender, EventArgs e)
+        {
+            UIKontor_TextBoxCPR1.Clear();
+            UIKontor_TextBoxCPR2.Clear();
+            UIKontor_TextBoxDiaMin.Clear();
+            UIKontor_TextBoxDiaMax.Clear();
+            UIKontor_TextBoxEfternavn.Clear();
+            UIKontor_TextBoxFornavn.Clear();
+            UIKontor_TextBoxStue2.Clear();
+            UIKontor_TextBoxStue1.Clear();
+            UIKontor_TextBoxSysMax.Clear();
+            UIKontor_TextBoxSysMin.Clear();
+            UIKontor_KnapIndskriv.Enabled = true;
+            UIKontor_KnapUdskriv.Enabled = false;
+            UIKontor_KnapStart.Enabled = false;
+        }
     }
 }
