@@ -51,6 +51,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.UIPatient_LabelDato = new System.Windows.Forms.Label();
             this.UIPatient_KnapStart = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BTChart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,8 +59,8 @@
             // 
             this.UIPatient_KnapNul.BackColor = System.Drawing.Color.Black;
             this.UIPatient_KnapNul.ForeColor = System.Drawing.Color.White;
-            this.UIPatient_KnapNul.Location = new System.Drawing.Point(387, 1089);
-            this.UIPatient_KnapNul.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UIPatient_KnapNul.Location = new System.Drawing.Point(221, 463);
+            this.UIPatient_KnapNul.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UIPatient_KnapNul.Name = "UIPatient_KnapNul";
             this.UIPatient_KnapNul.Size = new System.Drawing.Size(304, 151);
             this.UIPatient_KnapNul.TabIndex = 0;
@@ -72,8 +73,8 @@
             this.UIPatient_KnapDigital.BackColor = System.Drawing.Color.Black;
             this.UIPatient_KnapDigital.Enabled = false;
             this.UIPatient_KnapDigital.ForeColor = System.Drawing.Color.White;
-            this.UIPatient_KnapDigital.Location = new System.Drawing.Point(35, 1089);
-            this.UIPatient_KnapDigital.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UIPatient_KnapDigital.Location = new System.Drawing.Point(20, 463);
+            this.UIPatient_KnapDigital.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UIPatient_KnapDigital.Name = "UIPatient_KnapDigital";
             this.UIPatient_KnapDigital.Size = new System.Drawing.Size(304, 151);
             this.UIPatient_KnapDigital.TabIndex = 1;
@@ -85,8 +86,8 @@
             // 
             this.UIPatient_KnapStopAlarm.BackColor = System.Drawing.Color.Red;
             this.UIPatient_KnapStopAlarm.Enabled = false;
-            this.UIPatient_KnapStopAlarm.Location = new System.Drawing.Point(2056, 1107);
-            this.UIPatient_KnapStopAlarm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UIPatient_KnapStopAlarm.Location = new System.Drawing.Point(1175, 473);
+            this.UIPatient_KnapStopAlarm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UIPatient_KnapStopAlarm.Name = "UIPatient_KnapStopAlarm";
             this.UIPatient_KnapStopAlarm.Size = new System.Drawing.Size(303, 151);
             this.UIPatient_KnapStopAlarm.TabIndex = 2;
@@ -326,8 +327,8 @@
             this.UIPatient_KnapStart.BackColor = System.Drawing.Color.Black;
             this.UIPatient_KnapStart.Enabled = false;
             this.UIPatient_KnapStart.ForeColor = System.Drawing.Color.White;
-            this.UIPatient_KnapStart.Location = new System.Drawing.Point(738, 1089);
-            this.UIPatient_KnapStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UIPatient_KnapStart.Location = new System.Drawing.Point(422, 463);
+            this.UIPatient_KnapStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UIPatient_KnapStart.Name = "UIPatient_KnapStart";
             this.UIPatient_KnapStart.Size = new System.Drawing.Size(304, 151);
             this.UIPatient_KnapStart.TabIndex = 17;
@@ -335,12 +336,25 @@
             this.UIPatient_KnapStart.UseVisualStyleBackColor = false;
             this.UIPatient_KnapStart.Click += new System.EventHandler(this.UIPatient_KnapStart_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(625, 463);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(174, 78);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Stop Måling";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // UIPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(2597, 1323);
+            this.ClientSize = new System.Drawing.Size(1484, 730);
             this.Controls.Add(this.UIPatient_KnapStart);
             this.Controls.Add(this.UIPatient_LabelDato);
             this.Controls.Add(this.label3);
@@ -359,7 +373,7 @@
             this.Controls.Add(this.UIPatient_KnapStopAlarm);
             this.Controls.Add(this.UIPatient_KnapDigital);
             this.Controls.Add(this.UIPatient_KnapNul);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UIPatient";
             this.Text = "UIPatient";
             this.Load += new System.EventHandler(this.UIPatient_Load);
@@ -389,5 +403,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label UIPatient_LabelDato;
         private System.Windows.Forms.Button UIPatient_KnapStart;
+        private System.Windows.Forms.Button button1;
     }
 }
