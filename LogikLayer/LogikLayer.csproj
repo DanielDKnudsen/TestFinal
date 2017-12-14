@@ -62,7 +62,6 @@
     <Compile Include="Converter.cs" />
     <Compile Include="DigFilter.cs" />
     <Compile Include="Filter.cs" />
-    <Compile Include="HentData.cs" />
     <Compile Include="Kalibrering.cs" />
     <Compile Include="ListerTilLogind.cs" />
     <Compile Include="LogikController.cs" />
@@ -73,8 +72,6 @@
     <Compile Include="BTMåler\Systole.cs" />
     <Compile Include="RawFilter.cs" />
     <Compile Include="StandardAfvigelse.cs" />
-    <Compile Include="SubjectTransferData.cs" />
-    <Compile Include="TransferData.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

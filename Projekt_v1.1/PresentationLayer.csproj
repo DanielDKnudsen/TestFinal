@@ -75,12 +75,6 @@
     <Compile Include="UIPatient.Designer.cs">
       <DependentUpon>UIPatient.cs</DependentUpon>
     </Compile>
-    <Compile Include="UIPrint.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UIPrint.Designer.cs">
-      <DependentUpon>UIPrint.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">
@@ -112,9 +106,9 @@
     <EmbeddedResource Include="UIPatient.resx">
       <DependentUpon>UIPatient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UIPrint.resx">
-      <DependentUpon>UIPrint.cs</DependentUpon>
-    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
