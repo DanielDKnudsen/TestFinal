@@ -20,7 +20,6 @@ namespace Projekt_v1._1
         private ILogikLayer LL;
         private DataContainer _dct;
         private MålingContainer _målingContainer;
-        private bool _farve = false;
 
 
         public UIKontor1(ILogikLayer ll, DataContainer DCT, MålingContainer målingContainer)
