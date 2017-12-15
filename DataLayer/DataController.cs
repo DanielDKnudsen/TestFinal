@@ -25,7 +25,7 @@ namespace DataLayer
         {
             _producer = producer;
             NPJ = new XMLGemNulpunkt();
-            IDaq = new DAQ();
+            IDaq = new FakeDAQ();
             HentNPJ = new HentNulpunktXML();
             Kalib = new XMLGemKalibrering();
             HentKalib = new Hent_Kalibrering();

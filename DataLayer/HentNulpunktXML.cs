@@ -14,7 +14,7 @@ namespace DataLayer
         {
 
        
-            string filNavnDaniel = @"C:\Users\Daniel\source\repos\TestFinal";
+            string filNavnDaniel = @"C:\Users\Daniel\source\repos\TestFinal\";
             string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\";
 
             XmlDocument doc = new XmlDocument();

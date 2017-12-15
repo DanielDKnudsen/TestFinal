@@ -87,13 +87,6 @@ namespace LogikLayer
             DL.StartProducerTråd();
         }
 
-        //public void GemKalibrering(KalibreringDTO KalibDTO)
-        //{
-        //    KalibDTO.slope = _consumer.GetSlope();
-
-        //    DL.GemKalibrering(KalibDTO);
-        //}
-
         public void SetFilter(string Filter)
         {
             tidFaktor = false;

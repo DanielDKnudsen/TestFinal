@@ -16,9 +16,6 @@ namespace DataLayer
         private string filNavn = @"C:\Users\mikke\Documents\GitHub\TestFinal\Kalibrering.xml";
         public void GemXML1(KalibreringDTO kalibreringDTO)
         {
-            //byte[] data = new byte[kalibreringDTO.KalibrerDoubles.Count];
-            //data = ConvertToBinary(kalibreringDTO.KalibrerDoubles);
-            //string dataString = Convert.ToBase64String(data);
 
             XmlTextWriter xWriter = new XmlTextWriter(filNavnDaniel, Encoding.UTF8);
             xWriter.Formatting = Formatting.Indented;
@@ -42,16 +39,6 @@ namespace DataLayer
             xWriter.WriteString(Convert.ToString(kalibreringDTO.slope));
             xWriter.WriteEndElement();
             xWriter.Close();
-        }
-
-        private byte[] ConvertToBinary(List<double> data)
-        {
-            var binformatter = new BinaryFormatter();
-            var mStream = new MemoryStream();
-
-            binformatter.Serialize(mStream, data);
-            
-            return mStream.ToArray();
         }
     }
 }

@@ -21,7 +21,7 @@ namespace DataLayer
         public DataProducer(ConcurrentQueue<Bufferblock> dataQueue)
         {
             _dataQueue = dataQueue;
-            _data = new DAQ();
+            _data = new FakeDAQ();
         }
 
         public void Run()
@@ -31,7 +31,7 @@ namespace DataLayer
                 Bufferblock B1 = new Bufferblock();
                 B1.Datalist = _data.CollectNulpunktsListe().Data;
                 _dataQueue.Enqueue(B1);
-                //Thread.Sleep(50);
+                Thread.Sleep(50);
 
                 for (int i = 0; i < B1.Datalist.Count; i++)
                 {
