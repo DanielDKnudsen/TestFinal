@@ -16,7 +16,7 @@ namespace DataLayer
             List<double> liste = new List<double>();
             for (int i = 0; i < 50; i++)
             {
-                liste.Add(r1.NextDouble());
+                liste.Add(i);
             }
             MålingDTO mDTO = new MålingDTO();
             mDTO.Data = liste;

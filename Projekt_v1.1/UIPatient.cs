@@ -16,7 +16,7 @@ using ObserverPatternVol2;
 
 namespace Projekt_v1._1
 {
-    public partial class UIPatient : Form, IDataObserver, IFilterObserver, IMålingObserver
+    public partial class UIPatient : Form, IFilterObserver, IMålingObserver
     {
         private ILogikLayer LL;
         private bool DigFilter;
@@ -67,20 +67,6 @@ namespace Projekt_v1._1
         private void UIPatient_KnapNul_Click(object sender, EventArgs e)
         {
             NulpunktsGUI();
-        }
-
-        public void UpdateData(MålingDTO mDTO)
-        {
-            if (InvokeRequired)
-            {
-                BeginInvoke(new Action(() => UpdateData(mDTO)));
-            }
-            else
-            {
-                UIPatient_LabelMID.Text = mDTO.MiddelBT.ToString();
-                UIPatient_LabelPULS.Text = mDTO.Puls.ToString();
-                UIPatient_LabelSysDia.Text = mDTO.Sys.ToString() + "/" + mDTO.Dia.ToString();
-            }
         }
 
         public void Update(Queue<double> filtreretKø)
@@ -201,18 +187,18 @@ namespace Projekt_v1._1
         public void Alarm(MålingDTO mDTO)
         {
             
-            if (mDTO.Sys > _SysMax || mDTO.Sys < _SysMin)
-            {
-                player.PlayLooping();
-                UIPatient_KnapStopAlarm.Enabled = true;
-                STP.Reset();
-            }
-            if (mDTO.Dia > _DiaMax || mDTO.Sys < _DiaMin)
-            {
-                player.PlayLooping();
-                UIPatient_KnapStopAlarm.Enabled = true;
-                STP.Reset();
-            }
+            //if (mDTO.Sys > _SysMax || mDTO.Sys < _SysMin)
+            //{
+            //    player.PlayLooping();
+            //    UIPatient_KnapStopAlarm.Enabled = true;
+            //    STP.Reset();
+            //}
+            //if (mDTO.Dia > _DiaMax || mDTO.Sys < _DiaMin)
+            //{
+            //    player.PlayLooping();
+            //    UIPatient_KnapStopAlarm.Enabled = true;
+            //    STP.Reset();
+            //}
         }
 
         private void UIPatient_KnapStopAlarm_Click(object sender, EventArgs e)

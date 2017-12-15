@@ -42,7 +42,11 @@ namespace LogikLayer
         {
             Kalib = DL.startMålingPrøve().Data;
             _npj = DL.hentNPJ();
-            
+            return beregnGennemsnit(mmHg);
+        }
+
+        private bool beregnGennemsnit(int mmHg)
+        {
             gnms = ((Kalib.Sum() / Kalib.Count) / (5 * 0.000005 * 736.294)) - _npj;
 
             if (gnms < mmHg + 3 && gnms > mmHg - 3)
@@ -80,8 +84,6 @@ namespace LogikLayer
         }
         public void LavGemDTO()
         {
-            
-            if (i == 6)
             {
                 KDTO.KalibrerDoubles = new List<double>();
                 KDTO.KalibrerDoubles.Add(mm1Hg10);
