@@ -37,11 +37,6 @@ namespace DataLayer
                 {
                     test.Add(B1.Datalist[i]);
                 }
-
-                if (test.Count == 5000)
-                {
-                    int t = 1;
-                }
             }
         }
     }

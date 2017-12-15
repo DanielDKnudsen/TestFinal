@@ -64,12 +64,6 @@ namespace DataLayer
             producerThread.Start();
         }
 
-        public KalibreringDTO LavKalibrering(int mmHg)
-        {
-            Hent_Kalibrering hentKalib = new Hent_Kalibrering();
-            return hentKalib.HentKal();
-        }
-
         public void StopProducerTråd()
         {
             _producer.kør = false;
@@ -81,12 +75,6 @@ namespace DataLayer
             return IDaq.CollectNulpunktsListe();
             
         }
-
-        public MålingDTO Start()
-        {
-            return IDaq.CollectNulpunktsListe();
-        }
-
         
     }
 }

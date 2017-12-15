@@ -10,8 +10,6 @@ namespace Interfaces
     public interface IDataLayer
     {
         MålingDTO startMålingPrøve();
-        MålingDTO Start();
-        KalibreringDTO LavKalibrering(int mmHg);
         void GemKalibrering(KalibreringDTO KalibDTO);
         void StartProducerTråd();
         void GemNPJ(double Nulpunkt);

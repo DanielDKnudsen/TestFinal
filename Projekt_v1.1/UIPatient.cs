@@ -217,11 +217,6 @@ namespace Projekt_v1._1
 
         private void UIPatient_KnapStopAlarm_Click(object sender, EventArgs e)
         {
-            StopAlarm();
-        }
-
-        private void StopAlarm()
-        {
             player.Stop();
             STP.Start();
         }

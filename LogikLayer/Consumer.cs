@@ -21,7 +21,6 @@ namespace LogikLayer
         private Filter filter;
         public IFilter Ifilter { get; set; }
         public DataContainer _dct;
-        private List<double> test = new List<double>();
         private List<double> konverteretListe = new List<double>();
         public bool kør { get; set; } 
 

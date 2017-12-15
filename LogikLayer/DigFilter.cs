@@ -14,7 +14,6 @@ namespace LogikLayer
 
         public DigFilter()
         {
-            ClearList();
         }
 
         public List<double> Filtrer(List<double> RawList)
@@ -62,9 +61,5 @@ namespace LogikLayer
             return RawListe;
         }
 
-        private void ClearList()
-        {
-            
-        }
     }
 }

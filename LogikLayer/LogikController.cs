@@ -17,7 +17,6 @@ namespace LogikLayer
     {
 
         private IDataLayer DL;
-        private IPresentationLayer PL;
         private Kalibrering kalib;
         private Consumer _consumer;
         private Nulpunktsjustering NPJ;
@@ -25,8 +24,7 @@ namespace LogikLayer
         private DataContainer _dct;
         private bool tidFaktor;
         private List<double> HeleMålingen = new List<double>();
-        private bool GemMålinger;
-        
+       
 
         public LogikController(IDataLayer dl, Consumer consumer,DataContainer DCT, Kalibrering Kalib)
         {
@@ -37,7 +35,6 @@ namespace LogikLayer
             _filter = new Filter(new RawFilter(), _dct);
             kalib = Kalib;
             HentKalibrering();
-            GemMålinger = false;
         }
 
         //Hent måling fra consumer-klassen:
@@ -153,9 +150,5 @@ namespace LogikLayer
             return kdto;
         }
 
-        public void GemKalibrering(KalibreringDTO KalibDTO)
-        {
-            
-        }
     }
 }
