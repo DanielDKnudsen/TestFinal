@@ -31,16 +31,11 @@ namespace DataLayer
                 Bufferblock B1 = new Bufferblock();
                 B1.Datalist = _data.CollectNulpunktsListe().Data;
                 _dataQueue.Enqueue(B1);
-                Thread.Sleep(50);
+                //Thread.Sleep(50);
 
                 for (int i = 0; i < B1.Datalist.Count; i++)
                 {
                     test.Add(B1.Datalist[i]);
-                }
-
-                if (test.Count == 5000)
-                {
-                    int t = 1;
                 }
             }
         }

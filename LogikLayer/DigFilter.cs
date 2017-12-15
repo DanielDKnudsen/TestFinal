@@ -12,11 +12,6 @@ namespace LogikLayer
         private double total;
         private List<double> Sidste2Punkter = new List<double>();
 
-        public DigFilter()
-        {
-            ClearList();
-        }
-
         public List<double> Filtrer(List<double> RawList)
         {
             List<double> FiltretetRawListe = new List<double>();
@@ -60,11 +55,6 @@ namespace LogikLayer
                 RawListe.Add(total);
             }
             return RawListe;
-        }
-
-        private void ClearList()
-        {
-            
         }
     }
 }
