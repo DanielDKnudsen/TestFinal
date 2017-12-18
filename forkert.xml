@@ -1,0 +1,13 @@
+﻿<Kalibrering>
+  <Dato>15-12-2017 10:59:36</Dato>
+  <Brugernavn />
+  <Kalibreringsdata>
+    <Måling>9,91838245443609</Måling>
+    <Måling>49,794749239297</Måling>
+    <Måling>100,58177761432</Måling>
+    <Måling>9,8864962485427</Måling>
+    <Måling>50,0496060017257</Måling>
+    <Måling>99,523276889915</Måling>
+  </Kalibreringsdata>
+  <Slope>0,99</Slope>
+</Kalibrering>

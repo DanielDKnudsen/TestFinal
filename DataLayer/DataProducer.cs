@@ -21,7 +21,7 @@ namespace DataLayer
         public DataProducer(ConcurrentQueue<Bufferblock> dataQueue)
         {
             _dataQueue = dataQueue;
-            _data = new FakeDAQ();
+            _data = new DAQ();
         }
 
         public void Run()

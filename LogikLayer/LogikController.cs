@@ -71,7 +71,7 @@ namespace LogikLayer
 
         public void SetNPJ()
         {
-            DL.GemNPJ(NPJ.NulpunktBeregnet());
+            DL.GemNPJ(NPJ.NulpunktBeregnet() / (5 * 0.000005 * 736.294));
             _consumer.GetNPJ(NPJ.NulpunktBeregnet());
         }
 

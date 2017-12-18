@@ -22,7 +22,7 @@ namespace DataLayer
             data = ConvertToBinary(mdto.Data);
             string dataString = Convert.ToBase64String(data);
 
-            if (File.Exists(filNavn))
+            if (File.Exists(filNavnDaniel))
             {
                 XmlDocument doc = new XmlDocument();
                 doc.Load(filNavnDaniel);

@@ -29,7 +29,7 @@ namespace Projekt_v1._1
         private int _SysMin = 0;
         private UIKontor1 _UIkontor;
 
-        System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\mikke\Documents\GitHub\TestFinal\Alarm.wav");
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Daniel\Dropbox\3.Semesterprojekt\Alarm.wav");
         Stopwatch STP =  new Stopwatch();
 
         public UIPatient(UIKontor1 UIkontor, string navn, DateTime tid, ILogikLayer ll, DataContainer DCT, MålingContainer målingContainer, string DiaMax,string DiaMin, string SysMax,string SysMin)
@@ -186,27 +186,21 @@ namespace Projekt_v1._1
 
         public void Alarm(MålingDTO mDTO)
         {
-            
-            //if (mDTO.Sys > _SysMax || mDTO.Sys < _SysMin)
-            //{
-            //    player.PlayLooping();
-            //    UIPatient_KnapStopAlarm.Enabled = true;
-            //    STP.Reset();
-            //}
-            //if (mDTO.Dia > _DiaMax || mDTO.Sys < _DiaMin)
-            //{
-            //    player.PlayLooping();
-            //    UIPatient_KnapStopAlarm.Enabled = true;
-            //    STP.Reset();
-            //}
+            if (mDTO.Sys > _SysMax || mDTO.Sys < _SysMin)
+            {
+                player.PlayLooping();
+                UIPatient_KnapStopAlarm.Enabled = true;
+                STP.Reset();
+            }
+            if (mDTO.Dia > _DiaMax || mDTO.Sys < _DiaMin)
+            {
+                player.PlayLooping();
+                UIPatient_KnapStopAlarm.Enabled = true;
+                STP.Reset();
+            }
         }
 
         private void UIPatient_KnapStopAlarm_Click(object sender, EventArgs e)
-        {
-            StopAlarm();
-        }
-
-        private void StopAlarm()
         {
             player.Stop();
             STP.Start();
