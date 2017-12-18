@@ -67,21 +67,6 @@ namespace LogikLayer
             if (mmHg == 100 && i == 5) { mm2Hg100 = gnms; i = 6; LavGemDTO(); }
         }
 
-        public List<double> TegnKalibGraf()
-        {
-            List<double> KalibGraf = new List<double>();
-            if (i == 6)
-            {
-                KalibGraf.Add(mm1Hg10);
-                KalibGraf.Add(mm1Hg50);
-                KalibGraf.Add(mm1Hg100);
-                KalibGraf.Add(mm2Hg10);
-                KalibGraf.Add(mm2Hg50);
-                KalibGraf.Add(mm2Hg100);
-            }
-            return KalibGraf;
-
-        }
         public void LavGemDTO()
         {
             {

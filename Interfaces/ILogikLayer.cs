@@ -16,7 +16,6 @@ namespace Interfaces
         bool StartKalibrering(int mmHg);
         void setKali(int mmHg);
         bool GetTidfaktor();
-        void GemKalibrering(KalibreringDTO KalibDTO);
         void SetFilter(string Filter);
         KalibreringDTO kalibliste();
         void GemAlleMålinger(PatientDTO PDTO);

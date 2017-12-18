@@ -14,8 +14,6 @@ namespace LogikLayer
         private List<double> KonverteretListe = new List<double>();
         private List<int> TickCount = new List<int>();
         private IDataLayer idal;
-        private Filter _filter;
-        private LogikController LC;
         private BTMålerController _BTMålerController;
         private UdregnKalibrering _UdKal;
 

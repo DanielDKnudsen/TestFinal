@@ -25,7 +25,7 @@ namespace DataLayer
         {
             _producer = producer;
             NPJ = new XMLGemNulpunkt();
-            IDaq = new DAQ();
+            IDaq = new FakeDAQ();
             HentNPJ = new HentNulpunktXML();
             Kalib = new XMLGemKalibrering();
             HentKalib = new Hent_Kalibrering();
@@ -64,12 +64,6 @@ namespace DataLayer
             producerThread.Start();
         }
 
-        public KalibreringDTO LavKalibrering(int mmHg)
-        {
-            Hent_Kalibrering hentKalib = new Hent_Kalibrering();
-            return hentKalib.HentKal();
-        }
-
         public void StopProducerTråd()
         {
             _producer.kør = false;
@@ -80,11 +74,6 @@ namespace DataLayer
             
             return IDaq.CollectNulpunktsListe();
             
-        }
-
-        public MålingDTO Start()
-        {
-            return IDaq.CollectNulpunktsListe();
         }
         
     }

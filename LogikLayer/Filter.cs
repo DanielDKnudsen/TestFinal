@@ -8,7 +8,7 @@ using ObserverPatternVol2;
 
 namespace LogikLayer
 {
-    public class Filter : DataContainerSubject
+    public class Filter 
     {
         private Queue<double> filtreretKø = new Queue<double>();
         public IFilter _filter;
