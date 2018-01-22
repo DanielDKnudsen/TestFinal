@@ -51,7 +51,6 @@ namespace Main
             _producer = new DataProducer(_dataqueue);
             DL = new DataController(_producer);
             _kalib = new Kalibrering(DL);
-
             
             _UdKal = new UdregnKalibrering();
             _consumer = new Consumer(_dataqueue, _ifilter, _dataContainer, _BTcontroller, _UdKal);

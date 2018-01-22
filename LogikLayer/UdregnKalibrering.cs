@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Accord.Math.Transforms;
-using Accord.Statistics.Models;
-using Accord.MachineLearning;
 using Accord.Statistics.Models.Regression.Linear;
 using DTO;
 using Interfaces;
@@ -15,11 +12,6 @@ namespace LogikLayer
     public class UdregnKalibrering
     {
         private double slope;
-
-        public UdregnKalibrering()
-        {
-
-        }
 
         public double Slope(KalibreringDTO kDTO)
         {
